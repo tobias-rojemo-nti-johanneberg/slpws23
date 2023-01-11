@@ -1,7 +1,7 @@
-# Slutprojekt 2022 WSP
-Slutprojekt 2022 Webbserverprogrammering.
+# slpws23
+Slutprojekt 2023 Webbserverprogrammering.
 
-![begin](begin.png)
+![betterworld](betterworld.jpg)
 
 ##  Uppgiftsbeskrivning
 
@@ -12,16 +12,18 @@ Du kommer även under arbetets gång få miniföreläsningar om hur du kan göra
 ##  Specifikation
 - Valfri applikation, tex webbshop, forum, föreningssida med användare, företagssida med olika användare...
 - Individuellt projekt
-- Forka grundrepo: https://github.com/ntijoh/wsp22.git
+- Forka grundrepo: https://github.com/ntijoh/slpws23.git
 - Utvecklingsdagbok i dokument på classroom
 - CSS är inget krav men är uppmuntrat
-- Inlämningar v.10 (för feedback, avstämning), 16 (slutinlämning)
+- Delinlämning v.9 på classroom (för feedback, avstämning). 
+- v.14 slutinlämning
 - Lämna in en liten film på classroom som visar applikationen
 
 ## Lektionsstruktur
 - Standup meetings i början på varje lektion
 - Commits under lektion och push i slutet
 - Eleven uppdaterar utvecklingsdagboken (classroom) det sista som händer
+- Vissa lektioner kommer läraren ha en kort genomgång (gg) om lite mer avancerade saker (C/A-nivå) som man kan addera till sitt projekt.
 
 ## Lektionsplanering
 
