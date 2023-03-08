@@ -28,7 +28,7 @@ db = SQLite3::Database.new("db/data.sqlite")
 db.results_as_hash = true
 
 TABLE_QUERIES = [
-  "CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT NOT NULL, pass TEXT, perms INTEGER NOT NULL) STRICT",
+  "CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT NOT NULL, pass BLOB, perms INTEGER NOT NULL, pfp TEXT NOT NULL DEFAULT 'default_user') STRICT",
   "CREATE TABLE IF NOT EXISTS characters (id INTEGER PRIMARY KEY AUTOINCREMENT, author_id INTEGER NOT NULL, name TEXT NOT NULL, public INTEGER NOT NULL, type INTEGER NOT NULL, ability TEXT NOT NULL, first_night REAL NOT NULL, other_nights REAL NOT NULL, FOREIGN KEY (author_id) REFERENCES users(id)) STRICT",
   "CREATE TABLE IF NOT EXISTS scripts (id INTEGER PRIMARY KEY AUTOINCREMENT, author_id INTEGER NOT NULL, title TEXT NOT NULL, public INTEGER NOT NULL, source_id INTEGER, version_num TEXT, FOREIGN KEY (author_id) REFERENCES users(id) FOREIGN KEY (source_id) REFERENCES scripts(id)) STRICT",
   "CREATE TABLE IF NOT EXISTS script_character_rel (character_id INTEGER NOT NULL, script_id INTEGER NOT NULL, featured INTEGER NOT NULL DEFAULT 0, PRIMARY KEY (character_id, script_id), FOREIGN KEY (character_id) REFERENCES characters(id), FOREIGN KEY (script_id) REFERENCES scripts(id)) STRICT, WITHOUT ROWID",

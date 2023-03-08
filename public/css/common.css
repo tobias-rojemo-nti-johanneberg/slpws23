@@ -2,6 +2,9 @@
   margin: 0;
   border: 0;
   padding: 0;
+}
+
+body {
   background-color: #000;
 }
 
@@ -16,6 +19,78 @@ span {
 
 h1 {
   text-align: center;
+}
+
+.header-buffer {
+  height: 2.2rem;;
+}
+
+header {
+  position: fixed;
+  height: 2.2rem;
+  width: 100%;
+  background-color: #000;
+  border-bottom: 2px solid #fff;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.login-field {
+  position: fixed;
+  right: 0;
+  top: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  width: min-content;
+}
+
+.profile {
+  position: fixed;
+  right: 0;
+  top: 0.1rem;
+  height: 2rem;
+  display: flex;
+  flex-direction: row;
+  width: min-content;
+}
+
+.profile img {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.profile span {
+  flex: 1;
+  font-size: 1.5rem;
+}
+
+.login-field a {
+  flex: 1;
+  margin: 1px;
+  padding: 2px;
+  border-radius: 4px;
+  border: 1px solid #fff;
+  text-align: center;
+  width: min-content;
+  text-decoration: none;
+}
+
+form {
+  width: min-content;
+  display: flex;
+  flex-direction: column;
+}
+
+form input {
+  border-radius: 2px;
+  border: 2px solid #fff;
+  padding: 2px;
+  margin: 2px;
 }
 
 .script {

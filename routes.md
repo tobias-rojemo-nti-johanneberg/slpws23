@@ -52,10 +52,6 @@
 
 > all scripts
 
-# # GET /scripts/search/:query
-
-> all scripts, filtered by query
-
 # # GET /scripts/:id
 
 > specific script
@@ -63,10 +59,6 @@
 # # GET /scripts/:id/characters
 
 > all characters in script
-
-# # GET /scripts/:id/owner
-
-> owner of specific script, specific user
 
 # # GET /scripts/:id/source
 
@@ -105,10 +97,6 @@
 # # GET /users
 
 > all users
-
-# # GET /users/search/:query
-
-> all users, filtered by query
 
 # # GET /users/:id
 

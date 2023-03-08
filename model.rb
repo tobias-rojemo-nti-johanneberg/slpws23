@@ -1,5 +1,4 @@
 require 'sqlite3'
-require 'bcrypt'
 
 require_relative 'tag'
 require_relative 'character'

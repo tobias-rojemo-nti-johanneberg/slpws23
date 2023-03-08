@@ -42,6 +42,12 @@ class TagType
     
     return data.map{|char| Character.new(@db, char["id"])}
   end
+
+  def to_s
+    type_name = @db.execute("SELECT name FROM tag_types WHERE id = ?", @type)
+
+    return type_name[0]["name"] 
+  end
 end
 
 class Tag

@@ -11,4 +11,17 @@ html lang="en"
     script src="/js/common.js" defer=true
     title Document
   body
-    == yield
+    header
+      - if @title
+        h1 = @title
+      - if @user
+        .profile
+          img src="/img/#{@user.pfp}.png"
+          span = @user.name
+      - else
+        .login-field
+          a.login href="/login" Login
+          a.register href="/register" Register
+    .header-buffer
+    main
+      == yield
