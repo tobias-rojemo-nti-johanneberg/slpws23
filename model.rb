@@ -23,4 +23,8 @@ class Database
   def users
     return UserManager.new(@db)
   end
+
+  def tags
+    return TagTypeManager.new(@db)
+  end
 end

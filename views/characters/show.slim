@@ -1,0 +1,21 @@
+.character-view
+  img src=@character.img alt=@character.name
+  .info
+    .traveller-name-fix
+      h1.name = @character.name
+    p.type = @character.type
+    p.author = @character.author
+    p.ability = @character.ability
+    .tags
+      - @character.tags.each do |tag|
+        a.tag data-bg=tag.bg data-text=tag.text href="/characters/tag/#{tag.type}"
+          span.tag-content = tag.to_s
+    .comments
+      h2 Discussion
+      - if @character.comments.empty?
+        p It's empty here
+      - @character.comments.each do |comment|
+        .comment
+          p.created = comment.created
+          p.author = comment.author_name
+          p.content = comment.content

@@ -1,0 +1,10 @@
+h1 Characters
+.character-list
+  - @characters.each do |character|
+    .character
+      img src=character.img alt=character.name
+      a.traveller-name-fix href="/characters/#{character.id}"
+        h2.name = character.name
+      p.type = character.type
+      p.author = character.author
+      p.ability = character.ability

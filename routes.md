@@ -26,17 +26,13 @@
 
 > all characters
 
-# # GET /characters/search/:query
-
-> all characters, filtered by query
-
 # # GET /characters/:id
 
 > specific character
 
-# # GET /characters/:id/tags
+# # GET /characters/tag/:id
 
-> all tags of character
+> all characters with specific tag type
 
 # # POST /characters
 

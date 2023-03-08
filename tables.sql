@@ -1,36 +1,37 @@
 CREATE TABLE IF NOT EXISTS users (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  name TEXT NOT NULL,
+  username TEXT NOT NULL,
   pass TEXT,
   perms INTEGER NOT NULL
 ) STRICT;
 
 CREATE TABLE IF NOT EXISTS characters (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  owner_id INTEGER NOT NULL,
+  author_id INTEGER NOT NULL,
   name TEXT NOT NULL,
   public INTEGER NOT NULL,
   type INTEGER NOT NULL,
   ability TEXT NOT NULL,
   first_night REAL NOT NULL,
   other_nights REAL NOT NULL,
-  FOREIGN KEY (owner_id) REFERENCES users(id)
+  FOREIGN KEY (author_id) REFERENCES users(id)
 ) STRICT;
 
 CREATE TABLE IF NOT EXISTS scripts (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  owner_id INTEGER NOT NULL,
-  name TEXT NOT NULL,
+  author_id INTEGER NOT NULL,
+  title TEXT NOT NULL,
   public INTEGER NOT NULL,
   source_id INTEGER,
   version_num TEXT,
-  FOREIGN KEY (owner_id) REFERENCES users(id)
+  FOREIGN KEY (author_id) REFERENCES users(id)
   FOREIGN KEY (source_id) REFERENCES scripts(id)
 ) STRICT;
 
 CREATE TABLE IF NOT EXISTS script_character_rel (
   character_id INTEGER NOT NULL,
   script_id INTEGER NOT NULL,
+  featured INTEGER NOT NULL DEFAULT 0,
   PRIMARY KEY (character_id, script_id),
   FOREIGN KEY (character_id) REFERENCES characters(id),
   FOREIGN KEY (script_id) REFERENCES scripts(id)
@@ -48,7 +49,10 @@ CREATE TABLE IF NOT EXISTS jinxes (
 
 CREATE TABLE IF NOT EXISTS tag_types (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  name TEXT NOT NULL
+  name TEXT NOT NULL,
+  bg TEXT NOT NULL DEFAULT '#A0A0A0',
+  text TEXT NOT NULL DEFAULT '#000000',
+  display_value INT NOT NULL DEFAULT 0
 ) STRICT;
 
 CREATE TABLE IF NOT EXISTS tags (
@@ -68,3 +72,23 @@ CREATE TABLE IF NOT EXISTS script_edits (
   FOREIGN KEY (character_id) REFERENCES characters(id),
   FOREIGN KEY (script_id) REFERENCES scripts(id)
 ) STRICT, WITHOUT ROWID;
+
+CREATE TABLE IF NOT EXISTS character_comments (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  character_id INTEGER NOT NULL,
+  author_id INTEGER NOT NULL,
+  content TEXT NOT NULL,
+  created TEXT NOT NULL DEFAULT (datetime()),
+  FOREIGN KEY (character_id) REFERENCES characters(id),
+  FOREIGN KEY (author_id) REFERENCES users(id)
+) STRICT;
+
+CREATE TABLE IF NOT EXISTS script_comments (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  script_id INTEGER NOT NULL,
+  author_id INTEGER NOT NULL,
+  content TEXT NOT NULL,
+  created TEXT NOT NULL DEFAULT (datetime()),
+  FOREIGN KEY (script_id) REFERENCES scripts(id),
+  FOREIGN KEY (author_id) REFERENCES users(id)
+) STRICT;
