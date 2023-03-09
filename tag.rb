@@ -8,12 +8,14 @@ class TagTypeManager
   end
 
   def get(*ids)
-    @data = @db.execute("SELECT id FROM tag_types ORDER BY name ASC")
     if ids.size == 0
+      @data = @db.execute("SELECT id FROM tag_types ORDER BY name ASC")
       return @data.map{|tag| TagType.new(@db, tag["id"])}
     elsif ids.size == 1
+      @data = @db.execute("SELECT id FROM tag_types WHERE id = ? LIMIT 1", ids[0])
       return TagType.new(@db, @data[0]["id"])
     else
+      @data = @db.execute("SELECT id FROM tag_types ORDER BY name ASC")
       return @data.filter{|tag| ids.include?(tag["id"])}.map{|tag| TagType.new(@db, tag["id"])}
     end
   end

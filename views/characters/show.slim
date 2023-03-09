@@ -1,5 +1,6 @@
 .character-view
-  img src=@character.img alt=@character.name
+  - if @character.has_img
+    img src=@character.img alt=@character.name
   .info
     .traveller-name-fix
       h1.name = @character.name

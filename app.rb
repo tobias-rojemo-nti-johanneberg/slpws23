@@ -5,7 +5,8 @@ require_relative 'model'
 enable :sessions
 
 before do
-  @user = Database.new.users.from_session(session[:id])
+  @db = Database.new
+  @user = @db.users.from_session(session[:id])
 end
 
 get('/') do
@@ -28,10 +29,10 @@ post('/login') do
   pass = params[:pass]
 
   if !name || !pass
-    redirect(:/)
+    redirect(:"/login")
   end
 
-  session_id = Database.new.users.login(name, pass)
+  session_id = @db.users.login(name, pass)
 
   if session_id
     session[:id] = session_id
@@ -45,24 +46,22 @@ post('/register') do
   verify = params[:verifyPass]
 
   if !name || !pass
-    redirect(:/)
+    redirect(:"/register")
   elsif pass != verify
-    redirect(:/)
+    redirect(:"/register")
   end
 
-  p Database.new
-
-  Database.new.users.register(name, pass)
+  @db.users.register(name, pass)
 end
 
 get('/characters') do
   @title = "Characters"
-  @characters = Database.new.characters
+  @characters = @db.characters
   slim(:"characters/index")
 end
 
 get('/characters/:id') do
-  @character = Database.new.characters.get(params[:id].to_i)
+  @character = @db.characters.get(params[:id].to_i)
   if @character
     slim(:"characters/show")
   else
@@ -70,8 +69,19 @@ get('/characters/:id') do
   end
 end
 
+get('/characters/:id/scripts') do
+  @character = @db.characters.get(params[:id].to_i)
+  if @character
+    @scripts = @character.scripts
+    @title = "Scripts with #{@character.name}"
+    slim(:"scripts/index")
+  else
+    slim(:"characters/notfound")
+  end
+end
+
 get('/characters/tag/:id') do
-  tag = Database.new.tags.get(params[:id].to_i)
+  tag = @db.tags.get(params[:id].to_i)
   @title = "Characters with tag #{tag.to_s}"
   @characters = tag.characters
   slim(:"characters/index")
@@ -79,7 +89,29 @@ end
 
 get('/scripts') do
   @title = "Scripts"
-  @scripts = Database.new.scripts
+  @scripts = @db.scripts
   slim(:"scripts/index")
 end
 
+get('/scripts/:id') do
+  @script = @db.scripts.get(params[:id].to_i)
+  if @script
+    slim(:"scripts/show")
+  else
+    slim(:"scripts/notfound")
+  end
+end
+
+get('/scripts/:id/characters') do
+  @script = @db.scripts.get(params[:id].to_i)
+  @characters = @script.characters
+  @title = "Characters in #{@script.title}"
+  slim(:"characters/index")
+end
+
+get('/scripts/:id/forks') do
+  @script = @db.scripts.get(params[:id].to_i)
+  @scripts = @script.forks
+  @title = "Forks of #{@script.title}"
+  slim(:"/scripts/index")
+end

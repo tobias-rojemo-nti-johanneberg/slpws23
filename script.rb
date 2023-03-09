@@ -7,12 +7,14 @@ class ScriptManager
   end
 
   def get(*ids)
-    @data = @db.execute("SELECT id FROM scripts ORDER BY id DESC")
     if ids.size == 0
+      @data = @db.execute("SELECT id FROM scripts ORDER BY title ASC")
       return @data.map{|script| Script.new(@db, script["id"])}
     elsif ids.size == 1
+      @data = @db.execute("SELECT id FROM scripts WHERE id = ? LIMIT 1", ids[0])
       return Script.new(@db, @data[0]["id"])
     else
+      @data = @db.execute("SELECT id FROM scripts ORDER BY title ASC")
       return @data.filter{|script| ids.include(script.id)}.map{|script| Script.new(@db, script["id"])}
     end
   end
@@ -47,22 +49,44 @@ class Script
     @db = db
     @id = id
 
-    @data = @db.execute("SELECT username, title FROM scripts INNER JOIN users ON scripts.author_id = users.id WHERE scripts.id = ? LIMIT 1", @id)
+    @data = @db.execute("SELECT username, title, source_id FROM scripts INNER JOIN users ON scripts.author_id = users.id WHERE scripts.id = ? LIMIT 1", @id)
 
+    @source_id = @data[0]["source_id"]
     @title = @data[0]["title"]
     @author = @data[0]["username"]
   end
 
-  def characters()
+  def characters
     @data = @db.execute("SELECT id FROM characters WHERE id IN (SELECT character_id FROM script_character_rel WHERE script_id = ?)", @id)
 
     return @data.map{|char| Character.new(@db, char["id"])}
   end
 
-  def forks()
+  def forks
     @data = @db.execute("SELECT id FROM scripts WHERE source_id = ?", @id)
     
     return @data.map{|script| Script.new(@db, script["id"])}
+  end
+
+  def source
+    return @source_id ? Script.new(@db, @source_id) : nil
+  end
+
+  def origin
+    return @source_id ? self.source.origin : self
+  end
+
+  def comments
+    @comments = @db.execute("SELECT id FROM script_comments WHERE script_id = ? ORDER BY id DESC", @id)
+    @comments.map{|comment_data| Comment.new(@db, comment_data["type"], comment_data["value"])}
+  end
+
+  def has_img 
+    return File.exists?("public/img/s#{@id}.png")
+  end
+
+  def img
+    return "/img/s#{@id}.png"
   end
 
   attr_accessor :id

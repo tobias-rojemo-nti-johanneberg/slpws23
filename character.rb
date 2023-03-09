@@ -10,12 +10,14 @@ class CharacterManager
   end
 
   def get(*ids)
-    @data = @db.execute("SELECT id FROM characters ORDER BY name ASC")
     if ids.size == 0
+      @data = @db.execute("SELECT id FROM characters ORDER BY name ASC")
       return @data.map{|character| Character.new(@db, character["id"])}
     elsif ids.size == 1
+      @data = @db.execute("SELECT id FROM characters WHERE id = ? LIMIT 1", ids[0])
       return Character.new(@db, @data[0]["id"])
     else
+      @data = @db.execute("SELECT id FROM characters ORDER BY name ASC")
       return @data.filter{|character| ids.include?(character["id"])}.map{|character| Character.new(@db, character["id"])}
     end
   end
@@ -50,6 +52,12 @@ class Character
     @author = @data[0]["username"]
   end
 
+  def scripts
+    @data = @db.execute("SELECT id FROM scripts WHERE id IN (SELECT script_id FROM script_character_rel WHERE character_id = ?)", @id)
+  
+    return @data.map {|script| Script.new(@db, script["id"])}
+  end
+
   def tags
     @tags = @db.execute("SELECT tag_type_id, value FROM tags WHERE character_id = ?", @id)
     @tags.map{|tag_data| Tag.new(@db, tag_data["tag_type_id"], tag_data["value"])}
@@ -58,6 +66,10 @@ class Character
   def comments
     @comments = @db.execute("SELECT id FROM character_comments WHERE character_id = ? ORDER BY id DESC", @id)
     @comments.map{|comment_data| Comment.new(@db, comment_data["type"], comment_data["value"])}
+  end
+
+  def has_img 
+    return File.exists?("public/img/c#{@id}.png")
   end
 
   def img

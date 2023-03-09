@@ -1,0 +1,27 @@
+.script-view
+  - if @script.has_img
+    img src=@script.img alt=@script.title
+  .info
+    h1.title = @script.title
+    p.author = @script.author
+    - if @script.source
+      a.source href="/scripts/#{@script.id}" = @script.source.title
+    .characters
+      .script-character-list
+        - @script.characters.each do |character|
+          .character
+            img src=character.img alt=character.name
+            a.traveller-name-fix href="/characters/#{character.id}"
+              h2.name = character.name
+            p.type = character.type
+            p.author = character.author
+            p.ability = character.ability
+    .comments
+      h2 Discussion
+      - if @script.comments.empty?
+        p It's empty here
+      - @script.comments.each do |comment|
+        .comment
+          p.created = comment.created
+          p.author = comment.author_name
+          p.content = comment.content

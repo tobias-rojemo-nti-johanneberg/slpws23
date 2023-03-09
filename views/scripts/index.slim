@@ -1,5 +1,5 @@
 .script-list
   - @scripts.each do |script|
     .script
-      h2.title = script.title
+      a.title href="/scripts/#{script.id}" = script.title
       p.author = script.author

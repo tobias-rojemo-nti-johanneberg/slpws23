@@ -102,6 +102,8 @@ form input {
 .script .title {
   font-family: "Great Vibes", cursive;
   flex: 1;
+  font-size: 1.6rem;
+  text-decoration: none;
 }
 
 .script .author {
@@ -112,6 +114,11 @@ form input {
 .character-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+}
+
+.script-character-list {
+  display: grid;
+  grid-template-columns: 1fr
 }
 
 .character {

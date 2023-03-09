@@ -30,6 +30,10 @@
 
 > specific character
 
+# # GET /characters/:id/scripts
+
+> all scripts with specific character
+
 # # GET /characters/tag/:id
 
 > all characters with specific tag type
