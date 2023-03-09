@@ -41,13 +41,11 @@ class TagType
 
   def characters
     data = @db.execute("SELECT id FROM characters WHERE id IN (SELECT character_id FROM tags WHERE tag_type_id = ?) ORDER BY name ASC", @type)
-    
     return data.map{|char| Character.new(@db, char["id"])}
   end
 
   def to_s
     type_name = @db.execute("SELECT name FROM tag_types WHERE id = ?", @type)
-
     return type_name[0]["name"] 
   end
 end
@@ -78,7 +76,6 @@ class Tag
 
   def to_s()
     type_name = @db.execute("SELECT name FROM tag_types WHERE id = ?", @type)
-
     return @display_value == TRUE ? "#{type_name[0]["name"]}:#{@value}" : type_name[0]["name"]
   end
 

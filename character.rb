@@ -54,7 +54,6 @@ class Character
 
   def scripts
     @data = @db.execute("SELECT id FROM scripts WHERE id IN (SELECT script_id FROM script_character_rel WHERE character_id = ?)", @id)
-  
     return @data.map {|script| Script.new(@db, script["id"])}
   end
 
@@ -65,16 +64,11 @@ class Character
 
   def comments
     @comments = @db.execute("SELECT id FROM character_comments WHERE character_id = ? ORDER BY id DESC", @id)
-    @comments.map{|comment_data| Comment.new(@db, comment_data["type"], comment_data["value"])}
+    @comments.map{|comment_data| CharacterComment.new(@db, comment_data["type"], comment_data["value"])}
   end
 
-  def has_img 
-    return File.exists?("public/img/c#{@id}.png")
-  end
-
-  def img
-    return "/img/c#{@id}.png"
-  end
+  def has_img = File.exists?("public/img/c#{@id}.png")
+  def img = "/img/c#{@id}.png"
 
   attr_accessor :id
   attr_accessor :name
@@ -95,21 +89,10 @@ class CharacterComment
     @created = @data[0]["created"]
   end
 
-  def character 
-    return Character.new(@db, @character_id)
-  end
-
-  def character_name
-    return @db.execute("SELECT name FROM characters WHERE id = ? LIMIT 1", @character_id)[0]["name"]
-  end
-
-  def author
-    return User.new(@db, @author_id)
-  end
-
-  def author_name
-    return @db.execute("SELECT username FROM characters WHERE id = ? LIMIT 1", @character_id)[0]["username"]
-  end
+  def character = Character.new(@db, @character_id)
+  def character_name = @db.execute("SELECT name FROM characters WHERE id = ? LIMIT 1", @character_id)[0]["name"]
+  def author = User.new(@db, @author_id)
+  def author_name = @db.execute("SELECT username FROM characters WHERE id = ? LIMIT 1", @character_id)[0]["username"]
 
   attr_accessor :id
   attr_accessor :content

@@ -11,19 +11,8 @@ class Database
     @db.results_as_hash = true
   end
 
-  def characters
-    return CharacterManager.new(@db)
-  end
-
-  def scripts
-    return ScriptManager.new(@db)
-  end
-
-  def users
-    return UserManager.new(@db)
-  end
-
-  def tags
-    return TagTypeManager.new(@db)
-  end
+  def characters = CharacterManager.new(@db)
+  def scripts = ScriptManager.new(@db)
+  def users = UserManager.new(@db)
+  def tags = TagTypeManager.new(@db)
 end

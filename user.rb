@@ -14,9 +14,6 @@ class UserManager
 
   def is_taken(name)
     @data = @db.execute("SELECT id FROM users WHERE username = ?")
-
-    p @data
-
     return !@data.empty?
   end
 
@@ -26,15 +23,13 @@ class UserManager
     end
 
     @digest = BCrypt::Password.create(pass)
-
     @data = @db.execute("INSERT INTO users (username, pass, perms) VALUES (?, ?, ?) RETURNING id", name, @digest, perms)
-
+    
     return User.new(@db, @data[0]["id"])
   end
 
   def login(name, pass)
     @data = @db.execute("SELECT id, pass FROM users WHERE username = ? LIMIT 1", name)
-
     digest = @data[0]["pass"]
 
     if BCrypt::Password.new(digest) == pass

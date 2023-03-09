@@ -99,6 +99,10 @@ form input {
   flex-direction: column;
 }
 
+.script-view .title {
+  font-family: "Great Vibes", cursive;
+}
+
 .script .title {
   font-family: "Great Vibes", cursive;
   flex: 1;

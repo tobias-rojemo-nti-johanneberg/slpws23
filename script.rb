@@ -49,47 +49,57 @@ class Script
     @db = db
     @id = id
 
-    @data = @db.execute("SELECT username, title, source_id FROM scripts INNER JOIN users ON scripts.author_id = users.id WHERE scripts.id = ? LIMIT 1", @id)
+    @data = @db.execute("SELECT username, title, source_id, version_num FROM scripts INNER JOIN users ON scripts.author_id = users.id WHERE scripts.id = ? LIMIT 1", @id)
 
     @source_id = @data[0]["source_id"]
     @title = @data[0]["title"]
     @author = @data[0]["username"]
+    @version_num = @data[0]["version_num"]
   end
 
   def characters
     @data = @db.execute("SELECT id FROM characters WHERE id IN (SELECT character_id FROM script_character_rel WHERE script_id = ?)", @id)
-
     return @data.map{|char| Character.new(@db, char["id"])}
   end
 
   def forks
     @data = @db.execute("SELECT id FROM scripts WHERE source_id = ?", @id)
-    
     return @data.map{|script| Script.new(@db, script["id"])}
-  end
-
-  def source
-    return @source_id ? Script.new(@db, @source_id) : nil
-  end
-
-  def origin
-    return @source_id ? self.source.origin : self
   end
 
   def comments
     @comments = @db.execute("SELECT id FROM script_comments WHERE script_id = ? ORDER BY id DESC", @id)
-    @comments.map{|comment_data| Comment.new(@db, comment_data["type"], comment_data["value"])}
+    @comments.map{|comment_data| ScriptComment.new(@db, comment_data["type"], comment_data["value"])}
   end
 
-  def has_img 
-    return File.exists?("public/img/s#{@id}.png")
-  end
-
-  def img
-    return "/img/s#{@id}.png"
-  end
+  def source = @source_id ? Script.new(@db, @source_id) : nil
+  def origin = @source_id ? self.source.origin : self
+  def has_img = File.exists?("public/img/s#{@id}.png")
+  def img = "/img/s#{@id}.png"
+  def full_title = @version_num ? "#{@title} v#{@version_num}" : @title
 
   attr_accessor :id
   attr_accessor :title
   attr_accessor :author
+end
+
+class ScriptComment
+  def initialize(db, id)
+    @db = db
+    @id = id
+    @data = @db.execute("SELECT script_id, author_id, content, created FROM script_comments WHERE id = ? LIMIT 1", @id)
+    @script_id = @data[0]["script_id"]
+    @author_id = @data[0]["author_id"]
+    @content = @data[0]["content"]
+    @created = @data[0]["created"]
+  end
+
+  def script = Script.new(@db, @script_id)
+  def script_title = @db.execute("SELECT name FROM scripts WHERE id = ? LIMIT 1", @script_id)[0]["title"]
+  def author = User.new(@db, @author_id)
+  def author_name = @db.execute("SELECT username FROM scripts WHERE id = ? LIMIT 1", @script_id)[0]["username"]
+
+  attr_accessor :id
+  attr_accessor :content
+  attr_accessor :created
 end

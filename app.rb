@@ -62,11 +62,7 @@ end
 
 get('/characters/:id') do
   @character = @db.characters.get(params[:id].to_i)
-  if @character
-    slim(:"characters/show")
-  else
-    slim(:"characters/notfound")
-  end
+  @character ? slim(:"characters/show") : slim(:"characters/notfound")
 end
 
 get('/characters/:id/scripts') do
@@ -95,23 +91,19 @@ end
 
 get('/scripts/:id') do
   @script = @db.scripts.get(params[:id].to_i)
-  if @script
-    slim(:"scripts/show")
-  else
-    slim(:"scripts/notfound")
-  end
+  @script ? slim(:"scripts/show") : slim(:"scripts/notfound")
 end
 
 get('/scripts/:id/characters') do
   @script = @db.scripts.get(params[:id].to_i)
   @characters = @script.characters
-  @title = "Characters in #{@script.title}"
+  @title = "Characters in #{@script.full_title}"
   slim(:"characters/index")
 end
 
 get('/scripts/:id/forks') do
   @script = @db.scripts.get(params[:id].to_i)
   @scripts = @script.forks
-  @title = "Forks of #{@script.title}"
+  @title = "Forks of #{@script.full_title}"
   slim(:"/scripts/index")
 end

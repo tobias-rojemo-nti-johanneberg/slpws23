@@ -1,8 +1,8 @@
 .script-view
   - if @script.has_img
-    img src=@script.img alt=@script.title
+    img src=@script.img alt=@script.full_title
   .info
-    h1.title = @script.title
+    h1.title = @script.full_title
     p.author = @script.author
     - if @script.source
       a.source href="/scripts/#{@script.id}" = @script.source.title
