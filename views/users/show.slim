@@ -1,0 +1,17 @@
+.user-view
+  img src=@user.pfp alt=@user.name
+  h1.username = @user.name
+  .content
+    .preview-character-list
+      - @user.characters.each do |character|
+        .character
+          - if character.has_img?
+            img src=character.img alt=character.name
+          a.traveller-name-fix href="/characters/#{character.id}"
+            h2.name = character.name
+          p.type = character.type
+          p.ability = character.ability
+    .preview-script-list
+      - @user.scripts.each do |script|
+        .script
+          a.title href="/scripts/#{script.id}" = script.title

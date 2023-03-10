@@ -15,21 +15,17 @@ class CharacterManager
       return @data.map{|character| Character.new(@db, character["id"])}
     elsif ids.size == 1
       @data = @db.execute("SELECT id FROM characters WHERE id = ? LIMIT 1", ids[0])
-      return Character.new(@db, @data[0]["id"])
+      return Character.new(@db, @data[0]["id"]) unless @data.size == 0
     else
       @data = @db.execute("SELECT id FROM characters ORDER BY name ASC")
       return @data.filter{|character| ids.include?(character["id"])}.map{|character| Character.new(@db, character["id"])}
     end
   end
 
-  def count()
-    @data = @db.execute("SELECT id FROM characters")
-    return @data.size
-  end
+  def count = @db.execute("SELECT id FROM characters").size
 
   def each
-    @characters = get()
-    @characters.each do |character|
+    self.get.each do |character|
       yield character
     end
   end
@@ -44,12 +40,13 @@ class Character
   def initialize(db, id)
     @db = db
     @id = id
-    @data = @db.execute("SELECT name, type, ability, username FROM characters INNER JOIN users ON characters.author_id = users.id WHERE characters.id = ? LIMIT 1", @id)
+    @data = @db.execute("SELECT name, type, ability, username, author_id FROM characters INNER JOIN users ON characters.author_id = users.id WHERE characters.id = ? LIMIT 1", @id)
     @name = @data[0]["name"]
     @type_id = @data[0]["type"]
     @type = CHARACTER_TYPES[@type_id]
     @ability = @data[0]["ability"]
     @author = @data[0]["username"]
+    @author_id = @data[0]["author_id"]
   end
 
   def scripts
@@ -67,7 +64,7 @@ class Character
     @comments.map{|comment_data| CharacterComment.new(@db, comment_data["type"], comment_data["value"])}
   end
 
-  def has_img = File.exists?("public/img/c#{@id}.png")
+  def has_img? = File.exists?("public/img/c#{@id}.png")
   def img = "/img/c#{@id}.png"
 
   attr_accessor :id
@@ -76,6 +73,7 @@ class Character
   attr_accessor :type
   attr_accessor :ability
   attr_accessor :author
+  attr_accessor :author_id
 end
 
 class CharacterComment

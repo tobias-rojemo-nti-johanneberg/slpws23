@@ -14,10 +14,10 @@ html lang="en"
     header
       - if @title
         h1 = @title
-      - if @user
+      - if @logged_in_user
         .profile
-          img src="/img/#{@user.pfp}.png"
-          span = @user.name
+          img src="/img/#{@logged_in_user.pfp}.png"
+          span = @logged_in_user.name
       - else
         .login-field
           a.login href="/login" Login

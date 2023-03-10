@@ -1,9 +1,9 @@
 .script-view
-  - if @script.has_img
+  - if @script.has_img?
     img src=@script.img alt=@script.full_title
   .info
     h1.title = @script.full_title
-    p.author = @script.author
+    a.author href="/users/#{@script.author_id}" = @script.author
     - if @script.source
       a.source href="/scripts/#{@script.id}" = @script.source.title
     .characters
@@ -14,7 +14,7 @@
             a.traveller-name-fix href="/characters/#{character.id}"
               h2.name = character.name
             p.type = character.type
-            p.author = character.author
+            a.author href="/users/#{character.author_id}" = character.author
             p.ability = character.ability
     .comments
       h2 Discussion
@@ -23,5 +23,5 @@
       - @script.comments.each do |comment|
         .comment
           p.created = comment.created
-          p.author = comment.author_name
+          a.author href="/users/#{comment.author_id}" = comment.author_name
           p.content = comment.content

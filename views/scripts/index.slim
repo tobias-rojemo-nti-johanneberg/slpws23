@@ -2,4 +2,4 @@
   - @scripts.each do |script|
     .script
       a.title href="/scripts/#{script.id}" = script.title
-      p.author = script.author
+      a.author href="/users/#{script.author_id}" = script.author

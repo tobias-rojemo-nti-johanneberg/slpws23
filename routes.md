@@ -64,10 +64,6 @@
 
 > all characters in script
 
-# # GET /scripts/:id/source
-
-> source of specific script if fork, else null
-
 # # GET /scripts/:id/forks
 
 > all forks of specific script
@@ -105,3 +101,11 @@
 # # GET /users/:id
 
 > specific user
+
+# # GET /users/:id/scripts
+
+> all scripts made by specific user
+
+# # GET /users/:id/characters
+
+> all characters made by specific user

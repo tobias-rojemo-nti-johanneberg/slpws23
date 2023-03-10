@@ -1,11 +1,11 @@
 .character-view
-  - if @character.has_img
+  - if @character.has_img?
     img src=@character.img alt=@character.name
   .info
     .traveller-name-fix
       h1.name = @character.name
     p.type = @character.type
-    p.author = @character.author
+    a.author href="/users/#{@character.author_id}" = @character.author
     p.ability = @character.ability
     .tags
       - @character.tags.each do |tag|

@@ -49,6 +49,27 @@ class UserManager
 
     return User.new(@db, @data[0]["id"])
   end
+
+  def get(*ids)
+    if ids.size == 0
+      @data = @db.execute("SELECT id FROM users ORDER BY username ASC")
+      return @data.map{|user| User.new(@db, user["id"])}
+    elsif ids.size == 1
+      @data = @db.execute("SELECT id FROM users WHERE id = ? LIMIT 1", ids[0])
+      return User.new(@db, @data[0]["id"]) unless @data.size == 0
+    else
+      @data = @db.execute("SELECT id FROM users ORDER BY title ASC")
+      return @data.filter{|user| ids.include(user.id)}.map{|user| User.new(@db, user["id"])}
+    end
+  end
+
+  def count = @db.execute("SELECT id FROM users").size
+
+  def each
+    self.get.each do |user|
+      yield user
+    end
+  end
 end
 
 class User
@@ -59,6 +80,16 @@ class User
     @name = @data[0]["username"]
     @perms = @data[0]["perms"]
     @pfp = @data[0]["pfp"]
+  end
+
+  def scripts
+    @data = @db.execute("SELECT id FROM scripts WHERE author_id = ? ORDER BY title ASC", @id)
+    return @data.map{|script| Script.new(@db, script["id"])}
+  end
+
+  def characters
+    @data = @db.execute("SELECT id FROM characters WHERE author_id = ? ORDER BY name ASC", @id)
+    return @data.map{|char| Character.new(@db, char["id"])}
   end
 
   attr_accessor :id

@@ -22,7 +22,7 @@ h1 {
 }
 
 .header-buffer {
-  height: 2.2rem;;
+  height: 2.2rem;
 }
 
 header {
@@ -120,9 +120,16 @@ form input {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
+.preview-script-list,
+.preview-character-list {
+  flex: 1;
+  display: grid;
+  height: min-content;
+}
+
 .script-character-list {
   display: grid;
-  grid-template-columns: 1fr
+  grid-template-columns: 1fr;
 }
 
 .character {
@@ -243,4 +250,9 @@ form input {
 .tag-content {
   size: 1rem;
   background-color: #00000000;
+}
+
+.user-view .content {
+  display: flex;
+  flex-direction: row;
 }

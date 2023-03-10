@@ -12,21 +12,17 @@ class ScriptManager
       return @data.map{|script| Script.new(@db, script["id"])}
     elsif ids.size == 1
       @data = @db.execute("SELECT id FROM scripts WHERE id = ? LIMIT 1", ids[0])
-      return Script.new(@db, @data[0]["id"])
+      return Script.new(@db, @data[0]["id"]) unless @data.size == 0
     else
       @data = @db.execute("SELECT id FROM scripts ORDER BY title ASC")
       return @data.filter{|script| ids.include(script.id)}.map{|script| Script.new(@db, script["id"])}
     end
   end
 
-  def count()
-    @data = @db.execute("SELECT id FROM scripts")
-    return @data.size
-  end
+  def count = @db.execute("SELECT id FROM scripts").size
 
   def each
-    @scripts = get()
-    @scripts.each do |script|
+    self.get.each do |script|
       yield script
     end
   end
@@ -49,11 +45,12 @@ class Script
     @db = db
     @id = id
 
-    @data = @db.execute("SELECT username, title, source_id, version_num FROM scripts INNER JOIN users ON scripts.author_id = users.id WHERE scripts.id = ? LIMIT 1", @id)
+    @data = @db.execute("SELECT username, title, source_id, version_num, author_id FROM scripts INNER JOIN users ON scripts.author_id = users.id WHERE scripts.id = ? LIMIT 1", @id)
 
     @source_id = @data[0]["source_id"]
     @title = @data[0]["title"]
     @author = @data[0]["username"]
+    @author_id = @data[0]["author_id"]
     @version_num = @data[0]["version_num"]
   end
 
@@ -74,13 +71,14 @@ class Script
 
   def source = @source_id ? Script.new(@db, @source_id) : nil
   def origin = @source_id ? self.source.origin : self
-  def has_img = File.exists?("public/img/s#{@id}.png")
+  def has_img? = File.exists?("public/img/s#{@id}.png")
   def img = "/img/s#{@id}.png"
   def full_title = @version_num ? "#{@title} v#{@version_num}" : @title
 
   attr_accessor :id
   attr_accessor :title
   attr_accessor :author
+  attr_accessor :author_id
 end
 
 class ScriptComment

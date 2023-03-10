@@ -13,21 +13,17 @@ class TagTypeManager
       return @data.map{|tag| TagType.new(@db, tag["id"])}
     elsif ids.size == 1
       @data = @db.execute("SELECT id FROM tag_types WHERE id = ? LIMIT 1", ids[0])
-      return TagType.new(@db, @data[0]["id"])
+      return TagType.new(@db, @data[0]["id"]) unless @data.size == 0
     else
       @data = @db.execute("SELECT id FROM tag_types ORDER BY name ASC")
       return @data.filter{|tag| ids.include?(tag["id"])}.map{|tag| TagType.new(@db, tag["id"])}
     end
   end
 
-  def count()
-    @data = @db.execute("SELECT id FROM tag_types")
-    return @data.size
-  end
+  def count =  @db.execute("SELECT id FROM tag_types").size
 
   def each
-    @tags = get()
-    @tags.each do |tag|
+    self.get.each do |tag|
       yield tag
     end
   end
