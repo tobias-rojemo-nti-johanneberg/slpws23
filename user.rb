@@ -40,6 +40,10 @@ class UserManager
     end
   end
 
+  def logout(session)
+    Sessions.execute("DELETE FROM sessions WHERE session = ?", session)
+  end
+
   def from_session(session)
     @data = Sessions.execute("SELECT id FROM sessions WHERE session = ? LIMIT 1", session)
 

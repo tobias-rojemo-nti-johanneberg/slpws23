@@ -50,6 +50,12 @@ post('/register') do
   @db.users.register(name, pass)
 end
 
+post('/logout') do
+  @db.users.logout(session[:id])
+  session[:id] = nil
+  redirect(:/)
+end
+
 get('/characters') do
   @title = "Characters"
   @characters = @db.characters

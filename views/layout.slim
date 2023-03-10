@@ -18,6 +18,9 @@ html lang="en"
         .profile
           img src="/img/#{@logged_in_user.pfp}.png"
           span = @logged_in_user.name
+          .hover-menu
+            form action="/logout" method="post"
+              input type="submit" value="Logout"/ 
       - else
         .login-field
           a.login href="/login" Login
