@@ -96,6 +96,10 @@ class User
     return @data.map{|char| Character.new(@db, char["id"])}
   end
 
+  def delete
+    @db.execute("DELETE FROM users WHERE id = ?", @id)
+  end
+
   attr_accessor :id
   attr_accessor :name
   attr_accessor :perms

@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS characters (
   ability TEXT NOT NULL,
   first_night REAL NOT NULL,
   other_nights REAL NOT NULL,
-  FOREIGN KEY (author_id) REFERENCES users(id)
+  FOREIGN KEY (author_id) REFERENCES users(id) ON DELETE CASCADE
 ) STRICT;
 
 CREATE TABLE IF NOT EXISTS scripts (
@@ -25,8 +25,8 @@ CREATE TABLE IF NOT EXISTS scripts (
   public INTEGER NOT NULL,
   source_id INTEGER,
   version_num TEXT,
-  FOREIGN KEY (author_id) REFERENCES users(id)
-  FOREIGN KEY (source_id) REFERENCES scripts(id)
+  FOREIGN KEY (author_id) REFERENCES users(id) ON DELETE CASCADE
+  FOREIGN KEY (source_id) REFERENCES scripts(id) ON DELETE CASCADE
 ) STRICT;
 
 CREATE TABLE IF NOT EXISTS script_character_rel (
@@ -34,8 +34,8 @@ CREATE TABLE IF NOT EXISTS script_character_rel (
   script_id INTEGER NOT NULL,
   featured INTEGER NOT NULL DEFAULT 0,
   PRIMARY KEY (character_id, script_id),
-  FOREIGN KEY (character_id) REFERENCES characters(id),
-  FOREIGN KEY (script_id) REFERENCES scripts(id)
+  FOREIGN KEY (character_id) REFERENCES characters(id) ON DELETE CASCADE,
+  FOREIGN KEY (script_id) REFERENCES scripts(id) ON DELETE CASCADE
 ) STRICT, WITHOUT ROWID;
 
 CREATE TABLE IF NOT EXISTS jinxes (
@@ -44,8 +44,8 @@ CREATE TABLE IF NOT EXISTS jinxes (
   forbidden INTEGER NOT NULL,
   rule TEXT NOT NULL,
   PRIMARY KEY (source_character_id, target_character_id),
-  FOREIGN KEY (source_character_id) REFERENCES characters(id),
-  FOREIGN KEY (target_character_id) REFERENCES characters(id)
+  FOREIGN KEY (source_character_id) REFERENCES characters(id) ON DELETE CASCADE,
+  FOREIGN KEY (target_character_id) REFERENCES characters(id) ON DELETE CASCADE
 ) STRICT, WITHOUT ROWID;
 
 CREATE TABLE IF NOT EXISTS tag_types (
@@ -61,8 +61,8 @@ CREATE TABLE IF NOT EXISTS tags (
   tag_type_id INTEGER NOT NULL,
   value INTEGER NOT NULL,
   PRIMARY KEY (character_id, tag_type_id),
-  FOREIGN KEY (character_id) REFERENCES characters(id),
-  FOREIGN KEY (tag_type_id) REFERENCES tag_types(id)
+  FOREIGN KEY (character_id) REFERENCES characters(id) ON DELETE CASCADE,
+  FOREIGN KEY (tag_type_id) REFERENCES tag_types(id) ON DELETE CASCADE
 ) STRICT, WITHOUT ROWID;
 
 CREATE TABLE IF NOT EXISTS script_edits (
@@ -70,8 +70,8 @@ CREATE TABLE IF NOT EXISTS script_edits (
   script_id INTEGER NOT NULL,
   edit INTEGER NOT NULL,
   PRIMARY KEY (character_id, script_id),
-  FOREIGN KEY (character_id) REFERENCES characters(id),
-  FOREIGN KEY (script_id) REFERENCES scripts(id)
+  FOREIGN KEY (character_id) REFERENCES characters(id) ON DELETE CASCADE,
+  FOREIGN KEY (script_id) REFERENCES scripts(id) ON DELETE CASCADE
 ) STRICT, WITHOUT ROWID;
 
 CREATE TABLE IF NOT EXISTS character_comments (
@@ -80,8 +80,8 @@ CREATE TABLE IF NOT EXISTS character_comments (
   author_id INTEGER NOT NULL,
   content TEXT NOT NULL,
   created TEXT NOT NULL DEFAULT (datetime()),
-  FOREIGN KEY (character_id) REFERENCES characters(id),
-  FOREIGN KEY (author_id) REFERENCES users(id)
+  FOREIGN KEY (character_id) REFERENCES characters(id) ON DELETE CASCADE,
+  FOREIGN KEY (author_id) REFERENCES users(id) ON DELETE CASCADE
 ) STRICT;
 
 CREATE TABLE IF NOT EXISTS script_comments (
@@ -90,6 +90,6 @@ CREATE TABLE IF NOT EXISTS script_comments (
   author_id INTEGER NOT NULL,
   content TEXT NOT NULL,
   created TEXT NOT NULL DEFAULT (datetime()),
-  FOREIGN KEY (script_id) REFERENCES scripts(id),
-  FOREIGN KEY (author_id) REFERENCES users(id)
+  FOREIGN KEY (script_id) REFERENCES scripts(id) ON DELETE CASCADE,
+  FOREIGN KEY (author_id) REFERENCES users(id) ON DELETE CASCADE
 ) STRICT;

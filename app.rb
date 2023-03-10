@@ -62,6 +62,12 @@ get('/characters') do
   slim(:"characters/index")
 end
 
+get('/characters/create') do
+  return "You must be logged in to perform this action" unless @logged_in_user
+  @title = "Create a character"
+  slim(:"characters/create")
+end
+
 get('/characters/:id') do
   @character = @db.characters.get(params[:id].to_i)
   @character ? slim(:"characters/show") : slim(:"characters/notfound")

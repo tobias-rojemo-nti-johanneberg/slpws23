@@ -64,6 +64,10 @@ class Character
     @comments.map{|comment_data| CharacterComment.new(@db, comment_data["type"], comment_data["value"])}
   end
 
+  def delete
+    @db.execute("DELETE FROM characters WHERE id = ?", @id)
+  end
+
   def has_img? = File.exists?("public/img/c#{@id}.png")
   def img = "/img/c#{@id}.png"
 

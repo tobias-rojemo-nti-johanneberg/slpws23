@@ -69,6 +69,10 @@ class Script
     @comments.map{|comment_data| ScriptComment.new(@db, comment_data["type"], comment_data["value"])}
   end
 
+  def delete
+    @db.execute("DELETE FROM scripts WHERE id = ?", @id)
+  end
+
   def source = @source_id ? Script.new(@db, @source_id) : nil
   def origin = @source_id ? self.source.origin : self
   def has_img? = File.exists?("public/img/s#{@id}.png")
