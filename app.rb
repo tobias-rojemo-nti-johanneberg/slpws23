@@ -32,8 +32,9 @@ post('/login') do
 
   if session_id
     session[:id] = session_id
-    redirect(:/)
   end
+
+  redirect(:/)
 end
 
 post('/register') do
@@ -48,6 +49,7 @@ post('/register') do
   end
 
   @db.users.register(name, pass)
+  redirect(:/)
 end
 
 post('/logout') do
@@ -79,6 +81,13 @@ get('/characters/:id/scripts') do
   @scripts = @character.scripts
   @title = "Scripts with #{@character.name}"
   slim(:"scripts/index")
+end
+
+get('/characters/:id/edit') do
+  return "You must be logged in to perform this action" unless @logged_in_user
+  @character = @db.characters.get(params[:id].to_i)
+  return "Invalid permissions" unless @logged_in_user.id == @character.author_id || @logged_in_user.has_perms?(ADMIN)
+  @character ? slim(:"characters/edit") : slim(:"characters/notfound")
 end
 
 get('/characters/tag/:id') do
@@ -140,4 +149,40 @@ get('/users/:id/scripts') do
   @scripts = @user.scripts
   @title = "Scripts made by #{@user.name}"
   slim(:"scripts/index")
+end
+
+post('/characters') do
+  name = params[:name]
+  type = params[:type]
+  image = params[:image]
+  ability = params[:ability]
+
+  return redirect(:"/characters/create") unless name && type && image && ability
+
+  @character = @db.characters.create(@logged_in_user.id, name, FALSE, type, ability)
+  File.write("/public/img/c#{@character.id}.png", File.read(image[:tempfile]))
+
+  redirect(:"/characters/create")
+end
+
+patch('/characters/:id') do
+  id = params[:id].to_i
+
+  return redirect(:"/invalid") unless id
+
+  @character = @db.character.get(id)
+
+  return redirect(:"/invalid") unless @character
+  return redirect(:"/permissiondenied") unless @character.author_id == @logged_in_user.id || @logged_in_user.has_perms?(ADMIN)
+
+  name = params[:name] ? params[:name] : @character.name
+  type = params[:type] ? params[:type] : @character.type
+  ability = params[:ability] ? params[:ability] : @character.ability
+
+  File.write("/public/img/c#{@character.id}.png", File.read(image[:tempfile])) unless !image
+  @db.characters.update()
+end
+
+get('/invalid') do
+  "Invalid operation"
 end

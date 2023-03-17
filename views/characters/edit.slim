@@ -1,0 +1,11 @@
+form action="/characters/#{}" method="patch" enctype="multipart/form-data"
+  input type="text" name="name" value=@character.name /
+  select name="type"
+    - ["Townsfolk", "Outsider", "Minion", "Demon", "Traveller", "Fabled"].each_with_index do |value, index|
+      - if @character.type_id == index
+        option value=index selected="selected" = value
+      - else 
+        option value=index = value
+  input type="ability" name="ability" value=@character.ability /
+  input type="file" name="image" accept="image/png"/
+  input type="submit" name="create"

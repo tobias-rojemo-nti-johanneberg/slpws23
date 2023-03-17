@@ -4,6 +4,8 @@
   .info
     .traveller-name-fix
       h1.name = @character.name
+    - if @logged_in_user && (@logged_in_user.id == @character.author_id || @logged_in_user.has_perms?(2))
+      a.edit-link href="/characters/#{@character.id}/edit" Edit
     p.type = @character.type
     a.author href="/users/#{@character.author_id}" = @character.author
     p.ability = @character.ability

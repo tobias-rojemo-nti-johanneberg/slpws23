@@ -30,8 +30,8 @@ class CharacterManager
     end
   end
 
-  def create(author_id, name, is_public, type, ability, first_night, other_nights)
-    data = @db.execute("INSERT INTO characters (author_id, name, public, type, ability, first_night, other_nights) VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING id", author_id, name, is_public, type, ability, first_night, other_nights)
+  def create(author_id, name, is_public, type, ability)
+    data = @db.execute("INSERT INTO characters (author_id, name, public, type, ability) VALUES (?, ?, ?, ?, ?) RETURNING id", author_id, name, is_public, type, ability)
     return Character.new(@db, data[0]["id"])
   end
 end

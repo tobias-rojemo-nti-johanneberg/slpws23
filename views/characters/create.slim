@@ -1,1 +1,9 @@
-form action="/characters" method="post"
+form action="/characters" method="post" enctype="multipart/form-data"
+  input type="text" name="name"/
+  select name="type"
+    option value="0" selected="selected" = "Townsfolk"
+    - ["Outsider", "Minion", "Demon", "Traveller", "Fabled"].each.with_index(1) do |value, index|
+      option value=index = value
+  input type="ability" name="ability"
+  input type="file" name="image" accept="image/png"/
+  input type="submit" name="create"

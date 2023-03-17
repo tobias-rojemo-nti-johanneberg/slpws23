@@ -2,6 +2,10 @@ require 'bcrypt'
 require 'securerandom'
 
 PERMS = [:USER, :MODERATOR, :ADMIN, :NO_LOGIN]
+USER = 0
+MODERATOR = 1
+ADMIN = 2
+NO_LOGIN = 3
 
 Sessions = SQLite3::Database.new(":memory:")
 Sessions.results_as_hash = true
@@ -14,18 +18,18 @@ class UserManager
 
   def is_taken(name)
     @data = @db.execute("SELECT id FROM users WHERE username = ?")
-    return !@data.empty?
+    return @data.any?
   end
 
   def register(name, pass, perms = 0)
     if self.is_taken(name)
       return nil
+    else
+      @digest = BCrypt::Password.create(pass)
+      @data = @db.execute("INSERT INTO users (username, pass, perms) VALUES (?, ?, ?) RETURNING id", name, @digest, perms)
+      
+      return User.new(@db, @data[0]["id"])
     end
-
-    @digest = BCrypt::Password.create(pass)
-    @data = @db.execute("INSERT INTO users (username, pass, perms) VALUES (?, ?, ?) RETURNING id", name, @digest, perms)
-    
-    return User.new(@db, @data[0]["id"])
   end
 
   def login(name, pass)
@@ -99,6 +103,8 @@ class User
   def delete
     @db.execute("DELETE FROM users WHERE id = ?", @id)
   end
+
+  def has_perms?(perm_level) = perm_level <= @perms
 
   attr_accessor :id
   attr_accessor :name
