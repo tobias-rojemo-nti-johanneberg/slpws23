@@ -31,7 +31,7 @@ class CharacterManager
   end
 
   def create(author_id, name, is_public, type, ability)
-    data = @db.execute("INSERT INTO characters (author_id, name, public, type, ability) VALUES (?, ?, ?, ?, ?) RETURNING id", author_id, name, is_public, type, ability)
+    data = @db.execute("INSERT INTO characters (author_id, name, is_public, type, ability) VALUES (?, ?, ?, ?, ?) RETURNING id", author_id, name, is_public, type, ability)
     return Character.new(@db, data[0]["id"])
   end
 end
@@ -40,13 +40,14 @@ class Character
   def initialize(db, id)
     @db = db
     @id = id
-    @data = @db.execute("SELECT name, type, ability, username, author_id FROM characters INNER JOIN users ON characters.author_id = users.id WHERE characters.id = ? LIMIT 1", @id)
+    @data = @db.execute("SELECT name, type, ability, username, author_id, is_public FROM characters INNER JOIN users ON characters.author_id = users.id WHERE characters.id = ? LIMIT 1", @id)
     @name = @data[0]["name"]
     @type_id = @data[0]["type"]
     @type = CHARACTER_TYPES[@type_id]
     @ability = @data[0]["ability"]
     @author = @data[0]["username"]
     @author_id = @data[0]["author_id"]
+    @is_public = @data[0]["is_public"]
   end
 
   def scripts
@@ -64,10 +65,19 @@ class Character
     @comments.map{|comment_data| CharacterComment.new(@db, comment_data["type"], comment_data["value"])}
   end
 
-  def delete
-    @db.execute("DELETE FROM characters WHERE id = ?", @id)
+  def update(name, is_public, type, ability)
+    return unless is_public != false || !@is_public || self.scripts.empty?
+
+    @db.execute("UPDATE characters SET name = ?, is_public = ?, type = ?, ability = ? WHERE id = ?",
+      name != nil ? name : @name,
+      is_public != nil ? (is_public ? TRUE : FALSE) : @is_public,
+      type != nil ? type : @type,
+      ability != nil ? ability : @ability,
+      @id
+    )
   end
 
+  def delete = @db.execute("DELETE FROM characters WHERE id = ?", @id)
   def has_img? = File.exists?("public/img/c#{@id}.png")
   def img = "/img/c#{@id}.png"
 
@@ -78,6 +88,7 @@ class Character
   attr_accessor :ability
   attr_accessor :author
   attr_accessor :author_id
+  attr_accessor :is_public
 end
 
 class CharacterComment

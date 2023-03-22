@@ -29,8 +29,8 @@ db.results_as_hash = true
 
 TABLE_QUERIES = [
   "CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT NOT NULL, pass BLOB, perms INTEGER NOT NULL, pfp TEXT NOT NULL DEFAULT 'default_user') STRICT",
-  "CREATE TABLE IF NOT EXISTS characters (id INTEGER PRIMARY KEY AUTOINCREMENT, author_id INTEGER NOT NULL, name TEXT NOT NULL, public INTEGER NOT NULL, type INTEGER NOT NULL, ability TEXT NOT NULL, first_night REAL NOT NULL, other_nights REAL NOT NULL, FOREIGN KEY (author_id) REFERENCES users(id) ON DELETE CASCADE) STRICT",
-  "CREATE TABLE IF NOT EXISTS scripts (id INTEGER PRIMARY KEY AUTOINCREMENT, author_id INTEGER NOT NULL, title TEXT NOT NULL, public INTEGER NOT NULL, source_id INTEGER, version_num TEXT, FOREIGN KEY (author_id) REFERENCES users(id) ON DELETE CASCADE, FOREIGN KEY (source_id) REFERENCES scripts(id) ON DELETE CASCADE) STRICT",
+  "CREATE TABLE IF NOT EXISTS characters (id INTEGER PRIMARY KEY AUTOINCREMENT, author_id INTEGER NOT NULL, name TEXT NOT NULL, is_public INTEGER NOT NULL, type INTEGER NOT NULL, ability TEXT NOT NULL, FOREIGN KEY (author_id) REFERENCES users(id) ON DELETE CASCADE) STRICT",
+  "CREATE TABLE IF NOT EXISTS scripts (id INTEGER PRIMARY KEY AUTOINCREMENT, author_id INTEGER NOT NULL, title TEXT NOT NULL, is_public INTEGER NOT NULL, source_id INTEGER, version_num TEXT, FOREIGN KEY (author_id) REFERENCES users(id) ON DELETE CASCADE, FOREIGN KEY (source_id) REFERENCES scripts(id) ON DELETE CASCADE) STRICT",
   "CREATE TABLE IF NOT EXISTS script_character_rel (character_id INTEGER NOT NULL, script_id INTEGER NOT NULL, featured INTEGER NOT NULL DEFAULT 0, PRIMARY KEY (character_id, script_id), FOREIGN KEY (character_id) REFERENCES characters(id) ON DELETE CASCADE, FOREIGN KEY (script_id) REFERENCES scripts(id) ON DELETE CASCADE) STRICT, WITHOUT ROWID",
   "CREATE TABLE IF NOT EXISTS jinxes (source_character_id INTEGER NOT NULL, target_character_id INTEGER NOT NULL, forbidden INTEGER NOT NULL, rule TEXT NOT NULL, PRIMARY KEY (source_character_id, target_character_id), FOREIGN KEY (source_character_id) REFERENCES characters(id) ON DELETE CASCADE, FOREIGN KEY (target_character_id) REFERENCES characters(id) ON DELETE CASCADE) STRICT, WITHOUT ROWID",
   "CREATE TABLE IF NOT EXISTS tag_types (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, bg TEXT NOT NULL DEFAULT '#A0A0A0', text TEXT NOT NULL DEFAULT '#000000', display_value INTEGER NOT NULL DEFAULT 0) STRICT",
@@ -52,7 +52,7 @@ data.each do |character|
   id = nil
   if (character["team"] == "fabled")
     id = db.execute(
-      "INSERT INTO characters (author_id, name, public, type, ability, first_night, other_nights) VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING id",
+      "INSERT INTO characters (author_id, name, is_public, type, ability) VALUES (?, ?, ?, ?, ?) RETURNING id",
       tpi,
       character["name"],
       1,
@@ -63,14 +63,12 @@ data.each do |character|
     )[0]["id"]
   else
     id = db.execute(
-      "INSERT INTO characters (author_id, name, public, type, ability, first_night, other_nights) VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING id",
+      "INSERT INTO characters (author_id, name, is_public, type, ability) VALUES (?, ?, ?, ?, ?) RETURNING id",
       tpi,
       character["name"],
       1,
       type_name_to_id(character["team"]),
-      character["ability"],
-      character["firstNight"],
-      character["otherNight"]
+      character["ability"]
     )[0]["id"]
 
     db.execute("INSERT INTO tags (character_id, tag_type_id, value) VALUES (?, ?, ?)", id, official_tag, 1)
@@ -90,7 +88,7 @@ SCRIPTS.each do |script|
   used = data.filter {|character| character["edition"] == script[:id] && character["team"] != "traveler"}
   used_ids = used.map {|character| db.execute("SELECT id FROM characters WHERE name = ?", character["name"])[0]["id"]}
 
-  script_id = db.execute("INSERT INTO scripts (author_id, title, public) VALUES (?, ?, ?) RETURNING id", tpi, script[:name], 1)[0]["id"]
+  script_id = db.execute("INSERT INTO scripts (author_id, title, is_public) VALUES (?, ?, ?) RETURNING id", tpi, script[:name], 1)[0]["id"]
   used_ids.each do |character|
     db.execute("INSERT INTO script_character_rel (character_id, script_id) VALUES (?, ?)", character, script_id)
   end

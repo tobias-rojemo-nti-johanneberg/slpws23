@@ -28,7 +28,7 @@ class ScriptManager
   end
 
   def create(author_id, title, is_public, character_ids)
-    data = @db.execute("INSERT INTO scripts (author_id, title, public) VALUES (?, ?, ?) RETURNING id", author_id, title, is_public)
+    data = @db.execute("INSERT INTO scripts (author_id, title, is_public) VALUES (?, ?, ?) RETURNING id", author_id, title, is_public)
     
     script_id = data[0]["id"]
 

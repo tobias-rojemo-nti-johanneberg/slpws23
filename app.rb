@@ -12,7 +12,12 @@ end
 [
   {route: '/', slim: :home, title: "Home"},
   {route: '/login', slim: :login, title: "Login"},
-  {route: '/register', slim: :register, title: "Register"}
+  {route: '/register', slim: :register, title: "Register"},
+  {route: '/invalid', slim: :invalid, title: "Invalid operation"},
+  {route: '/permissiondenied', slim: :permissiondenied, title: "Permission denied"},
+  {route: '/scripts/notfound', slim: :"/scripts/notfound", title: "Script not found"},
+  {route: '/characters/notfound', slim: :"/characters/notfound", title: "Character not found"},
+  {route: '/notloggedin', slim: :notloggedin, title: "You are not logged in"}
 ].each {|route|
   get(route[:route]) do
     @title = route[:title]
@@ -23,17 +28,14 @@ end
 post('/login') do
   name = params[:name]
   pass = params[:pass]
-
   if !name || !pass
     redirect(:"/login")
   end
 
   session_id = @db.users.login(name, pass)
-
   if session_id
     session[:id] = session_id
   end
-
   redirect(:/)
 end
 
@@ -41,7 +43,6 @@ post('/register') do
   name = params[:name]
   pass = params[:pass]
   verify = params[:verifyPass]
-
   if !name || !pass
     redirect(:"/register")
   elsif pass != verify
@@ -65,29 +66,29 @@ get('/characters') do
 end
 
 get('/characters/create') do
-  return "You must be logged in to perform this action" unless @logged_in_user
+  redirect(:"/notloggedin") unless @logged_in_user
   @title = "Create a character"
   slim(:"characters/create")
 end
 
 get('/characters/:id') do
   @character = @db.characters.get(params[:id].to_i)
-  @character ? slim(:"characters/show") : slim(:"characters/notfound")
+  @character ? slim(:"characters/show") : redirect(:"/characters/notfound")
 end
 
 get('/characters/:id/scripts') do
   @character = @db.characters.get(params[:id].to_i)
-  return slim(:"characters/notfound") unless @character
+  redirect(:"/characters/notfound") unless @character
   @scripts = @character.scripts
   @title = "Scripts with #{@character.name}"
   slim(:"scripts/index")
 end
 
 get('/characters/:id/edit') do
-  return "You must be logged in to perform this action" unless @logged_in_user
+  redirect(:"/notloggedin") unless @logged_in_user
   @character = @db.characters.get(params[:id].to_i)
-  return "Invalid permissions" unless @logged_in_user.id == @character.author_id || @logged_in_user.has_perms?(ADMIN)
-  @character ? slim(:"characters/edit") : slim(:"characters/notfound")
+  redirect(:"/permissiondenied") unless @logged_in_user.id == @character.author_id || @logged_in_user.has_perms?(ADMIN)
+  @character ? slim(:"characters/edit") : redirect(:"/characters/notfound")
 end
 
 get('/characters/tag/:id') do
@@ -105,12 +106,12 @@ end
 
 get('/scripts/:id') do
   @script = @db.scripts.get(params[:id].to_i)
-  @script ? slim(:"scripts/show") : slim(:"scripts/notfound")
+  @script ? slim(:"scripts/show") : redirect(:"/scripts/notfound")
 end
 
 get('/scripts/:id/characters') do
   @script = @db.scripts.get(params[:id].to_i)
-  return slim(:"scripts/notfound") unless @script
+  redirect(:"/scripts/notfound") unless @script
   @characters = @script.characters
   @title = "Characters in #{@script.full_title}"
   slim(:"characters/index")
@@ -118,7 +119,7 @@ end
 
 get('/scripts/:id/forks') do
   @script = @db.scripts.get(params[:id].to_i)
-  return slim(:"scripts/notfound") unless @script
+  redirect(:"/scripts/notfound") unless @script
   @scripts = @script.forks
   @title = "Forks of #{@script.full_title}"
   slim(:"scripts/index")
@@ -132,12 +133,12 @@ end
 
 get('/users/:id') do
   @user = @db.users.get(params[:id].to_i)
-  @user ? slim(:"users/show") : slim(:"users/notfound")
+  @user ? slim(:"users/show") : redirect(:"/users/notfound")
 end
 
 get('/users/:id/characters') do
   @user = @db.users.get(params[:id].to_i)
-  return slim(:"users/notfound") unless @user
+  redirect(:"/users/notfound") unless @user
   @characters = @user.characters
   @title = "Characters made by #{@user.name}"
   slim(:"characters/index")
@@ -145,44 +146,48 @@ end
 
 get('/users/:id/scripts') do
   @user = @db.users.get(params[:id].to_i)
-  return slim(:"users/notfound") unless @user
+  redirect(:"/users/notfound") unless @user
   @scripts = @user.scripts
   @title = "Scripts made by #{@user.name}"
   slim(:"scripts/index")
 end
 
-post('/characters') do
+post('/characters/create') do
+  redirect(:"/notloggedin") unless @logged_in_user
   name = params[:name]
   type = params[:type]
   image = params[:image]
   ability = params[:ability]
+  is_public = params[:is_public]
+  redirect(:"/characters/create") unless name && type && image && ability
 
-  return redirect(:"/characters/create") unless name && type && image && ability
-
-  @character = @db.characters.create(@logged_in_user.id, name, FALSE, type, ability)
-  File.write("/public/img/c#{@character.id}.png", File.read(image[:tempfile]))
-
-  redirect(:"/characters/create")
+  @character = @db.characters.create(@logged_in_user.id, name, is_public ? is_public : FALSE, type, ability)
+  File.open("public/img/c#{@character.id}.png", "wb") {|f| f.write(image[:tempfile].read)}
+  redirect("/characters/#{@character.id}".to_sym)
 end
 
-patch('/characters/:id') do
+post('/characters/:id/edit') do
+  redirect(:"/notloggedin") unless @logged_in_user
   id = params[:id].to_i
+  redirect(:"/invalid") unless id
+  @character = @db.characters.get(id)
+  redirect(:"/invalid") unless @character
+  redirect(:"/permissiondenied") unless @character.author_id == @logged_in_user.id || @logged_in_user.has_perms?(ADMIN)
+  is_public = params[:is_public] ? (params[:is_public] == "on" ? true : false) : nil
 
-  return redirect(:"/invalid") unless id
-
-  @character = @db.character.get(id)
-
-  return redirect(:"/invalid") unless @character
-  return redirect(:"/permissiondenied") unless @character.author_id == @logged_in_user.id || @logged_in_user.has_perms?(ADMIN)
-
-  name = params[:name] ? params[:name] : @character.name
-  type = params[:type] ? params[:type] : @character.type
-  ability = params[:ability] ? params[:ability] : @character.ability
-
-  File.write("/public/img/c#{@character.id}.png", File.read(image[:tempfile])) unless !image
-  @db.characters.update()
+  File.open("public/img/c#{@character.id}.png", "wb") {|f| f.write(params[:image][:tempfile].read)} unless !params[:image]
+  @character.update(params[:name], is_public, params[:type], params[:ability])
+  redirect(:"/characters")
 end
 
-get('/invalid') do
-  "Invalid operation"
+post('/characters/:id/delete') do
+  redirect(:"/notloggedin") unless @logged_in_user
+  id = params[:id].to_i
+  redirect(:"/invalid") unless id
+  @character = @db.characters.get(id)
+  redirect(:"/invalid") unless @character
+  redirect(:"/permissiondenied") unless @character.author_id == @logged_in_user.id || @logged_in_user.has_perms?(ADMIN)
+
+  @character.delete()
+  redirect(:"/characters")
 end

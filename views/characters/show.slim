@@ -4,8 +4,10 @@
   .info
     .traveller-name-fix
       h1.name = @character.name
-    - if @logged_in_user && (@logged_in_user.id == @character.author_id || @logged_in_user.has_perms?(2))
+    - if @logged_in_user && (@logged_in_user.id == @character.author_id || @logged_in_user.has_perms?(ADMIN))
       a.edit-link href="/characters/#{@character.id}/edit" Edit
+      form action="/characters/#{@character.id}/delete" method="post"
+        input type="submit" value="Delete"/ 
     p.type = @character.type
     a.author href="/users/#{@character.author_id}" = @character.author
     p.ability = @character.ability

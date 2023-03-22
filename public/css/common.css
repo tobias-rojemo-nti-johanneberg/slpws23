@@ -13,7 +13,8 @@ h2,
 h3,
 p,
 a,
-span {
+span,
+label {
   color: #fff;
 }
 
@@ -255,4 +256,13 @@ form input {
 .user-view .content {
   display: flex;
   flex-direction: row;
+}
+
+form .checkbox {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+form .checkbox * {
+  flex: 1;
 }

@@ -1,4 +1,4 @@
-form action="/characters/#{}" method="patch" enctype="multipart/form-data"
+form action="/characters/#{@character.id}/edit" method="post" enctype="multipart/form-data"
   input type="text" name="name" value=@character.name /
   select name="type"
     - ["Townsfolk", "Outsider", "Minion", "Demon", "Traveller", "Fabled"].each_with_index do |value, index|
@@ -8,4 +8,7 @@ form action="/characters/#{}" method="patch" enctype="multipart/form-data"
         option value=index = value
   input type="ability" name="ability" value=@character.ability /
   input type="file" name="image" accept="image/png"/
-  input type="submit" name="create"
+  .checkbox
+    input type="checkbox" name="is_public" id="is_public" checked=@character.is_public /
+    label for="is_public" Public
+  input type="submit" value="update"
