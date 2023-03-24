@@ -76,6 +76,10 @@
 
 > all edits of specific script from origin script
 
+# # GET /scripts/:id/compare/:other_id
+
+> all edits of specific script to other specific script
+
 # # POST /scripts
 
 > create script

@@ -29,12 +29,14 @@ post('/login') do
   name = params[:name]
   pass = params[:pass]
   if !name || !pass
-    redirect(:"/login")
+    redirect back
   end
 
   session_id = @db.users.login(name, pass)
   if session_id
     session[:id] = session_id
+  else
+    redirect back
   end
   redirect(:/)
 end
@@ -44,9 +46,9 @@ post('/register') do
   pass = params[:pass]
   verify = params[:verifyPass]
   if !name || !pass
-    redirect(:"/register")
+    redirect back
   elsif pass != verify
-    redirect(:"/register")
+    redirect back
   end
 
   @db.users.register(name, pass)
@@ -86,7 +88,9 @@ end
 
 get('/characters/:id/edit') do
   redirect(:"/notloggedin") unless @logged_in_user
-  @character = @db.characters.get(params[:id].to_i)
+  id = params[:id].to_i
+  redirect(:"/invalid") unless id
+  @character = @db.characters.get(id)
   redirect(:"/permissiondenied") unless @logged_in_user.id == @character.author_id || @logged_in_user.has_perms?(ADMIN)
   @character ? slim(:"characters/edit") : redirect(:"/characters/notfound")
 end
@@ -113,7 +117,7 @@ get('/scripts/:id/characters') do
   @script = @db.scripts.get(params[:id].to_i)
   redirect(:"/scripts/notfound") unless @script
   @characters = @script.characters
-  @title = "Characters in #{@script.full_title}"
+  @title = "Characters in #{@script.title}"
   slim(:"characters/index")
 end
 
@@ -121,8 +125,35 @@ get('/scripts/:id/forks') do
   @script = @db.scripts.get(params[:id].to_i)
   redirect(:"/scripts/notfound") unless @script
   @scripts = @script.forks
-  @title = "Forks of #{@script.full_title}"
+  @title = "Forks of #{@script.title}"
   slim(:"scripts/index")
+end
+
+get('/scripts/:id/edits') do
+  @script = @db.scripts.get(params[:id].to_i)
+  redirect(:"/scripts/notfound") unless @script
+  @edits = @script.edits
+  redirect(:"/invalid") unless @edits
+  @title = "Changes from #{@script.source.title} to #{@script.title}"
+  slim(:"scripts/edits")
+end
+
+get('/scripts/:id/edits/origin') do
+  @script = @db.scripts.get(params[:id].to_i)
+  redirect(:"/scripts/notfound") unless @script
+  @edits = @script.edits_from_origin
+  redirect(:"/invalid") unless @edits
+  @title = "Changes from #{@script.source.title} to #{@script.title}"
+  slim(:"scripts/edits")
+end
+
+get('/scripts/:id/compare/:other_id') do
+  @script = @db.scripts.get(params[:id].to_i)
+  redirect(:"/scripts/notfound") unless @script
+  @edits = @script.edits
+  redirect(:"/invalid") unless @edits
+  @title = "Changes from #{@script.source.title} to #{@script.title}"
+  slim(:"scripts/edits")
 end
 
 get('/users') do
@@ -158,10 +189,9 @@ post('/characters/create') do
   type = params[:type]
   image = params[:image]
   ability = params[:ability]
-  is_public = params[:is_public]
-  redirect(:"/characters/create") unless name && type && image && ability
+  redirect back unless name && type && image && ability
 
-  @character = @db.characters.create(@logged_in_user.id, name, is_public ? is_public : FALSE, type, ability)
+  @character = @db.characters.create(@logged_in_user.id, name, false, type, ability)
   File.open("public/img/c#{@character.id}.png", "wb") {|f| f.write(image[:tempfile].read)}
   redirect("/characters/#{@character.id}".to_sym)
 end
@@ -177,7 +207,7 @@ post('/characters/:id/edit') do
 
   File.open("public/img/c#{@character.id}.png", "wb") {|f| f.write(params[:image][:tempfile].read)} unless !params[:image]
   @character.update(params[:name], is_public, params[:type], params[:ability])
-  redirect(:"/characters")
+  redirect("/characters/#{@character.id}".to_sym)
 end
 
 post('/characters/:id/delete') do
@@ -188,6 +218,124 @@ post('/characters/:id/delete') do
   redirect(:"/invalid") unless @character
   redirect(:"/permissiondenied") unless @character.author_id == @logged_in_user.id || @logged_in_user.has_perms?(ADMIN)
 
-  @character.delete()
+  @character.delete
   redirect(:"/characters")
+end
+
+post('/scripts/create') do
+  redirect(:"/notloggedin") unless @logged_in_user
+  title = params[:title]
+  redirect back unless title
+
+  @script = @db.scripts.create(@logged_in_user.id, title)
+  redirect("/scripts/#{@script.id}".to_sym)
+end
+
+get('/scripts/:id/edit') do
+  redirect(:"/notloggedin") unless @logged_in_user
+  id = params[:id].to_i
+  redirect(:"/invalid") unless id
+  @script = @db.scripts.get(id)
+  redirect(:"/invalid") unless @script
+  redirect(:"/permissiondenied") unless @script.author_id == @logged_in_user.id || @logged_in_user.has_perms?(ADMIN)
+  @characters = @db.characters
+  @script ? slim(:"scripts/edit") : redirect(:"/scripts/notfound")
+end
+
+post('/scripts/:id/edit') do
+  redirect(:"/notloggedin") unless @logged_in_user
+  id = params[:id].to_i
+  redirect(:"/invalid") unless id
+  @script = @db.scripts.get(id)
+  redirect(:"/invalid") unless @script
+  redirect(:"/permissiondenied") unless @script.author_id == @logged_in_user.id || @logged_in_user.has_perms?(ADMIN)
+  is_public = params[:is_public] ? (params[:is_public] == "on" ? true : false) : nil
+
+  @script.update(params[:title], is_public)
+  redirect("/scripts/#{@script.id}".to_sym)
+end
+
+post('/scripts/:script_id/add/:char_id') do
+  redirect(:"/notloggedin") unless @logged_in_user
+  script_id = params[:script_id].to_i
+  char_id = params[:char_id].to_i
+  redirect(:"/invalid") unless script_id
+  redirect(:"/invalid") unless char_id
+  @script = @db.scripts.get(script_id)
+  @character = @db.characters.get(char_id)
+  redirect(:"/invalid") unless @script
+  redirect(:"/invalid") unless @character
+  redirect(:"/invalid") if @script.include?(@character)
+  redirect(:"/permissiondenied") unless @script.author_id == @logged_in_user.id || @logged_in_user.has_perms?(ADMIN)
+  redirect(:"/permissiondenied") unless @character.is_public || @character.author_id == @logged_in_user.id
+  
+  @script.add(char_id)
+  redirect back
+end
+
+post('/scripts/:script_id/remove/:char_id') do
+  redirect(:"/notloggedin") unless @logged_in_user
+  script_id = params[:script_id].to_i
+  char_id = params[:char_id].to_i
+  redirect(:"/invalid") unless script_id
+  redirect(:"/invalid") unless char_id
+  @script = @db.scripts.get(script_id)
+  @character = @db.characters.get(char_id)
+  redirect(:"/invalid") unless @script
+  redirect(:"/invalid") unless @character
+  redirect(:"/invalid") unless @script.include?(@character)
+  redirect(:"/permissiondenied") unless @script.author_id == @logged_in_user.id || @logged_in_user.has_perms?(ADMIN)
+  redirect(:"/permissiondenied") unless @character.is_public || @character.author_id == @logged_in_user.id
+  
+  @script.remove(char_id)
+  redirect back
+end
+
+post('/scripts/:script_id/feature/:char_id') do
+  redirect(:"/notloggedin") unless @logged_in_user
+  script_id = params[:script_id].to_i
+  char_id = params[:char_id].to_i
+  redirect(:"/invalid") unless script_id
+  redirect(:"/invalid") unless char_id
+  @script = @db.scripts.get(script_id)
+  @character = @db.characters.get(char_id)
+  redirect(:"/invalid") unless @script
+  redirect(:"/invalid") unless @character
+  redirect(:"/invalid") unless @script.include?(@character)
+  redirect(:"/permissiondenied") unless @script.author_id == @logged_in_user.id || @logged_in_user.has_perms?(ADMIN)
+  redirect(:"/permissiondenied") unless @character.is_public || @character.author_id == @logged_in_user.id
+  
+  @script.feature(char_id)
+  redirect back
+end
+
+post('/scripts/:script_id/unfeature/:char_id') do
+  redirect(:"/notloggedin") unless @logged_in_user
+  script_id = params[:script_id].to_i
+  char_id = params[:char_id].to_i
+  redirect(:"/invalid") unless script_id
+  redirect(:"/invalid") unless char_id
+  @script = @db.scripts.get(script_id)
+  @character = @db.characters.get(char_id)
+  redirect(:"/invalid") unless @script
+  redirect(:"/invalid") unless @character
+  redirect(:"/invalid") unless @script.include?(@character)
+  redirect(:"/permissiondenied") unless @script.author_id == @logged_in_user.id || @logged_in_user.has_perms?(ADMIN)
+  redirect(:"/permissiondenied") unless @character.is_public || @character.author_id == @logged_in_user.id
+  
+  @script.unfeature(char_id)
+  redirect back
+end
+
+post('/scripts/:id/delete') do
+  redirect(:"/notloggedin") unless @logged_in_user
+  id = params[:id].to_i
+  redirect(:"/invalid") unless id
+  @script = @db.scripts.get(id)
+  redirect(:"/invalid") unless @script
+  redirect(:"/permissiondenied") unless @script.author_id == @logged_in_user.id || @logged_in_user.has_perms?(ADMIN)
+  is_public = params[:is_public] ? (params[:is_public] == "on" ? true : false) : nil
+
+  @script.delete
+  redirect(:"/scripts")
 end

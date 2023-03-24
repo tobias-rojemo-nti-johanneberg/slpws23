@@ -1,0 +1,12 @@
+.script-edit-list
+  - @edits.each do |edit|
+    .edit
+      img src=edit.img alt=edit.alt
+      .character
+        - if edit.char.has_img?
+          img src=edit.char.img alt=edit.char.name
+        a.traveller-name-fix href="/characters/#{edit.char.id}"
+          h2.name = edit.char.name
+        p.type = edit.char.type
+        a.author href="/users/#{edit.char.author_id}" = edit.char.author
+        p.ability = edit.char.ability

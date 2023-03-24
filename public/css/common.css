@@ -121,6 +121,10 @@ form input {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
+.character-list.script-edit {
+  grid-template-columns: 1fr 1fr;
+}
+
 .preview-script-list,
 .preview-character-list {
   flex: 1;
@@ -128,7 +132,8 @@ form input {
   height: min-content;
 }
 
-.script-character-list {
+.script-character-list,
+.script-edit-list {
   display: grid;
   grid-template-columns: 1fr;
 }
@@ -138,6 +143,22 @@ form input {
   grid-template-areas: "im nm nm" "im tp au" "im ab ab";
   grid-template-columns: 10rem 1fr 1fr;
   grid-template-rows: min-content min-content 1fr;
+}
+
+.character.script-edit-character {
+  display: grid;
+  grid-template-areas: "im nm fn" "im tp au" "im ab ab";
+  grid-template-columns: 10rem 1fr 1fr;
+  grid-template-rows: min-content min-content 1fr;
+}
+
+.script-edit-character .fns {
+  grid-area: fn;
+  display: flex;
+}
+
+.script-edit-character form {
+  flex: 1;
 }
 
 .character-preview {
@@ -167,7 +188,8 @@ form input {
 }
 
 .character .name,
-.character-preview .name {
+.character-preview .name,
+.featured-character .name {
   white-space: nowrap;
   width: min-content;
 }
@@ -265,4 +287,50 @@ form .checkbox {
 
 form .checkbox * {
   flex: 1;
+}
+
+.edit {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 5rem 1fr;
+}
+
+.edit img {
+  width: 100%;
+  height: 100%;
+}
+
+.featured-character-list {
+  display: flex;
+  flex-direction: row;
+  height: 5rem;
+  width: min-content;
+}
+
+.featured-character-list.small {
+  height: 1rem;
+}
+
+.featured-character {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+}
+
+.small .featured-character {
+  grid-template-columns: 1rem 1fr;
+}
+
+.small .name {
+  font-size: 1rem;
+}
+
+.featured-character .traveller-name-fix {
+  text-decoration: none;
+  align-self: center;
+}
+
+.featured-character img {
+  width: 100%;
+  height: 100%;
 }

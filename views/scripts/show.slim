@@ -1,11 +1,20 @@
 .script-view
-  - if @script.has_img?
-    img src=@script.img alt=@script.full_title
   .info
-    h1.title = @script.full_title
+    h1.title = @script.title
     a.author href="/users/#{@script.author_id}" = @script.author
     - if @script.source
-      a.source href="/scripts/#{@script.id}" = @script.source.title
+      br
+      a.source href="/scripts/#{@script.id}" Based on #{@script.source.title}
+    .featured-character-list
+      - @script.featured.each do |character|
+        .featured-character
+          img src=character.img alt=character.name
+          a.traveller-name-fix href="/characters/#{character.id}"
+            h2.name = character.name
+    - if @logged_in_user && (@logged_in_user.id == @script.author_id || @logged_in_user.has_perms?(ADMIN))
+      a.edit-link href="/scripts/#{@script.id}/edit" Edit
+      form action="/scripts/#{@script.id}/delete" method="post"
+        input type="submit" value="Delete"/
     .characters
       .script-character-list
         - @script.characters.each do |character|

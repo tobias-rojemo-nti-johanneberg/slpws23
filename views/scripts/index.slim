@@ -3,3 +3,9 @@
     .script
       a.title href="/scripts/#{script.id}" = script.title
       a.author href="/users/#{script.author_id}" = script.author
+      .featured-character-list.small
+        - script.featured.each do |character|
+          .featured-character
+            img src=character.img alt=character.name
+            a.traveller-name-fix href="/characters/#{character.id}"
+              h2.name = character.name

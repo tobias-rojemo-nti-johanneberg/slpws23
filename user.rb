@@ -34,6 +34,7 @@ class UserManager
 
   def login(name, pass)
     @data = @db.execute("SELECT id, pass FROM users WHERE username = ? LIMIT 1", name)
+    return nil unless @data.size == 1
     digest = @data[0]["pass"]
 
     if BCrypt::Password.new(digest) == pass

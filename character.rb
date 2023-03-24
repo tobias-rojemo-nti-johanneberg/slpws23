@@ -31,7 +31,7 @@ class CharacterManager
   end
 
   def create(author_id, name, is_public, type, ability)
-    data = @db.execute("INSERT INTO characters (author_id, name, is_public, type, ability) VALUES (?, ?, ?, ?, ?) RETURNING id", author_id, name, is_public, type, ability)
+    data = @db.execute("INSERT INTO characters (author_id, name, is_public, type, ability) VALUES (?, ?, ?, ?, ?) RETURNING id", author_id, name, is_public ? TRUE : FALSE, type, ability)
     return Character.new(@db, data[0]["id"])
   end
 end
@@ -77,7 +77,12 @@ class Character
     )
   end
 
-  def delete = @db.execute("DELETE FROM characters WHERE id = ?", @id)
+  def delete 
+    return unless self.scripts.empty?
+    @db.execute("DELETE FROM characters WHERE id = ?", @id)
+  end
+
+  def ==(other) = @id == other.id
   def has_img? = File.exists?("public/img/c#{@id}.png")
   def img = "/img/c#{@id}.png"
 

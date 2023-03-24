@@ -22,7 +22,6 @@ CREATE TABLE IF NOT EXISTS scripts (
   title TEXT NOT NULL,
   is_public INTEGER NOT NULL,
   source_id INTEGER,
-  version_num TEXT,
   FOREIGN KEY (author_id) REFERENCES users(id) ON DELETE CASCADE
   FOREIGN KEY (source_id) REFERENCES scripts(id) ON DELETE CASCADE
 ) STRICT;
