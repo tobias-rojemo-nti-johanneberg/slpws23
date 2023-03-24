@@ -97,7 +97,7 @@ class Script
   def unfeature(char_id) = @db.execute("UPDATE script_character_rel SET featured = 0 WHERE script_id = ? AND character_id = ?", @id, char_id)
   def include?(char) = self.characters.include?(char)
   def features?(char) = self.featured.include?(char)
-  def ==(other) = @id == other.i
+  def ==(other) = @id == other.id
   def source = @source_id ? Script.new(@db, @source_id) : nil
   def origin = @source_id ? self.source.origin : self
   def edits = self.source ? self.characters.filter {|char| !self.source.characters.include?(char)}.map {|char| ScriptEdit.new(char, ADDED)}.concat(self.source.characters.filter {|char| !self.characters.include?(char)}.map {|char| ScriptEdit.new(char, REMOVED)}) : nil

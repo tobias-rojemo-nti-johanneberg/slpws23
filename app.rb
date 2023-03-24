@@ -340,8 +340,19 @@ post('/scripts/:id/delete') do
   @script = @db.scripts.get(id)
   redirect(:"/invalid") unless @script
   redirect(:"/permissiondenied") unless @script.author_id == @logged_in_user.id || @logged_in_user.has_perms?(ADMIN)
-  is_public = params[:is_public] ? (params[:is_public] == "on" ? true : false) : nil
 
   @script.delete
   redirect(:"/scripts")
+end
+
+post('/scripts/:id/fork') do
+  redirect(:"/notloggedin") unless @logged_in_user
+  id = params[:id].to_i
+  redirect(:"/invalid") unless id
+  @script = @db.scripts.get(id)
+  redirect(:"/invalid") unless @script
+  redirect(:"/permissiondenied") unless @script.is_public || @script.author_id == @logged_in_user.id || @logged_in_user.has_perms?(ADMIN)
+
+  @fork = @script.fork(@logged_in_user.id)
+  redirect("/scripts/#{@fork.id}".to_sym)
 end

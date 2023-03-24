@@ -15,6 +15,9 @@
       a.edit-link href="/scripts/#{@script.id}/edit" Edit
       form action="/scripts/#{@script.id}/delete" method="post"
         input type="submit" value="Delete"/
+    - if @logged_in_user && (@script.is_public || @logged_in_user.id == @script.author_id || @logged_in_user.has_perms?(ADMIN))
+      form action="/scripts/#{@script.id}/fork" method="post"
+        input type="submit" value="Create fork"/
     .characters
       .script-character-list
         - @script.characters.each do |character|
