@@ -86,7 +86,7 @@
     
   
     
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Character.html" title="Character (class)">Character</a></span>, <span class='object_link'><a href="CharacterComment.html" title="CharacterComment (class)">CharacterComment</a></span>, <span class='object_link'><a href="CharacterManager.html" title="CharacterManager (class)">CharacterManager</a></span>, <span class='object_link'><a href="Database.html" title="Database (class)">Database</a></span>, <span class='object_link'><a href="Script.html" title="Script (class)">Script</a></span>, <span class='object_link'><a href="ScriptComment.html" title="ScriptComment (class)">ScriptComment</a></span>, <span class='object_link'><a href="ScriptManager.html" title="ScriptManager (class)">ScriptManager</a></span>, <span class='object_link'><a href="Tag.html" title="Tag (class)">Tag</a></span>, <span class='object_link'><a href="TagType.html" title="TagType (class)">TagType</a></span>, <span class='object_link'><a href="TagTypeManager.html" title="TagTypeManager (class)">TagTypeManager</a></span>, <span class='object_link'><a href="User_.html" title="User (class)">User</a></span>, <span class='object_link'><a href="UserManager.html" title="UserManager (class)">UserManager</a></span>
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Character.html" title="Character (class)">Character</a></span>, <span class='object_link'><a href="CharacterComment.html" title="CharacterComment (class)">CharacterComment</a></span>, <span class='object_link'><a href="CharacterManager.html" title="CharacterManager (class)">CharacterManager</a></span>, <span class='object_link'><a href="Database.html" title="Database (class)">Database</a></span>, <span class='object_link'><a href="Script.html" title="Script (class)">Script</a></span>, <span class='object_link'><a href="ScriptComment.html" title="ScriptComment (class)">ScriptComment</a></span>, <span class='object_link'><a href="ScriptEdit.html" title="ScriptEdit (class)">ScriptEdit</a></span>, <span class='object_link'><a href="ScriptManager.html" title="ScriptManager (class)">ScriptManager</a></span>, <span class='object_link'><a href="Tag.html" title="Tag (class)">Tag</a></span>, <span class='object_link'><a href="TagType.html" title="TagType (class)">TagType</a></span>, <span class='object_link'><a href="TagTypeManager.html" title="TagTypeManager (class)">TagTypeManager</a></span>, <span class='object_link'><a href="User_.html" title="User (class)">User</a></span>, <span class='object_link'><a href="UserManager.html" title="UserManager (class)">UserManager</a></span>
     
   
 </p>
@@ -98,6 +98,26 @@
     </h2>
 
     <dl class="constants">
+      
+        <dt id="TRUE-constant" class="">TRUE =
+          
+        </dt>
+        <dd><pre class="code"><span class='int'>1</span></pre></dd>
+      
+        <dt id="FALSE-constant" class="">FALSE =
+          
+        </dt>
+        <dd><pre class="code"><span class='int'>0</span></pre></dd>
+      
+        <dt id="ADDED-constant" class="">ADDED =
+          
+        </dt>
+        <dd><pre class="code"><span class='int'>1</span></pre></dd>
+      
+        <dt id="REMOVED-constant" class="">REMOVED =
+          
+        </dt>
+        <dd><pre class="code"><span class='int'>0</span></pre></dd>
       
         <dt id="CHARACTER_TYPES-constant" class="">CHARACTER_TYPES =
           
@@ -134,16 +154,6 @@
         </dt>
         <dd><pre class="code"><span class='const'>SQLite3</span><span class='op'>::</span><span class='const'>Database</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>:memory:</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></pre></dd>
       
-        <dt id="TRUE-constant" class="">TRUE =
-          
-        </dt>
-        <dd><pre class="code"><span class='int'>1</span></pre></dd>
-      
-        <dt id="FALSE-constant" class="">FALSE =
-          
-        </dt>
-        <dd><pre class="code"><span class='int'>0</span></pre></dd>
-      
     </dl>
   
 
@@ -160,28 +170,6 @@
     </h2>
 
     <ul class="summary">
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="top-level-namespace.html#DELETE__characters__id-instance_method" title="#DELETE /characters/:id (instance method)">#<strong>DELETE /characters/:id</strong>  &#x21d2; Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'></div></span>
-  
-</li>
-
       
         <li class="public ">
   <span class="summary_signature">
@@ -318,28 +306,6 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="top-level-namespace.html#GET__invalid-instance_method" title="#GET /invalid (instance method)">#<strong>GET /invalid</strong>  &#x21d2; Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'></div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
       <a href="top-level-namespace.html#GET__scripts-instance_method" title="#GET /scripts (instance method)">#<strong>GET /scripts</strong>  &#x21d2; Object </a>
     
 
@@ -385,6 +351,94 @@
   <span class="summary_signature">
     
       <a href="top-level-namespace.html#GET__scripts__id_characters-instance_method" title="#GET /scripts/:id/characters (instance method)">#<strong>GET /scripts/:id/characters</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="top-level-namespace.html#GET__scripts__id_compare__other_id-instance_method" title="#GET /scripts/:id/compare/:other_id (instance method)">#<strong>GET /scripts/:id/compare/:other_id</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="top-level-namespace.html#GET__scripts__id_edit-instance_method" title="#GET /scripts/:id/edit (instance method)">#<strong>GET /scripts/:id/edit</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="top-level-namespace.html#GET__scripts__id_edits-instance_method" title="#GET /scripts/:id/edits (instance method)">#<strong>GET /scripts/:id/edits</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="top-level-namespace.html#GET__scripts__id_edits_origin-instance_method" title="#GET /scripts/:id/edits/origin (instance method)">#<strong>GET /scripts/:id/edits/origin</strong>  &#x21d2; Object </a>
     
 
     
@@ -516,7 +570,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="top-level-namespace.html#PATCH__characters__id-instance_method" title="#PATCH /characters/:id (instance method)">#<strong>PATCH /characters/:id</strong>  &#x21d2; Object </a>
+      <a href="top-level-namespace.html#POST__characters__id_delete-instance_method" title="#POST /characters/:id/delete (instance method)">#<strong>POST /characters/:id/delete</strong>  &#x21d2; Object </a>
     
 
     
@@ -538,7 +592,29 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="top-level-namespace.html#POST__characters-instance_method" title="#POST /characters (instance method)">#<strong>POST /characters</strong>  &#x21d2; Object </a>
+      <a href="top-level-namespace.html#POST__characters__id_edit-instance_method" title="#POST /characters/:id/edit (instance method)">#<strong>POST /characters/:id/edit</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="top-level-namespace.html#POST__characters_create-instance_method" title="#POST /characters/create (instance method)">#<strong>POST /characters/create</strong>  &#x21d2; Object </a>
     
 
     
@@ -623,6 +699,160 @@
 </li>
 
       
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="top-level-namespace.html#POST__scripts__id_delete-instance_method" title="#POST /scripts/:id/delete (instance method)">#<strong>POST /scripts/:id/delete</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="top-level-namespace.html#POST__scripts__id_edit-instance_method" title="#POST /scripts/:id/edit (instance method)">#<strong>POST /scripts/:id/edit</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="top-level-namespace.html#POST__scripts__script_id_add__char_id-instance_method" title="#POST /scripts/:script_id/add/:char_id (instance method)">#<strong>POST /scripts/:script_id/add/:char_id</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="top-level-namespace.html#POST__scripts__script_id_feature__char_id-instance_method" title="#POST /scripts/:script_id/feature/:char_id (instance method)">#<strong>POST /scripts/:script_id/feature/:char_id</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="top-level-namespace.html#POST__scripts__script_id_remove__char_id-instance_method" title="#POST /scripts/:script_id/remove/:char_id (instance method)">#<strong>POST /scripts/:script_id/remove/:char_id</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="top-level-namespace.html#POST__scripts__script_id_unfeature__char_id-instance_method" title="#POST /scripts/:script_id/unfeature/:char_id (instance method)">#<strong>POST /scripts/:script_id/unfeature/:char_id</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="top-level-namespace.html#POST__scripts_create-instance_method" title="#POST /scripts/create (instance method)">#<strong>POST /scripts/create</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
     </ul>
   
 
@@ -633,57 +863,7 @@
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="DELETE__characters__id-instance_method">
-  
-    #<strong>DELETE /characters/:id</strong>  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-186
-187
-188
-189
-190
-191
-192
-193
-194
-195
-196
-197
-198</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 186</span>
-
-<span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/characters/:id</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
-  <span class='id identifier rubyid_id'>id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
-
-  <span class='kw'>return</span> <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_id'>id</span>
-
-  <span class='ivar'>@character</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_character'>character</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
-
-  <span class='kw'>return</span> <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@character</span>
-  <span class='kw'>return</span> <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/permissiondenied&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@character</span><span class='period'>.</span><span class='id identifier rubyid_author_id'>author_id</span> <span class='op'>==</span> <span class='ivar'>@logged_in_user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span> <span class='op'>||</span> <span class='ivar'>@logged_in_user</span><span class='period'>.</span><span class='id identifier rubyid_has_perms?'>has_perms?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#ADMIN-constant" title="ADMIN (constant)">ADMIN</a></span></span><span class='rparen'>)</span>
-
-  <span class='ivar'>@character</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/characters&quot;</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="GET__characters-instance_method">
+  <h3 class="signature first" id="GET__characters-instance_method">
   
     #<strong>GET /characters</strong>  &#x21d2; <tt>Object</tt> 
   
@@ -697,14 +877,14 @@
       <pre class="lines">
 
 
-61
-62
-63
 64
-65</pre>
+65
+66
+67
+68</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 61</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 64</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/characters</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
   <span class='ivar'>@title</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Characters</span><span class='tstring_end'>&quot;</span></span>
@@ -731,17 +911,17 @@
       <pre class="lines">
 
 
-73
-74
-75
-76</pre>
+76
+77
+78
+79</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 73</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 76</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/characters/:id</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
   <span class='ivar'>@character</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_characters'>characters</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rparen'>)</span>
-  <span class='ivar'>@character</span> <span class='op'>?</span> <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;characters/show&quot;</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;characters/notfound&quot;</span><span class='rparen'>)</span>
+  <span class='ivar'>@character</span> <span class='op'>?</span> <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;characters/show&quot;</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/characters/notfound&quot;</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -763,21 +943,25 @@
       <pre class="lines">
 
 
-86
-87
-88
 89
 90
-91</pre>
+91
+92
+93
+94
+95
+96</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 86</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 89</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/characters/:id/edit</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
-  <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>You must be logged in to perform this action</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='ivar'>@logged_in_user</span>
-  <span class='ivar'>@character</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_characters'>characters</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rparen'>)</span>
-  <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Invalid permissions</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='ivar'>@logged_in_user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span> <span class='op'>==</span> <span class='ivar'>@character</span><span class='period'>.</span><span class='id identifier rubyid_author_id'>author_id</span> <span class='op'>||</span> <span class='ivar'>@logged_in_user</span><span class='period'>.</span><span class='id identifier rubyid_has_perms?'>has_perms?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#ADMIN-constant" title="ADMIN (constant)">ADMIN</a></span></span><span class='rparen'>)</span>
-  <span class='ivar'>@character</span> <span class='op'>?</span> <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;characters/edit&quot;</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;characters/notfound&quot;</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/notloggedin&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@logged_in_user</span>
+  <span class='id identifier rubyid_id'>id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_id'>id</span>
+  <span class='ivar'>@character</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_characters'>characters</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/permissiondenied&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@logged_in_user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span> <span class='op'>==</span> <span class='ivar'>@character</span><span class='period'>.</span><span class='id identifier rubyid_author_id'>author_id</span> <span class='op'>||</span> <span class='ivar'>@logged_in_user</span><span class='period'>.</span><span class='id identifier rubyid_has_perms?'>has_perms?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#ADMIN-constant" title="ADMIN (constant)">ADMIN</a></span></span><span class='rparen'>)</span>
+  <span class='ivar'>@character</span> <span class='op'>?</span> <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;characters/edit&quot;</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/characters/notfound&quot;</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -799,20 +983,20 @@
       <pre class="lines">
 
 
-78
-79
-80
 81
 82
 83
-84</pre>
+84
+85
+86
+87</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 78</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 81</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/characters/:id/scripts</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
   <span class='ivar'>@character</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_characters'>characters</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rparen'>)</span>
-  <span class='kw'>return</span> <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;characters/notfound&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@character</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/characters/notfound&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@character</span>
   <span class='ivar'>@scripts</span> <span class='op'>=</span> <span class='ivar'>@character</span><span class='period'>.</span><span class='id identifier rubyid_scripts'>scripts</span>
   <span class='ivar'>@title</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Scripts with </span><span class='embexpr_beg'>#{</span><span class='ivar'>@character</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;scripts/index&quot;</span><span class='rparen'>)</span>
@@ -837,17 +1021,17 @@
       <pre class="lines">
 
 
-67
-68
-69
 70
-71</pre>
+71
+72
+73
+74</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 67</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 70</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/characters/create</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
-  <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>You must be logged in to perform this action</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='ivar'>@logged_in_user</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/notloggedin&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@logged_in_user</span>
   <span class='ivar'>@title</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Create a character</span><span class='tstring_end'>&quot;</span></span>
   <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;characters/create&quot;</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
@@ -871,51 +1055,21 @@
       <pre class="lines">
 
 
-93
-94
-95
-96
-97
-98</pre>
+98
+99
+100
+101
+102
+103</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 93</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 98</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/characters/tag/:id</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
   <span class='ivar'>@tag</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_tags'>tags</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rparen'>)</span>
   <span class='ivar'>@title</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Characters with tag </span><span class='embexpr_beg'>#{</span><span class='ivar'>@tag</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='ivar'>@characters</span> <span class='op'>=</span> <span class='ivar'>@tag</span><span class='period'>.</span><span class='id identifier rubyid_characters'>characters</span>
   <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;characters/index&quot;</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="GET__invalid-instance_method">
-  
-    #<strong>GET /invalid</strong>  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-200
-201
-202</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 200</span>
-
-<span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/invalid</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
-  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Invalid operation</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -937,14 +1091,14 @@
       <pre class="lines">
 
 
-100
-101
-102
-103
-104</pre>
+105
+106
+107
+108
+109</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 100</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 105</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/scripts</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
   <span class='ivar'>@title</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Scripts</span><span class='tstring_end'>&quot;</span></span>
@@ -971,17 +1125,17 @@
       <pre class="lines">
 
 
-106
-107
-108
-109</pre>
+111
+112
+113
+114</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 106</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 111</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/scripts/:id</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
   <span class='ivar'>@script</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_scripts'>scripts</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rparen'>)</span>
-  <span class='ivar'>@script</span> <span class='op'>?</span> <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;scripts/show&quot;</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;scripts/notfound&quot;</span><span class='rparen'>)</span>
+  <span class='ivar'>@script</span> <span class='op'>?</span> <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;scripts/show&quot;</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/scripts/notfound&quot;</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1003,23 +1157,187 @@
       <pre class="lines">
 
 
-111
-112
-113
-114
-115
 116
-117</pre>
+117
+118
+119
+120
+121
+122</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 111</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 116</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/scripts/:id/characters</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
   <span class='ivar'>@script</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_scripts'>scripts</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rparen'>)</span>
-  <span class='kw'>return</span> <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;scripts/notfound&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@script</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/scripts/notfound&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@script</span>
   <span class='ivar'>@characters</span> <span class='op'>=</span> <span class='ivar'>@script</span><span class='period'>.</span><span class='id identifier rubyid_characters'>characters</span>
-  <span class='ivar'>@title</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Characters in </span><span class='embexpr_beg'>#{</span><span class='ivar'>@script</span><span class='period'>.</span><span class='id identifier rubyid_full_title'>full_title</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='ivar'>@title</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Characters in </span><span class='embexpr_beg'>#{</span><span class='ivar'>@script</span><span class='period'>.</span><span class='id identifier rubyid_title'>title</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;characters/index&quot;</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GET__scripts__id_compare__other_id-instance_method">
+  
+    #<strong>GET /scripts/:id/compare/:other_id</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+150
+151
+152
+153
+154
+155
+156
+157</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 150</span>
+
+<span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/scripts/:id/compare/:other_id</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+  <span class='ivar'>@script</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_scripts'>scripts</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/scripts/notfound&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@script</span>
+  <span class='ivar'>@edits</span> <span class='op'>=</span> <span class='ivar'>@script</span><span class='period'>.</span><span class='id identifier rubyid_edits'>edits</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@edits</span>
+  <span class='ivar'>@title</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Changes from </span><span class='embexpr_beg'>#{</span><span class='ivar'>@script</span><span class='period'>.</span><span class='id identifier rubyid_source'>source</span><span class='period'>.</span><span class='id identifier rubyid_title'>title</span><span class='embexpr_end'>}</span><span class='tstring_content'> to </span><span class='embexpr_beg'>#{</span><span class='ivar'>@script</span><span class='period'>.</span><span class='id identifier rubyid_title'>title</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;scripts/edits&quot;</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GET__scripts__id_edit-instance_method">
+  
+    #<strong>GET /scripts/:id/edit</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 234</span>
+
+<span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/scripts/:id/edit</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/notloggedin&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@logged_in_user</span>
+  <span class='id identifier rubyid_id'>id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_id'>id</span>
+  <span class='ivar'>@script</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_scripts'>scripts</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@script</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/permissiondenied&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@script</span><span class='period'>.</span><span class='id identifier rubyid_author_id'>author_id</span> <span class='op'>==</span> <span class='ivar'>@logged_in_user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span> <span class='op'>||</span> <span class='ivar'>@logged_in_user</span><span class='period'>.</span><span class='id identifier rubyid_has_perms?'>has_perms?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#ADMIN-constant" title="ADMIN (constant)">ADMIN</a></span></span><span class='rparen'>)</span>
+  <span class='ivar'>@characters</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_characters'>characters</span>
+  <span class='ivar'>@script</span> <span class='op'>?</span> <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;scripts/edit&quot;</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/scripts/notfound&quot;</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GET__scripts__id_edits-instance_method">
+  
+    #<strong>GET /scripts/:id/edits</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+132
+133
+134
+135
+136
+137
+138
+139</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 132</span>
+
+<span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/scripts/:id/edits</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+  <span class='ivar'>@script</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_scripts'>scripts</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/scripts/notfound&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@script</span>
+  <span class='ivar'>@edits</span> <span class='op'>=</span> <span class='ivar'>@script</span><span class='period'>.</span><span class='id identifier rubyid_edits'>edits</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@edits</span>
+  <span class='ivar'>@title</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Changes from </span><span class='embexpr_beg'>#{</span><span class='ivar'>@script</span><span class='period'>.</span><span class='id identifier rubyid_source'>source</span><span class='period'>.</span><span class='id identifier rubyid_title'>title</span><span class='embexpr_end'>}</span><span class='tstring_content'> to </span><span class='embexpr_beg'>#{</span><span class='ivar'>@script</span><span class='period'>.</span><span class='id identifier rubyid_title'>title</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;scripts/edits&quot;</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GET__scripts__id_edits_origin-instance_method">
+  
+    #<strong>GET /scripts/:id/edits/origin</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+141
+142
+143
+144
+145
+146
+147
+148</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 141</span>
+
+<span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/scripts/:id/edits/origin</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+  <span class='ivar'>@script</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_scripts'>scripts</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/scripts/notfound&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@script</span>
+  <span class='ivar'>@edits</span> <span class='op'>=</span> <span class='ivar'>@script</span><span class='period'>.</span><span class='id identifier rubyid_edits_from_origin'>edits_from_origin</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@edits</span>
+  <span class='ivar'>@title</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Changes from </span><span class='embexpr_beg'>#{</span><span class='ivar'>@script</span><span class='period'>.</span><span class='id identifier rubyid_source'>source</span><span class='period'>.</span><span class='id identifier rubyid_title'>title</span><span class='embexpr_end'>}</span><span class='tstring_content'> to </span><span class='embexpr_beg'>#{</span><span class='ivar'>@script</span><span class='period'>.</span><span class='id identifier rubyid_title'>title</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;scripts/edits&quot;</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1041,22 +1359,22 @@
       <pre class="lines">
 
 
-119
-120
-121
-122
-123
 124
-125</pre>
+125
+126
+127
+128
+129
+130</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 119</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 124</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/scripts/:id/forks</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
   <span class='ivar'>@script</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_scripts'>scripts</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rparen'>)</span>
-  <span class='kw'>return</span> <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;scripts/notfound&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@script</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/scripts/notfound&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@script</span>
   <span class='ivar'>@scripts</span> <span class='op'>=</span> <span class='ivar'>@script</span><span class='period'>.</span><span class='id identifier rubyid_forks'>forks</span>
-  <span class='ivar'>@title</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Forks of </span><span class='embexpr_beg'>#{</span><span class='ivar'>@script</span><span class='period'>.</span><span class='id identifier rubyid_full_title'>full_title</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='ivar'>@title</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Forks of </span><span class='embexpr_beg'>#{</span><span class='ivar'>@script</span><span class='period'>.</span><span class='id identifier rubyid_title'>title</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;scripts/index&quot;</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -1079,14 +1397,14 @@
       <pre class="lines">
 
 
-127
-128
-129
-130
-131</pre>
+159
+160
+161
+162
+163</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 127</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 159</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/users</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
   <span class='ivar'>@users</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_users'>users</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span>
@@ -1113,17 +1431,17 @@
       <pre class="lines">
 
 
-133
-134
-135
-136</pre>
+165
+166
+167
+168</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 133</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 165</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/users/:id</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
   <span class='ivar'>@user</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_users'>users</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rparen'>)</span>
-  <span class='ivar'>@user</span> <span class='op'>?</span> <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;users/show&quot;</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;users/notfound&quot;</span><span class='rparen'>)</span>
+  <span class='ivar'>@user</span> <span class='op'>?</span> <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;users/show&quot;</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/users/notfound&quot;</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1145,20 +1463,20 @@
       <pre class="lines">
 
 
-138
-139
-140
-141
-142
-143
-144</pre>
+170
+171
+172
+173
+174
+175
+176</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 138</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 170</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/users/:id/characters</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
   <span class='ivar'>@user</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_users'>users</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rparen'>)</span>
-  <span class='kw'>return</span> <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;users/notfound&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@user</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/users/notfound&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@user</span>
   <span class='ivar'>@characters</span> <span class='op'>=</span> <span class='ivar'>@user</span><span class='period'>.</span><span class='id identifier rubyid_characters'>characters</span>
   <span class='ivar'>@title</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Characters made by </span><span class='embexpr_beg'>#{</span><span class='ivar'>@user</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;characters/index&quot;</span><span class='rparen'>)</span>
@@ -1183,20 +1501,20 @@
       <pre class="lines">
 
 
-146
-147
-148
-149
-150
-151
-152</pre>
+178
+179
+180
+181
+182
+183
+184</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 146</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 178</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/users/:id/scripts</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
   <span class='ivar'>@user</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_users'>users</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rparen'>)</span>
-  <span class='kw'>return</span> <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;users/notfound&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@user</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/users/notfound&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@user</span>
   <span class='ivar'>@scripts</span> <span class='op'>=</span> <span class='ivar'>@user</span><span class='period'>.</span><span class='id identifier rubyid_scripts'>scripts</span>
   <span class='ivar'>@title</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Scripts made by </span><span class='embexpr_beg'>#{</span><span class='ivar'>@user</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;scripts/index&quot;</span><span class='rparen'>)</span>
@@ -1207,9 +1525,9 @@
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="PATCH__characters__id-instance_method">
+  <h3 class="signature " id="POST__characters__id_delete-instance_method">
   
-    #<strong>PATCH /characters/:id</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>POST /characters/:id/delete</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -1221,36 +1539,30 @@
       <pre class="lines">
 
 
-171
-172
-173
-174
-175
-176
-177
-178
-179
-180
-181
-182
-183
-184</pre>
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 171</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 213</span>
 
-<span class='id identifier rubyid_patch'>patch</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/characters/:id</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+<span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/characters/:id/delete</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/notloggedin&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@logged_in_user</span>
   <span class='id identifier rubyid_id'>id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_id'>id</span>
+  <span class='ivar'>@character</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_characters'>characters</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@character</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/permissiondenied&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@character</span><span class='period'>.</span><span class='id identifier rubyid_author_id'>author_id</span> <span class='op'>==</span> <span class='ivar'>@logged_in_user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span> <span class='op'>||</span> <span class='ivar'>@logged_in_user</span><span class='period'>.</span><span class='id identifier rubyid_has_perms?'>has_perms?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#ADMIN-constant" title="ADMIN (constant)">ADMIN</a></span></span><span class='rparen'>)</span>
 
-  <span class='kw'>return</span> <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_id'>id</span>
-
-  <span class='ivar'>@character</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_character'>character</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
-
-  <span class='kw'>return</span> <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@character</span>
-  <span class='kw'>return</span> <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/permissiondenied&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@character</span><span class='period'>.</span><span class='id identifier rubyid_author_id'>author_id</span> <span class='op'>==</span> <span class='ivar'>@logged_in_user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span> <span class='op'>||</span> <span class='ivar'>@logged_in_user</span><span class='period'>.</span><span class='id identifier rubyid_has_perms?'>has_perms?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#ADMIN-constant" title="ADMIN (constant)">ADMIN</a></span></span><span class='rparen'>)</span>
-
-  <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>public/img/c</span><span class='embexpr_beg'>#{</span><span class='ivar'>@character</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='embexpr_end'>}</span><span class='tstring_content'>.png</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>wb</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_f'>f</span><span class='op'>|</span> <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:image</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:tempfile</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='rparen'>)</span><span class='rbrace'>}</span> <span class='kw'>unless</span> <span class='op'>!</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:image</span><span class='rbracket'>]</span>
-  <span class='ivar'>@character</span><span class='period'>.</span><span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:is_public</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:type</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:ability</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='ivar'>@character</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span>
   <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/characters&quot;</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -1259,9 +1571,9 @@
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="POST__characters-instance_method">
+  <h3 class="signature " id="POST__characters__id_edit-instance_method">
   
-    #<strong>POST /characters</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>POST /characters/:id/edit</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -1273,41 +1585,83 @@
       <pre class="lines">
 
 
-154
-155
-156
-157
-158
-159
-160
-161
-162
-163
-164
-165
-166
-167
-168
-169</pre>
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 154</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 199</span>
 
-<span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/characters</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
-  <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>You must be logged in to perform this action</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='ivar'>@logged_in_user</span>
+<span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/characters/:id/edit</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/notloggedin&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@logged_in_user</span>
+  <span class='id identifier rubyid_id'>id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_id'>id</span>
+  <span class='ivar'>@character</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_characters'>characters</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@character</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/permissiondenied&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@character</span><span class='period'>.</span><span class='id identifier rubyid_author_id'>author_id</span> <span class='op'>==</span> <span class='ivar'>@logged_in_user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span> <span class='op'>||</span> <span class='ivar'>@logged_in_user</span><span class='period'>.</span><span class='id identifier rubyid_has_perms?'>has_perms?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#ADMIN-constant" title="ADMIN (constant)">ADMIN</a></span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_is_public'>is_public</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:is_public</span><span class='rbracket'>]</span> <span class='op'>?</span> <span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:is_public</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>on</span><span class='tstring_end'>&quot;</span></span> <span class='op'>?</span> <span class='kw'>true</span> <span class='op'>:</span> <span class='kw'>false</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='kw'>nil</span>
+
+  <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>public/img/c</span><span class='embexpr_beg'>#{</span><span class='ivar'>@character</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='embexpr_end'>}</span><span class='tstring_content'>.png</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>wb</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_f'>f</span><span class='op'>|</span> <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:image</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:tempfile</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='rparen'>)</span><span class='rbrace'>}</span> <span class='kw'>unless</span> <span class='op'>!</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:image</span><span class='rbracket'>]</span>
+  <span class='ivar'>@character</span><span class='period'>.</span><span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_is_public'>is_public</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:type</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:ability</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/characters/</span><span class='embexpr_beg'>#{</span><span class='ivar'>@character</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="POST__characters_create-instance_method">
   
+    #<strong>POST /characters/create</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 186</span>
+
+<span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/characters/create</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/notloggedin&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@logged_in_user</span>
   <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span>
   <span class='id identifier rubyid_type'>type</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:type</span><span class='rbracket'>]</span>
   <span class='id identifier rubyid_image'>image</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:image</span><span class='rbracket'>]</span>
   <span class='id identifier rubyid_ability'>ability</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:ability</span><span class='rbracket'>]</span>
-  <span class='id identifier rubyid_is_public'>is_public</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:is_public</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_redirect'>redirect</span> <span class='id identifier rubyid_back'>back</span> <span class='kw'>unless</span> <span class='id identifier rubyid_name'>name</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_type'>type</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_image'>image</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_ability'>ability</span>
 
-  <span class='kw'>return</span> <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/characters/create&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_name'>name</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_type'>type</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_image'>image</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_ability'>ability</span>
-
-  <span class='ivar'>@character</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_characters'>characters</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='ivar'>@logged_in_user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_is_public'>is_public</span> <span class='op'>?</span> <span class='id identifier rubyid_is_public'>is_public</span> <span class='op'>:</span> <span class='const'><span class='object_link'><a href="#FALSE-constant" title="FALSE (constant)">FALSE</a></span></span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_ability'>ability</span><span class='rparen'>)</span>
+  <span class='ivar'>@character</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_characters'>characters</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='ivar'>@logged_in_user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_ability'>ability</span><span class='rparen'>)</span>
   <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>public/img/c</span><span class='embexpr_beg'>#{</span><span class='ivar'>@character</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='embexpr_end'>}</span><span class='tstring_content'>.png</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>wb</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_f'>f</span><span class='op'>|</span> <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_image'>image</span><span class='lbracket'>[</span><span class='symbol'>:tempfile</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='rparen'>)</span><span class='rbrace'>}</span>
-
-  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/characters/create&quot;</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/characters/</span><span class='embexpr_beg'>#{</span><span class='ivar'>@character</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1329,11 +1683,6 @@
       <pre class="lines">
 
 
-23
-24
-25
-26
-27
 28
 29
 30
@@ -1344,25 +1693,28 @@
 35
 36
 37
-38</pre>
+38
+39
+40
+41
+42</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 23</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 28</span>
 
 <span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/login</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
   <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span>
   <span class='id identifier rubyid_pass'>pass</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:pass</span><span class='rbracket'>]</span>
-
   <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_name'>name</span> <span class='op'>||</span> <span class='op'>!</span><span class='id identifier rubyid_pass'>pass</span>
-    <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/login&quot;</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_redirect'>redirect</span> <span class='id identifier rubyid_back'>back</span>
   <span class='kw'>end</span>
 
   <span class='id identifier rubyid_session_id'>session_id</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_users'>users</span><span class='period'>.</span><span class='id identifier rubyid_login'>login</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_pass'>pass</span><span class='rparen'>)</span>
-
   <span class='kw'>if</span> <span class='id identifier rubyid_session_id'>session_id</span>
     <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_session_id'>session_id</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_redirect'>redirect</span> <span class='id identifier rubyid_back'>back</span>
   <span class='kw'>end</span>
-
   <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:/</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -1385,14 +1737,14 @@
       <pre class="lines">
 
 
-55
-56
-57
 58
-59</pre>
+59
+60
+61
+62</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 55</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 58</span>
 
 <span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/logout</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
   <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_users'>users</span><span class='period'>.</span><span class='id identifier rubyid_logout'>logout</span><span class='lparen'>(</span><span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
@@ -1419,10 +1771,6 @@
       <pre class="lines">
 
 
-40
-41
-42
-43
 44
 45
 46
@@ -1432,24 +1780,394 @@
 50
 51
 52
-53</pre>
+53
+54
+55
+56</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 40</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 44</span>
 
 <span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/register</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
   <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span>
   <span class='id identifier rubyid_pass'>pass</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:pass</span><span class='rbracket'>]</span>
   <span class='id identifier rubyid_verify'>verify</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:verifyPass</span><span class='rbracket'>]</span>
-
   <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_name'>name</span> <span class='op'>||</span> <span class='op'>!</span><span class='id identifier rubyid_pass'>pass</span>
-    <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/register&quot;</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_redirect'>redirect</span> <span class='id identifier rubyid_back'>back</span>
   <span class='kw'>elsif</span> <span class='id identifier rubyid_pass'>pass</span> <span class='op'>!=</span> <span class='id identifier rubyid_verify'>verify</span>
-    <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/register&quot;</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_redirect'>redirect</span> <span class='id identifier rubyid_back'>back</span>
   <span class='kw'>end</span>
 
   <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_users'>users</span><span class='period'>.</span><span class='id identifier rubyid_register'>register</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_pass'>pass</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:/</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="POST__scripts__id_delete-instance_method">
+  
+    #<strong>POST /scripts/:id/delete</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 330</span>
+
+<span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/scripts/:id/delete</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/notloggedin&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@logged_in_user</span>
+  <span class='id identifier rubyid_id'>id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_id'>id</span>
+  <span class='ivar'>@script</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_scripts'>scripts</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@script</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/permissiondenied&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@script</span><span class='period'>.</span><span class='id identifier rubyid_author_id'>author_id</span> <span class='op'>==</span> <span class='ivar'>@logged_in_user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span> <span class='op'>||</span> <span class='ivar'>@logged_in_user</span><span class='period'>.</span><span class='id identifier rubyid_has_perms?'>has_perms?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#ADMIN-constant" title="ADMIN (constant)">ADMIN</a></span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_is_public'>is_public</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:is_public</span><span class='rbracket'>]</span> <span class='op'>?</span> <span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:is_public</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>on</span><span class='tstring_end'>&quot;</span></span> <span class='op'>?</span> <span class='kw'>true</span> <span class='op'>:</span> <span class='kw'>false</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='kw'>nil</span>
+
+  <span class='ivar'>@script</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/scripts&quot;</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="POST__scripts__id_edit-instance_method">
+  
+    #<strong>POST /scripts/:id/edit</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 245</span>
+
+<span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/scripts/:id/edit</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/notloggedin&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@logged_in_user</span>
+  <span class='id identifier rubyid_id'>id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_id'>id</span>
+  <span class='ivar'>@script</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_scripts'>scripts</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@script</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/permissiondenied&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@script</span><span class='period'>.</span><span class='id identifier rubyid_author_id'>author_id</span> <span class='op'>==</span> <span class='ivar'>@logged_in_user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span> <span class='op'>||</span> <span class='ivar'>@logged_in_user</span><span class='period'>.</span><span class='id identifier rubyid_has_perms?'>has_perms?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#ADMIN-constant" title="ADMIN (constant)">ADMIN</a></span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_is_public'>is_public</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:is_public</span><span class='rbracket'>]</span> <span class='op'>?</span> <span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:is_public</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>on</span><span class='tstring_end'>&quot;</span></span> <span class='op'>?</span> <span class='kw'>true</span> <span class='op'>:</span> <span class='kw'>false</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='kw'>nil</span>
+
+  <span class='ivar'>@script</span><span class='period'>.</span><span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:title</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_is_public'>is_public</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/scripts/</span><span class='embexpr_beg'>#{</span><span class='ivar'>@script</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="POST__scripts__script_id_add__char_id-instance_method">
+  
+    #<strong>POST /scripts/:script_id/add/:char_id</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 258</span>
+
+<span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/scripts/:script_id/add/:char_id</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/notloggedin&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@logged_in_user</span>
+  <span class='id identifier rubyid_script_id'>script_id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:script_id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
+  <span class='id identifier rubyid_char_id'>char_id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:char_id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_script_id'>script_id</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_char_id'>char_id</span>
+  <span class='ivar'>@script</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_scripts'>scripts</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_script_id'>script_id</span><span class='rparen'>)</span>
+  <span class='ivar'>@character</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_characters'>characters</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_char_id'>char_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@script</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@character</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='ivar'>@script</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='ivar'>@character</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/permissiondenied&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@script</span><span class='period'>.</span><span class='id identifier rubyid_author_id'>author_id</span> <span class='op'>==</span> <span class='ivar'>@logged_in_user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span> <span class='op'>||</span> <span class='ivar'>@logged_in_user</span><span class='period'>.</span><span class='id identifier rubyid_has_perms?'>has_perms?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#ADMIN-constant" title="ADMIN (constant)">ADMIN</a></span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/permissiondenied&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@character</span><span class='period'>.</span><span class='id identifier rubyid_is_public'>is_public</span> <span class='op'>||</span> <span class='ivar'>@character</span><span class='period'>.</span><span class='id identifier rubyid_author_id'>author_id</span> <span class='op'>==</span> <span class='ivar'>@logged_in_user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>
+  
+  <span class='ivar'>@script</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='id identifier rubyid_char_id'>char_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_redirect'>redirect</span> <span class='id identifier rubyid_back'>back</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="POST__scripts__script_id_feature__char_id-instance_method">
+  
+    #<strong>POST /scripts/:script_id/feature/:char_id</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 294</span>
+
+<span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/scripts/:script_id/feature/:char_id</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/notloggedin&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@logged_in_user</span>
+  <span class='id identifier rubyid_script_id'>script_id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:script_id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
+  <span class='id identifier rubyid_char_id'>char_id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:char_id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_script_id'>script_id</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_char_id'>char_id</span>
+  <span class='ivar'>@script</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_scripts'>scripts</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_script_id'>script_id</span><span class='rparen'>)</span>
+  <span class='ivar'>@character</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_characters'>characters</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_char_id'>char_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@script</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@character</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@script</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='ivar'>@character</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/permissiondenied&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@script</span><span class='period'>.</span><span class='id identifier rubyid_author_id'>author_id</span> <span class='op'>==</span> <span class='ivar'>@logged_in_user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span> <span class='op'>||</span> <span class='ivar'>@logged_in_user</span><span class='period'>.</span><span class='id identifier rubyid_has_perms?'>has_perms?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#ADMIN-constant" title="ADMIN (constant)">ADMIN</a></span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/permissiondenied&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@character</span><span class='period'>.</span><span class='id identifier rubyid_is_public'>is_public</span> <span class='op'>||</span> <span class='ivar'>@character</span><span class='period'>.</span><span class='id identifier rubyid_author_id'>author_id</span> <span class='op'>==</span> <span class='ivar'>@logged_in_user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>
+  
+  <span class='ivar'>@script</span><span class='period'>.</span><span class='id identifier rubyid_feature'>feature</span><span class='lparen'>(</span><span class='id identifier rubyid_char_id'>char_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_redirect'>redirect</span> <span class='id identifier rubyid_back'>back</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="POST__scripts__script_id_remove__char_id-instance_method">
+  
+    #<strong>POST /scripts/:script_id/remove/:char_id</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 276</span>
+
+<span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/scripts/:script_id/remove/:char_id</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/notloggedin&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@logged_in_user</span>
+  <span class='id identifier rubyid_script_id'>script_id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:script_id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
+  <span class='id identifier rubyid_char_id'>char_id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:char_id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_script_id'>script_id</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_char_id'>char_id</span>
+  <span class='ivar'>@script</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_scripts'>scripts</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_script_id'>script_id</span><span class='rparen'>)</span>
+  <span class='ivar'>@character</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_characters'>characters</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_char_id'>char_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@script</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@character</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@script</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='ivar'>@character</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/permissiondenied&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@script</span><span class='period'>.</span><span class='id identifier rubyid_author_id'>author_id</span> <span class='op'>==</span> <span class='ivar'>@logged_in_user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span> <span class='op'>||</span> <span class='ivar'>@logged_in_user</span><span class='period'>.</span><span class='id identifier rubyid_has_perms?'>has_perms?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#ADMIN-constant" title="ADMIN (constant)">ADMIN</a></span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/permissiondenied&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@character</span><span class='period'>.</span><span class='id identifier rubyid_is_public'>is_public</span> <span class='op'>||</span> <span class='ivar'>@character</span><span class='period'>.</span><span class='id identifier rubyid_author_id'>author_id</span> <span class='op'>==</span> <span class='ivar'>@logged_in_user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>
+  
+  <span class='ivar'>@script</span><span class='period'>.</span><span class='id identifier rubyid_remove'>remove</span><span class='lparen'>(</span><span class='id identifier rubyid_char_id'>char_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_redirect'>redirect</span> <span class='id identifier rubyid_back'>back</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="POST__scripts__script_id_unfeature__char_id-instance_method">
+  
+    #<strong>POST /scripts/:script_id/unfeature/:char_id</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 312</span>
+
+<span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/scripts/:script_id/unfeature/:char_id</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/notloggedin&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@logged_in_user</span>
+  <span class='id identifier rubyid_script_id'>script_id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:script_id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
+  <span class='id identifier rubyid_char_id'>char_id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:char_id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_script_id'>script_id</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_char_id'>char_id</span>
+  <span class='ivar'>@script</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_scripts'>scripts</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_script_id'>script_id</span><span class='rparen'>)</span>
+  <span class='ivar'>@character</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_characters'>characters</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_char_id'>char_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@script</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@character</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/invalid&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@script</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='ivar'>@character</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/permissiondenied&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@script</span><span class='period'>.</span><span class='id identifier rubyid_author_id'>author_id</span> <span class='op'>==</span> <span class='ivar'>@logged_in_user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span> <span class='op'>||</span> <span class='ivar'>@logged_in_user</span><span class='period'>.</span><span class='id identifier rubyid_has_perms?'>has_perms?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#ADMIN-constant" title="ADMIN (constant)">ADMIN</a></span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/permissiondenied&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@character</span><span class='period'>.</span><span class='id identifier rubyid_is_public'>is_public</span> <span class='op'>||</span> <span class='ivar'>@character</span><span class='period'>.</span><span class='id identifier rubyid_author_id'>author_id</span> <span class='op'>==</span> <span class='ivar'>@logged_in_user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>
+  
+  <span class='ivar'>@script</span><span class='period'>.</span><span class='id identifier rubyid_unfeature'>unfeature</span><span class='lparen'>(</span><span class='id identifier rubyid_char_id'>char_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_redirect'>redirect</span> <span class='id identifier rubyid_back'>back</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="POST__scripts_create-instance_method">
+  
+    #<strong>POST /scripts/create</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+225
+226
+227
+228
+229
+230
+231
+232</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 225</span>
+
+<span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/scripts/create</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='symbol'>:&quot;/notloggedin&quot;</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@logged_in_user</span>
+  <span class='id identifier rubyid_title'>title</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:title</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_redirect'>redirect</span> <span class='id identifier rubyid_back'>back</span> <span class='kw'>unless</span> <span class='id identifier rubyid_title'>title</span>
+
+  <span class='ivar'>@script</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_scripts'>scripts</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='ivar'>@logged_in_user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='id identifier rubyid_title'>title</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/scripts/</span><span class='embexpr_beg'>#{</span><span class='ivar'>@script</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1461,7 +2179,7 @@
 </div>
 
       <div id="footer">
-  Generated on Fri Mar 17 16:32:22 2023 by
+  Generated on Fri Mar 24 09:39:09 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.2).
 </div>

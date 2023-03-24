@@ -55,7 +55,7 @@ class Script
   end
 
   def featured
-    @data = @db.execute("SELECT id FROM characters WHERE id IN (SELECT character_id FROM script_character_rel WHERE script_id = ? AND featured = 1) ORDER BY type, name ASC", @id)
+    @data = @db.execute("SELECT id FROM characters WHERE id IN (SELECT character_id FROM script_character_rel WHERE script_id = ? AND featured = 1) ORDER BY type, name ASC LIMIT 3", @id)
     return @data.map{|char| Character.new(@db, char["id"])}
   end
 
@@ -102,6 +102,7 @@ class Script
   def origin = @source_id ? self.source.origin : self
   def edits = self.source ? self.characters.filter {|char| !self.source.characters.include?(char)}.map {|char| ScriptEdit.new(char, ADDED)}.concat(self.source.characters.filter {|char| !self.characters.include?(char)}.map {|char| ScriptEdit.new(char, REMOVED)}) : nil
   def edits_from_origin = self.origin != self ? self.characters.filter {|char| !self.origin.characters.include?(char)}.map {|char| ScriptEdit.new(char, ADDED)}.concat(self.origin.characters.filter {|char| !self.characters.include?(char)}.map {|char| ScriptEdit.new(char, REMOVED)}) : nil
+  def compare(other) = self.characters.filter {|char| !other.characters.include?(char)}.map {|char| ScriptEdit.new(char, ADDED)}.concat(other.characters.filter {|char| !self.characters.include?(char)}.map {|char| ScriptEdit.new(char, REMOVED)})
 
   attr_accessor :id
   attr_accessor :title

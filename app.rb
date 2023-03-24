@@ -148,11 +148,17 @@ get('/scripts/:id/edits/origin') do
 end
 
 get('/scripts/:id/compare/:other_id') do
-  @script = @db.scripts.get(params[:id].to_i)
+  id = params[:id].to_i
+  other_id = params[:other_id].to_i
+  redirect(:"/invalid") unless id
+  redirect(:"/invalid") unless other_id
+  @script = @db.scripts.get(id)
+  @other_script = @db.scripts.get(other_id)
   redirect(:"/scripts/notfound") unless @script
-  @edits = @script.edits
+  redirect(:"/scripts/notfound") unless @other_script
+  @edits = @script.compare(@other_script)
   redirect(:"/invalid") unless @edits
-  @title = "Changes from #{@script.source.title} to #{@script.title}"
+  @title = "Changes from #{@other_script.title} to #{@script.title}"
   slim(:"scripts/edits")
 end
 
