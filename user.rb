@@ -72,6 +72,7 @@ class UserManager
     end
   end
 
+  def [](*ids) = self.get(ids)
   def count = @db.execute("SELECT id FROM users").size
 
   def each

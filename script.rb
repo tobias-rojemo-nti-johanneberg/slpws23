@@ -21,6 +21,7 @@ class ScriptManager
     end
   end
 
+  def [](*ids) = self.get(ids)
   def count = @db.execute("SELECT id FROM scripts").size
 
   def each
@@ -77,7 +78,7 @@ class Script
   def fork(author_id)
     @data = @db.execute("INSERT INTO scripts (title, author_id, is_public, source_id) VALUES (?, ?, 0, ?) RETURNING id", "Fork of #{self.title}", author_id, @id)
     @fork = Script.new(@db, @data[0]["id"])
-    @db.execute("WITH n(script_id) AS (SELECT ?) INSERT INTO script_character_rel (character_id, script_id, featured) SELECT character_id, n.script_id, featured FROM script_character_rel INNER JOIN n WHERE script_character_rel.script_id = ?", @fork.id, @id)
+    @db.execute("INSERT INTO script_character_rel (character_id, script_id, featured) SELECT character_id, ?, featured FROM script_character_rel WHERE script_character_rel.script_id = ?", @fork.id, @id)
     return @fork
   end
 

@@ -40,6 +40,12 @@ header h1 {
   text-align: center;
 }
 
+.create {
+  position: fixed;
+  left: 0;
+  top: 0.5rem;
+}
+
 .login-field {
   position: fixed;
   right: 0;

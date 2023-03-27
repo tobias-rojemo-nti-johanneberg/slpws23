@@ -12,6 +12,8 @@ html lang="en"
     title = @title
   body
     header
+      - if @create && @logged_in_user
+        a.create href=@create[:href] = @create[:text]
       - if @title
         h1 = @title
       - if @logged_in_user
