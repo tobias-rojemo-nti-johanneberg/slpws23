@@ -17,6 +17,10 @@
           span.tag-content = tag.to_s
     .comments
       h2 Discussion
+      - if @logged_in_user
+        form action="/characters/#{@character.id}/comment" method="post"
+          input#content type="text" name="content" required="true"/
+          input type="submit" value="Comment"/ 
       - if @character.comments.empty?
         p It's empty here
       - @character.comments.each do |comment|

@@ -40,7 +40,8 @@ header h1 {
   text-align: center;
 }
 
-.create {
+.create,
+.back {
   position: fixed;
   left: 0;
   top: 0.5rem;

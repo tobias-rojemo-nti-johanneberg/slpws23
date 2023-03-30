@@ -67,7 +67,7 @@ class Script
 
   def comments
     @comments = @db.execute("SELECT id FROM script_comments WHERE script_id = ? ORDER BY id DESC", @id)
-    @comments.map{|comment_data| ScriptComment.new(@db, comment_data["type"], comment_data["value"])}
+    @comments.map{|comment_data| ScriptComment.new(@db, comment_data["id"])}
   end
 
   def delete
@@ -90,6 +90,10 @@ class Script
       is_public != nil ? (is_public ? TRUE : FALSE) : @is_public,
       @id
     )
+  end
+
+  def comment(author_id, content)
+    @db.execute("INSERT INTO script_comments (author_id, script_id, content) VALUES (?, ?, ?)", author_id, @id, content)
   end
 
   def add(char_id) = @db.execute("INSERT INTO script_character_rel (script_id, character_id) VALUES (?, ?)", @id, char_id)
@@ -126,7 +130,7 @@ class ScriptComment
   def script = Script.new(@db, @script_id)
   def script_title = @db.execute("SELECT name FROM scripts WHERE id = ? LIMIT 1", @script_id)[0]["title"]
   def author = User.new(@db, @author_id)
-  def author_name = @db.execute("SELECT username FROM scripts WHERE id = ? LIMIT 1", @script_id)[0]["username"]
+  def author_name = @db.execute("SELECT username FROM users WHERE id = ? LIMIT 1", @author_id)[0]["username"]
 
   attr_accessor :id
   attr_accessor :content

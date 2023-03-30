@@ -63,7 +63,7 @@ class Character
 
   def comments
     @comments = @db.execute("SELECT id FROM character_comments WHERE character_id = ? ORDER BY id DESC", @id)
-    @comments.map{|comment_data| CharacterComment.new(@db, comment_data["type"], comment_data["value"])}
+    @comments.map{|comment_data| CharacterComment.new(@db, comment_data["id"])}
   end
 
   def update(name, is_public, type, ability)
@@ -76,6 +76,10 @@ class Character
       ability != nil ? ability : @ability,
       @id
     )
+  end
+
+  def comment(author_id, content)
+    @db.execute("INSERT INTO character_comments (author_id, character_id, content) VALUES (?, ?, ?)", author_id, @id, content)
   end
 
   def delete 
@@ -111,7 +115,7 @@ class CharacterComment
   def character = Character.new(@db, @character_id)
   def character_name = @db.execute("SELECT name FROM characters WHERE id = ? LIMIT 1", @character_id)[0]["name"]
   def author = User.new(@db, @author_id)
-  def author_name = @db.execute("SELECT username FROM characters WHERE id = ? LIMIT 1", @character_id)[0]["username"]
+  def author_name = @db.execute("SELECT username FROM users WHERE id = ? LIMIT 1", @author_id)[0]["username"]
 
   attr_accessor :id
   attr_accessor :content

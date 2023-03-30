@@ -4,7 +4,7 @@
     a.author href="/users/#{@script.author_id}" = @script.author
     - if @script.source
       br
-      a.source href="/scripts/#{@script.id}" Based on #{@script.source.title}
+      a.source href="/scripts/#{@script.source.id}" Based on #{@script.source.title}
     .featured-character-list
       - @script.featured.each do |character|
         .featured-character
@@ -30,6 +30,10 @@
             p.ability = character.ability
     .comments
       h2 Discussion
+      - if @logged_in_user
+        form action="/scripts/#{@script.id}/comment" method="post"
+          input#content type="text" name="content" required="true"/
+          input type="submit" value="Comment"/ 
       - if @script.comments.empty?
         p It's empty here
       - @script.comments.each do |comment|

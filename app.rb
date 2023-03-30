@@ -17,7 +17,8 @@ end
   {route: '/permissiondenied', slim: :permissiondenied, title: "Permission denied"},
   {route: '/scripts/notfound', slim: :"/scripts/notfound", title: "Script not found"},
   {route: '/characters/notfound', slim: :"/characters/notfound", title: "Character not found"},
-  {route: '/notloggedin', slim: :notloggedin, title: "You are not logged in"}
+  {route: '/notloggedin', slim: :notloggedin, title: "You are not logged in"},
+  {route: '/notfound', slim: :notfound, title: "Resource not found"}
 ].each {|route|
   get(route[:route]) do
     @title = route[:title]
@@ -223,6 +224,8 @@ get('/scripts/:id/edit') do |id|
   @script = req @db.scripts[id]
   redirect(:"/permissiondenied") unless @script.author_id == @logged_in_user.id || @logged_in_user.has_perms?(ADMIN)
   @characters = @db.characters
+  @back = {href: "/scripts/#{id}", text: "Return to script"}
+  @title = "Editing #{@script.title}"
   @script ? slim(:"scripts/edit") : redirect(:"/scripts/notfound")
 end
 
@@ -300,4 +303,20 @@ post('/scripts/:id/fork') do |id|
 
   @fork = @script.fork(@logged_in_user.id)
   redirect("/scripts/#{@fork.id}".to_sym)
+end
+
+post('/scripts/:id/comment') do |id|
+  reqsess(@logged_in_user)
+  @script = req @db.scripts[id]
+  redirect(:"/permissiondenied") unless @script.is_public
+  @script.comment(@logged_in_user.id, reqp(:content, "/scripts/#{id}".to_sym))
+  redirect back
+end
+
+post('/characters/:id/comment') do |id|
+  reqsess(@logged_in_user)
+  @character = req @db.characters[id]
+  redirect(:"/permissiondenied") unless @character.is_public
+  @character.comment(@logged_in_user.id, reqp(:content, "/characters/#{id}".to_sym))
+  redirect back
 end
