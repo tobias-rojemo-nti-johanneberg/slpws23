@@ -325,7 +325,51 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#comment-instance_method" title="#comment (instance method)">#<strong>comment</strong>(author_id, content)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#comments-instance_method" title="#comments (instance method)">#<strong>comments</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#compare-instance_method" title="#compare (instance method)">#<strong>compare</strong>(other)  &#x21d2; Object </a>
     
 
     
@@ -712,7 +756,6 @@
       <pre class="lines">
 
 
-39
 40
 41
 42
@@ -723,10 +766,11 @@
 47
 48
 49
-50</pre>
+50
+51</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'script.rb', line 39</span>
+      <pre class="code"><span class="info file"># File 'script.rb', line 40</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_db'>db</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
   <span class='ivar'>@db</span> <span class='op'>=</span> <span class='id identifier rubyid_db'>db</span>
@@ -780,12 +824,12 @@
       <pre class="lines">
 
 
-108
-109
-110</pre>
+114
+115
+116</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'script.rb', line 108</span>
+      <pre class="code"><span class="info file"># File 'script.rb', line 114</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_author'>author</span>
   <span class='ivar'>@author</span>
@@ -825,12 +869,12 @@
       <pre class="lines">
 
 
-109
-110
-111</pre>
+115
+116
+117</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'script.rb', line 109</span>
+      <pre class="code"><span class="info file"># File 'script.rb', line 115</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_author_id'>author_id</span>
   <span class='ivar'>@author_id</span>
@@ -870,12 +914,12 @@
       <pre class="lines">
 
 
-106
-107
-108</pre>
+112
+113
+114</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'script.rb', line 106</span>
+      <pre class="code"><span class="info file"># File 'script.rb', line 112</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_id'>id</span>
   <span class='ivar'>@id</span>
@@ -915,12 +959,12 @@
       <pre class="lines">
 
 
-110
-111
-112</pre>
+116
+117
+118</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'script.rb', line 110</span>
+      <pre class="code"><span class="info file"># File 'script.rb', line 116</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_is_public'>is_public</span>
   <span class='ivar'>@is_public</span>
@@ -960,12 +1004,12 @@
       <pre class="lines">
 
 
-107
-108
-109</pre>
+113
+114
+115</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'script.rb', line 107</span>
+      <pre class="code"><span class="info file"># File 'script.rb', line 113</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_title'>title</span>
   <span class='ivar'>@title</span>
@@ -997,12 +1041,12 @@
       <pre class="lines">
 
 
-100</pre>
+105</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'script.rb', line 100</span>
+      <pre class="code"><span class="info file"># File 'script.rb', line 105</span>
 
-<span class='kw'>def</span> <span class='op'>==</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span> <span class='op'>=</span> <span class='ivar'>@id</span> <span class='op'>==</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_i'>i</span></pre>
+<span class='kw'>def</span> <span class='op'>==</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span> <span class='op'>=</span> <span class='ivar'>@id</span> <span class='op'>==</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span></pre>
     </td>
   </tr>
 </table>
@@ -1023,10 +1067,10 @@
       <pre class="lines">
 
 
-94</pre>
+99</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'script.rb', line 94</span>
+      <pre class="code"><span class="info file"># File 'script.rb', line 99</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='id identifier rubyid_char_id'>char_id</span><span class='rparen'>)</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>INSERT INTO script_character_rel (script_id, character_id) VALUES (?, ?)</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='ivar'>@id</span><span class='comma'>,</span> <span class='id identifier rubyid_char_id'>char_id</span><span class='rparen'>)</span></pre>
     </td>
@@ -1049,17 +1093,47 @@
       <pre class="lines">
 
 
-52
 53
 54
-55</pre>
+55
+56</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'script.rb', line 52</span>
+      <pre class="code"><span class="info file"># File 'script.rb', line 53</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_characters'>characters</span>
   <span class='ivar'>@data</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SELECT id FROM characters WHERE id IN (SELECT character_id FROM script_character_rel WHERE script_id = ?) ORDER BY type, name ASC</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='ivar'>@id</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='ivar'>@data</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_char'>char</span><span class='op'>|</span> <span class='const'><span class='object_link'><a href="Character.html" title="Character (class)">Character</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Character.html#initialize-instance_method" title="Character#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='ivar'>@db</span><span class='comma'>,</span> <span class='id identifier rubyid_char'>char</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="comment-instance_method">
+  
+    #<strong>comment</strong>(author_id, content)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+95
+96
+97</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'script.rb', line 95</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_comment'>comment</span><span class='lparen'>(</span><span class='id identifier rubyid_author_id'>author_id</span><span class='comma'>,</span> <span class='id identifier rubyid_content'>content</span><span class='rparen'>)</span>
+  <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>INSERT INTO script_comments (author_id, script_id, content) VALUES (?, ?, ?)</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_author_id'>author_id</span><span class='comma'>,</span> <span class='ivar'>@id</span><span class='comma'>,</span> <span class='id identifier rubyid_content'>content</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1081,18 +1155,44 @@
       <pre class="lines">
 
 
-67
 68
 69
-70</pre>
+70
+71</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'script.rb', line 67</span>
+      <pre class="code"><span class="info file"># File 'script.rb', line 68</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_comments'>comments</span>
   <span class='ivar'>@comments</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SELECT id FROM script_comments WHERE script_id = ? ORDER BY id DESC</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='ivar'>@id</span><span class='rparen'>)</span>
-  <span class='ivar'>@comments</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_comment_data'>comment_data</span><span class='op'>|</span> <span class='const'><span class='object_link'><a href="ScriptComment.html" title="ScriptComment (class)">ScriptComment</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="ScriptComment.html#initialize-instance_method" title="ScriptComment#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='ivar'>@db</span><span class='comma'>,</span> <span class='id identifier rubyid_comment_data'>comment_data</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>type</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_comment_data'>comment_data</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>value</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rbrace'>}</span>
+  <span class='ivar'>@comments</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_comment_data'>comment_data</span><span class='op'>|</span> <span class='const'><span class='object_link'><a href="ScriptComment.html" title="ScriptComment (class)">ScriptComment</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="ScriptComment.html#initialize-instance_method" title="ScriptComment#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='ivar'>@db</span><span class='comma'>,</span> <span class='id identifier rubyid_comment_data'>comment_data</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rbrace'>}</span>
 <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="compare-instance_method">
+  
+    #<strong>compare</strong>(other)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+110</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'script.rb', line 110</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_compare'>compare</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_characters'>characters</span><span class='period'>.</span><span class='id identifier rubyid_filter'>filter</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_char'>char</span><span class='op'>|</span> <span class='op'>!</span><span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_characters'>characters</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_char'>char</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_char'>char</span><span class='op'>|</span> <span class='const'><span class='object_link'><a href="ScriptEdit.html" title="ScriptEdit (class)">ScriptEdit</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="ScriptEdit.html#initialize-instance_method" title="ScriptEdit#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_char'>char</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="top-level-namespace.html#ADDED-constant" title="ADDED (constant)">ADDED</a></span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_concat'>concat</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_characters'>characters</span><span class='period'>.</span><span class='id identifier rubyid_filter'>filter</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_char'>char</span><span class='op'>|</span> <span class='op'>!</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_characters'>characters</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_char'>char</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_char'>char</span><span class='op'>|</span> <span class='const'><span class='object_link'><a href="ScriptEdit.html" title="ScriptEdit (class)">ScriptEdit</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="ScriptEdit.html#initialize-instance_method" title="ScriptEdit#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_char'>char</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="top-level-namespace.html#REMOVED-constant" title="REMOVED (constant)">REMOVED</a></span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='rparen'>)</span></pre>
     </td>
   </tr>
 </table>
@@ -1113,13 +1213,13 @@
       <pre class="lines">
 
 
-72
 73
 74
-75</pre>
+75
+76</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'script.rb', line 72</span>
+      <pre class="code"><span class="info file"># File 'script.rb', line 73</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_delete'>delete</span>
   <span class='kw'>return</span> <span class='kw'>unless</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_forks'>forks</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
@@ -1145,10 +1245,10 @@
       <pre class="lines">
 
 
-103</pre>
+108</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'script.rb', line 103</span>
+      <pre class="code"><span class="info file"># File 'script.rb', line 108</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_edits'>edits</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_source'>source</span> <span class='op'>?</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_characters'>characters</span><span class='period'>.</span><span class='id identifier rubyid_filter'>filter</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_char'>char</span><span class='op'>|</span> <span class='op'>!</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_source'>source</span><span class='period'>.</span><span class='id identifier rubyid_characters'>characters</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_char'>char</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_char'>char</span><span class='op'>|</span> <span class='const'><span class='object_link'><a href="ScriptEdit.html" title="ScriptEdit (class)">ScriptEdit</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="ScriptEdit.html#initialize-instance_method" title="ScriptEdit#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_char'>char</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="top-level-namespace.html#ADDED-constant" title="ADDED (constant)">ADDED</a></span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_concat'>concat</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_source'>source</span><span class='period'>.</span><span class='id identifier rubyid_characters'>characters</span><span class='period'>.</span><span class='id identifier rubyid_filter'>filter</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_char'>char</span><span class='op'>|</span> <span class='op'>!</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_characters'>characters</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_char'>char</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_char'>char</span><span class='op'>|</span> <span class='const'><span class='object_link'><a href="ScriptEdit.html" title="ScriptEdit (class)">ScriptEdit</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="ScriptEdit.html#initialize-instance_method" title="ScriptEdit#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_char'>char</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="top-level-namespace.html#REMOVED-constant" title="REMOVED (constant)">REMOVED</a></span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='kw'>nil</span></pre>
     </td>
@@ -1171,10 +1271,10 @@
       <pre class="lines">
 
 
-104</pre>
+109</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'script.rb', line 104</span>
+      <pre class="code"><span class="info file"># File 'script.rb', line 109</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_edits_from_origin'>edits_from_origin</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_origin'>origin</span> <span class='op'>!=</span> <span class='kw'>self</span> <span class='op'>?</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_characters'>characters</span><span class='period'>.</span><span class='id identifier rubyid_filter'>filter</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_char'>char</span><span class='op'>|</span> <span class='op'>!</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_origin'>origin</span><span class='period'>.</span><span class='id identifier rubyid_characters'>characters</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_char'>char</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_char'>char</span><span class='op'>|</span> <span class='const'><span class='object_link'><a href="ScriptEdit.html" title="ScriptEdit (class)">ScriptEdit</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="ScriptEdit.html#initialize-instance_method" title="ScriptEdit#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_char'>char</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="top-level-namespace.html#ADDED-constant" title="ADDED (constant)">ADDED</a></span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_concat'>concat</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_origin'>origin</span><span class='period'>.</span><span class='id identifier rubyid_characters'>characters</span><span class='period'>.</span><span class='id identifier rubyid_filter'>filter</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_char'>char</span><span class='op'>|</span> <span class='op'>!</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_characters'>characters</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_char'>char</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_char'>char</span><span class='op'>|</span> <span class='const'><span class='object_link'><a href="ScriptEdit.html" title="ScriptEdit (class)">ScriptEdit</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="ScriptEdit.html#initialize-instance_method" title="ScriptEdit#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_char'>char</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="top-level-namespace.html#REMOVED-constant" title="REMOVED (constant)">REMOVED</a></span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='kw'>nil</span></pre>
     </td>
@@ -1197,10 +1297,10 @@
       <pre class="lines">
 
 
-96</pre>
+101</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'script.rb', line 96</span>
+      <pre class="code"><span class="info file"># File 'script.rb', line 101</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_feature'>feature</span><span class='lparen'>(</span><span class='id identifier rubyid_char_id'>char_id</span><span class='rparen'>)</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>UPDATE script_character_rel SET featured = 1 WHERE script_id = ? AND character_id = ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='ivar'>@id</span><span class='comma'>,</span> <span class='id identifier rubyid_char_id'>char_id</span><span class='rparen'>)</span></pre>
     </td>
@@ -1223,13 +1323,13 @@
       <pre class="lines">
 
 
-57
 58
 59
-60</pre>
+60
+61</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'script.rb', line 57</span>
+      <pre class="code"><span class="info file"># File 'script.rb', line 58</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_featured'>featured</span>
   <span class='ivar'>@data</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SELECT id FROM characters WHERE id IN (SELECT character_id FROM script_character_rel WHERE script_id = ? AND featured = 1) ORDER BY type, name ASC LIMIT 3</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='ivar'>@id</span><span class='rparen'>)</span>
@@ -1279,10 +1379,10 @@
       <pre class="lines">
 
 
-99</pre>
+104</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'script.rb', line 99</span>
+      <pre class="code"><span class="info file"># File 'script.rb', line 104</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_features?'>features?</span><span class='lparen'>(</span><span class='id identifier rubyid_char'>char</span><span class='rparen'>)</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_featured'>featured</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_char'>char</span><span class='rparen'>)</span></pre>
     </td>
@@ -1305,20 +1405,20 @@
       <pre class="lines">
 
 
-77
 78
 79
 80
 81
-82</pre>
+82
+83</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'script.rb', line 77</span>
+      <pre class="code"><span class="info file"># File 'script.rb', line 78</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_fork'>fork</span><span class='lparen'>(</span><span class='id identifier rubyid_author_id'>author_id</span><span class='rparen'>)</span>
   <span class='ivar'>@data</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>INSERT INTO scripts (title, author_id, is_public, source_id) VALUES (?, ?, 0, ?) RETURNING id</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Fork of </span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_title'>title</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_author_id'>author_id</span><span class='comma'>,</span> <span class='ivar'>@id</span><span class='rparen'>)</span>
   <span class='ivar'>@fork</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Script (class)">Script</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Script#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='ivar'>@db</span><span class='comma'>,</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
-  <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>WITH n(script_id) AS (SELECT ?) INSERT INTO script_character_rel (character_id, script_id, featured) SELECT character_id, n.script_id, featured FROM script_character_rel INNER JOIN n WHERE script_character_rel.script_id = ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='ivar'>@fork</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='ivar'>@id</span><span class='rparen'>)</span>
+  <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>INSERT INTO script_character_rel (character_id, script_id, featured) SELECT character_id, ?, featured FROM script_character_rel WHERE script_character_rel.script_id = ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='ivar'>@fork</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='ivar'>@id</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='ivar'>@fork</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -1341,13 +1441,13 @@
       <pre class="lines">
 
 
-62
 63
 64
-65</pre>
+65
+66</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'script.rb', line 62</span>
+      <pre class="code"><span class="info file"># File 'script.rb', line 63</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_forks'>forks</span>
   <span class='ivar'>@data</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SELECT id FROM scripts WHERE source_id = ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='ivar'>@id</span><span class='rparen'>)</span>
@@ -1397,10 +1497,10 @@
       <pre class="lines">
 
 
-98</pre>
+103</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'script.rb', line 98</span>
+      <pre class="code"><span class="info file"># File 'script.rb', line 103</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_char'>char</span><span class='rparen'>)</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_characters'>characters</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_char'>char</span><span class='rparen'>)</span></pre>
     </td>
@@ -1423,10 +1523,10 @@
       <pre class="lines">
 
 
-102</pre>
+107</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'script.rb', line 102</span>
+      <pre class="code"><span class="info file"># File 'script.rb', line 107</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_origin'>origin</span> <span class='op'>=</span> <span class='ivar'>@source_id</span> <span class='op'>?</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_source'>source</span><span class='period'>.</span><span class='id identifier rubyid_origin'>origin</span> <span class='op'>:</span> <span class='kw'>self</span></pre>
     </td>
@@ -1449,10 +1549,10 @@
       <pre class="lines">
 
 
-95</pre>
+100</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'script.rb', line 95</span>
+      <pre class="code"><span class="info file"># File 'script.rb', line 100</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_remove'>remove</span><span class='lparen'>(</span><span class='id identifier rubyid_char_id'>char_id</span><span class='rparen'>)</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>DELETE FROM script_character_rel WHERE script_id = ? AND character_id = ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='ivar'>@id</span><span class='comma'>,</span> <span class='id identifier rubyid_char_id'>char_id</span><span class='rparen'>)</span></pre>
     </td>
@@ -1475,10 +1575,10 @@
       <pre class="lines">
 
 
-101</pre>
+106</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'script.rb', line 101</span>
+      <pre class="code"><span class="info file"># File 'script.rb', line 106</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_source'>source</span> <span class='op'>=</span> <span class='ivar'>@source_id</span> <span class='op'>?</span> <span class='const'><span class='object_link'><a href="" title="Script (class)">Script</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Script#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='ivar'>@db</span><span class='comma'>,</span> <span class='ivar'>@source_id</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='kw'>nil</span></pre>
     </td>
@@ -1501,10 +1601,10 @@
       <pre class="lines">
 
 
-97</pre>
+102</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'script.rb', line 97</span>
+      <pre class="code"><span class="info file"># File 'script.rb', line 102</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_unfeature'>unfeature</span><span class='lparen'>(</span><span class='id identifier rubyid_char_id'>char_id</span><span class='rparen'>)</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>UPDATE script_character_rel SET featured = 0 WHERE script_id = ? AND character_id = ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='ivar'>@id</span><span class='comma'>,</span> <span class='id identifier rubyid_char_id'>char_id</span><span class='rparen'>)</span></pre>
     </td>
@@ -1527,7 +1627,6 @@
       <pre class="lines">
 
 
-84
 85
 86
 87
@@ -1535,10 +1634,11 @@
 89
 90
 91
-92</pre>
+92
+93</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'script.rb', line 84</span>
+      <pre class="code"><span class="info file"># File 'script.rb', line 85</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_title'>title</span><span class='comma'>,</span> <span class='id identifier rubyid_is_public'>is_public</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>unless</span> <span class='id identifier rubyid_is_public'>is_public</span> <span class='op'>!=</span> <span class='kw'>false</span> <span class='op'>||</span> <span class='op'>!</span><span class='ivar'>@is_public</span> <span class='op'>||</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_forks'>forks</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
@@ -1559,7 +1659,7 @@
 </div>
 
       <div id="footer">
-  Generated on Fri Mar 24 09:39:09 2023 by
+  Generated on Thu Mar 30 13:46:56 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.2).
 </div>

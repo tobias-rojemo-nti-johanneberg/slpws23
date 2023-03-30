@@ -5,5 +5,6 @@ document.querySelectorAll(".character").forEach((character) => {
 
 document.querySelectorAll(".tag").forEach((tag) => {
   tag.style.backgroundColor = tag.attributes["data-bg"].value;
-  tag.getElementsByClassName("tag-content")[0].style.color = tag.attributes["data-text"].value;
+  tag.getElementsByClassName("tag-content")[0].style.color =
+    tag.attributes["data-text"].value;
 });

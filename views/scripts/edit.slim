@@ -1,29 +1,21 @@
+script src="/js/scriptedit.js" defer=true
 form action="/scripts/create" method="post" enctype="multipart/form-data"
   input type="text" name="title" required="true"
   .checkbox
     input type="checkbox" name="is_public" id="is_public" checked=@script.is_public /
     label for="is_public" Public
   input type="submit" value="Update"
-.character-list.script-edit
+.character-list.script-edit data-script-id=@script.id
   - @characters.each do |character|
-    .character.script-edit-character
+    .character.script-edit-character data-id=character.id data-status="#{@script.include?(character) ? (@script.features?(character) ? 2 : 1) : 0}"
       - if character.has_img?
         img src=character.img alt=character.name
       a.traveller-name-fix href="/characters/#{character.id}"
         h2.name = character.name
       p.type = character.type
       a.author href="/users/#{character.author_id}" = character.author
-      p.ability = character.ability
-      .fns 
-        - if @script.include?(character)
-          form action="/scripts/#{@script.id}/remove/#{character.id}" method="post"
-            input type="submit" value="Remove"/
-          - if @script.features?(character)
-            form action="/scripts/#{@script.id}/unfeature/#{character.id}" method="post"
-              input type="submit" value="Unfeature"/
-          - else
-            form action="/scripts/#{@script.id}/feature/#{character.id}" method="post"
-              input type="submit" value="Feature"/
-        - else
-          form action="/scripts/#{@script.id}/add/#{character.id}" method="post"
-            input type="submit" value="Add"/
+      .fns
+        button.script-edit-button.add Add
+        button.script-edit-button.remove Remove
+        button.script-edit-button.feature Feature
+        button.script-edit-button.unfeature Unfeature

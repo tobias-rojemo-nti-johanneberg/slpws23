@@ -109,8 +109,15 @@ get('/scripts') do
   slim(:"scripts/index")
 end
 
+get('/scripts/create') do
+  reqsess(@logged_in_user)
+  @title = "Create a script"
+  slim(:"/scripts/create")
+end
+
 get('/scripts/:id') do |id|
   @script = req @db.scripts[id]
+  @title = @script.title
   slim(:"scripts/show")
 end
 
@@ -215,7 +222,7 @@ post('/scripts/create') do
   reqsess(@logged_in_user)
   title = reqp(:title, :"/scripts")
 
-  @script = @db.scripts.create(@logged_in_user.id, title)
+  @script = @db.scripts.create(@logged_in_user.id, title, false)
   redirect("/scripts/#{@script.id}".to_sym)
 end
 

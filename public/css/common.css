@@ -129,7 +129,7 @@ form input {
 }
 
 .character-list.script-edit {
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .preview-script-list,
@@ -155,7 +155,7 @@ form input {
 .character.script-edit-character {
   display: grid;
   grid-template-areas: "im nm fn" "im tp au" "im ab ab";
-  grid-template-columns: 10rem 1fr 1fr;
+  grid-template-columns: 2rem 1fr 1fr;
   grid-template-rows: min-content min-content 1fr;
 }
 
@@ -164,7 +164,7 @@ form input {
   display: flex;
 }
 
-.script-edit-character form {
+.script-edit-character button {
   flex: 1;
 }
 
@@ -180,6 +180,20 @@ form input {
   grid-area: im;
   width: 10rem;
   height: 10rem;
+}
+
+.character.script-edit-character img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.character.script-edit-character a,
+.character.script-edit-character p {
+  font-size: 0.5rem;
+}
+
+.character.script-edit-character h2 {
+  font-size: 1rem;
 }
 
 .character-preview img {
@@ -340,4 +354,12 @@ form .checkbox * {
 .featured-character img {
   width: 100%;
   height: 100%;
+}
+
+.script-edit-button {
+  display: none;
+}
+
+.script-edit-button.show {
+  display: block;
 }

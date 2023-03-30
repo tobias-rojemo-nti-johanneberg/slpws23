@@ -377,17 +377,17 @@
       <pre class="lines">
 
 
-85
 86
 87
 88
 89
 90
 91
-92</pre>
+92
+93</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'user.rb', line 85</span>
+      <pre class="code"><span class="info file"># File 'user.rb', line 86</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_db'>db</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
   <span class='ivar'>@db</span> <span class='op'>=</span> <span class='id identifier rubyid_db'>db</span>
@@ -437,12 +437,12 @@
       <pre class="lines">
 
 
-110
 111
-112</pre>
+112
+113</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'user.rb', line 110</span>
+      <pre class="code"><span class="info file"># File 'user.rb', line 111</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_id'>id</span>
   <span class='ivar'>@id</span>
@@ -482,12 +482,12 @@
       <pre class="lines">
 
 
-111
 112
-113</pre>
+113
+114</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'user.rb', line 111</span>
+      <pre class="code"><span class="info file"># File 'user.rb', line 112</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_name'>name</span>
   <span class='ivar'>@name</span>
@@ -527,12 +527,12 @@
       <pre class="lines">
 
 
-112
 113
-114</pre>
+114
+115</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'user.rb', line 112</span>
+      <pre class="code"><span class="info file"># File 'user.rb', line 113</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_perms'>perms</span>
   <span class='ivar'>@perms</span>
@@ -572,12 +572,12 @@
       <pre class="lines">
 
 
-113
 114
-115</pre>
+115
+116</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'user.rb', line 113</span>
+      <pre class="code"><span class="info file"># File 'user.rb', line 114</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_pfp'>pfp</span>
   <span class='ivar'>@pfp</span>
@@ -609,13 +609,13 @@
       <pre class="lines">
 
 
-99
 100
 101
-102</pre>
+102
+103</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'user.rb', line 99</span>
+      <pre class="code"><span class="info file"># File 'user.rb', line 100</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_characters'>characters</span>
   <span class='ivar'>@data</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SELECT id FROM characters WHERE author_id = ? ORDER BY name ASC</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='ivar'>@id</span><span class='rparen'>)</span>
@@ -641,12 +641,12 @@
       <pre class="lines">
 
 
-104
 105
-106</pre>
+106
+107</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'user.rb', line 104</span>
+      <pre class="code"><span class="info file"># File 'user.rb', line 105</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_delete'>delete</span>
   <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>DELETE FROM users WHERE id = ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='ivar'>@id</span><span class='rparen'>)</span>
@@ -695,10 +695,10 @@
       <pre class="lines">
 
 
-108</pre>
+109</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'user.rb', line 108</span>
+      <pre class="code"><span class="info file"># File 'user.rb', line 109</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_has_perms?'>has_perms?</span><span class='lparen'>(</span><span class='id identifier rubyid_perm_level'>perm_level</span><span class='rparen'>)</span> <span class='op'>=</span> <span class='id identifier rubyid_perm_level'>perm_level</span> <span class='op'>&lt;=</span> <span class='ivar'>@perms</span></pre>
     </td>
@@ -721,13 +721,13 @@
       <pre class="lines">
 
 
-94
 95
 96
-97</pre>
+97
+98</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'user.rb', line 94</span>
+      <pre class="code"><span class="info file"># File 'user.rb', line 95</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_scripts'>scripts</span>
   <span class='ivar'>@data</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SELECT id FROM scripts WHERE author_id = ? ORDER BY title ASC</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='ivar'>@id</span><span class='rparen'>)</span>
@@ -743,7 +743,7 @@
 </div>
 
       <div id="footer">
-  Generated on Fri Mar 24 09:39:10 2023 by
+  Generated on Thu Mar 30 13:46:56 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.2).
 </div>

@@ -1,6 +1,5 @@
 .script-view
   .info
-    h1.title = @script.title
     a.author href="/users/#{@script.author_id}" = @script.author
     - if @script.source
       br
@@ -32,7 +31,7 @@
       h2 Discussion
       - if @logged_in_user
         form action="/scripts/#{@script.id}/comment" method="post"
-          input#content type="text" name="content" required="true"/
+          input type="text" name="content" required="true"/
           input type="submit" value="Comment"/ 
       - if @script.comments.empty?
         p It's empty here
