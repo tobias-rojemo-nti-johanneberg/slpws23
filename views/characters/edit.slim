@@ -9,6 +9,9 @@ form action="/characters/#{@character.id}/edit" method="post" enctype="multipart
   input type="ability" name="ability" value=@character.ability /
   input type="file" name="image" accept="image/png"/
   .checkbox
-    input type="checkbox" name="is_public" id="is_public" checked=@character.is_public /
+    - if @character.is_public
+      input type="checkbox" name="is_public" id="is_public" checked="true" /
+    - else
+      input type="checkbox" name="is_public" id="is_public" /
     label for="is_public" Public
   input type="submit" value="Update"

@@ -303,6 +303,28 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#can_see%3F-instance_method" title="#can_see? (instance method)">#<strong>can_see?</strong>(user)  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#characters-instance_method" title="#characters (instance method)">#<strong>characters</strong>  &#x21d2; Object </a>
     
 
@@ -782,7 +804,7 @@
   <span class='ivar'>@title</span> <span class='op'>=</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>title</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
   <span class='ivar'>@author</span> <span class='op'>=</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>username</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
   <span class='ivar'>@author_id</span> <span class='op'>=</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>author_id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
-  <span class='ivar'>@is_public</span> <span class='op'>=</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>is_public</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+  <span class='ivar'>@is_public</span> <span class='op'>=</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>is_public</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>&gt;</span> <span class='int'>0</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -824,12 +846,12 @@
       <pre class="lines">
 
 
-114
 115
-116</pre>
+116
+117</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'script.rb', line 114</span>
+      <pre class="code"><span class="info file"># File 'script.rb', line 115</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_author'>author</span>
   <span class='ivar'>@author</span>
@@ -869,12 +891,12 @@
       <pre class="lines">
 
 
-115
 116
-117</pre>
+117
+118</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'script.rb', line 115</span>
+      <pre class="code"><span class="info file"># File 'script.rb', line 116</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_author_id'>author_id</span>
   <span class='ivar'>@author_id</span>
@@ -914,12 +936,12 @@
       <pre class="lines">
 
 
-112
 113
-114</pre>
+114
+115</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'script.rb', line 112</span>
+      <pre class="code"><span class="info file"># File 'script.rb', line 113</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_id'>id</span>
   <span class='ivar'>@id</span>
@@ -959,12 +981,12 @@
       <pre class="lines">
 
 
-116
 117
-118</pre>
+118
+119</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'script.rb', line 116</span>
+      <pre class="code"><span class="info file"># File 'script.rb', line 117</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_is_public'>is_public</span>
   <span class='ivar'>@is_public</span>
@@ -1004,12 +1026,12 @@
       <pre class="lines">
 
 
-113
 114
-115</pre>
+115
+116</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'script.rb', line 113</span>
+      <pre class="code"><span class="info file"># File 'script.rb', line 114</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_title'>title</span>
   <span class='ivar'>@title</span>
@@ -1073,6 +1095,56 @@
       <pre class="code"><span class="info file"># File 'script.rb', line 99</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='id identifier rubyid_char_id'>char_id</span><span class='rparen'>)</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>INSERT INTO script_character_rel (script_id, character_id) VALUES (?, ?)</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='ivar'>@id</span><span class='comma'>,</span> <span class='id identifier rubyid_char_id'>char_id</span><span class='rparen'>)</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="can_see?-instance_method">
+  
+    #<strong>can_see?</strong>(user)  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+111</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'script.rb', line 111</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_can_see?'>can_see?</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='rparen'>)</span> <span class='op'>=</span> <span class='ivar'>@is_public</span> <span class='op'>||</span> <span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span> <span class='op'>&amp;&amp;</span> <span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span> <span class='op'>==</span> <span class='ivar'>@author_id</span> <span class='op'>||</span> <span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_has_perms?'>has_perms?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="top-level-namespace.html#MODERATOR-constant" title="MODERATOR (constant)">MODERATOR</a></span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='rparen'>)</span></pre>
     </td>
   </tr>
 </table>
@@ -1645,7 +1717,7 @@
 
   <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>UPDATE scripts SET title = ?, is_public = ? WHERE id = ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
     <span class='id identifier rubyid_title'>title</span> <span class='op'>!=</span> <span class='kw'>nil</span> <span class='op'>?</span> <span class='id identifier rubyid_title'>title</span> <span class='op'>:</span> <span class='ivar'>@title</span><span class='comma'>,</span>
-    <span class='id identifier rubyid_is_public'>is_public</span> <span class='op'>!=</span> <span class='kw'>nil</span> <span class='op'>?</span> <span class='lparen'>(</span><span class='id identifier rubyid_is_public'>is_public</span> <span class='op'>?</span> <span class='const'><span class='object_link'><a href="top-level-namespace.html#TRUE-constant" title="TRUE (constant)">TRUE</a></span></span> <span class='op'>:</span> <span class='const'><span class='object_link'><a href="top-level-namespace.html#FALSE-constant" title="FALSE (constant)">FALSE</a></span></span><span class='rparen'>)</span> <span class='op'>:</span> <span class='ivar'>@is_public</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_is_public'>is_public</span> <span class='op'>!=</span> <span class='kw'>nil</span> <span class='op'>?</span> <span class='lparen'>(</span><span class='id identifier rubyid_is_public'>is_public</span> <span class='op'>?</span> <span class='const'><span class='object_link'><a href="top-level-namespace.html#TRUE-constant" title="TRUE (constant)">TRUE</a></span></span> <span class='op'>:</span> <span class='const'><span class='object_link'><a href="top-level-namespace.html#FALSE-constant" title="FALSE (constant)">FALSE</a></span></span><span class='rparen'>)</span> <span class='op'>:</span> <span class='lparen'>(</span><span class='ivar'>@is_public</span> <span class='op'>?</span> <span class='const'><span class='object_link'><a href="top-level-namespace.html#TRUE-constant" title="TRUE (constant)">TRUE</a></span></span> <span class='op'>:</span> <span class='const'><span class='object_link'><a href="top-level-namespace.html#FALSE-constant" title="FALSE (constant)">FALSE</a></span></span><span class='rparen'>)</span><span class='comma'>,</span>
     <span class='ivar'>@id</span>
   <span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
@@ -1659,7 +1731,7 @@
 </div>
 
       <div id="footer">
-  Generated on Thu Mar 30 13:46:56 2023 by
+  Generated on Fri Mar 31 16:06:29 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.2).
 </div>

@@ -22,7 +22,7 @@ class ScriptManager
   end
 
   def [](*ids) = self.get(ids)
-  def count = @db.execute("SELECT id FROM scripts").size
+  def filter(&block) = self.get.filter &block
 
   def each
     self.get.each do |script|
@@ -47,7 +47,7 @@ class Script
     @title = @data[0]["title"]
     @author = @data[0]["username"]
     @author_id = @data[0]["author_id"]
-    @is_public = @data[0]["is_public"]
+    @is_public = @data[0]["is_public"] > 0
   end
 
   def characters
@@ -87,7 +87,7 @@ class Script
 
     @db.execute("UPDATE scripts SET title = ?, is_public = ? WHERE id = ?",
       title != nil ? title : @title,
-      is_public != nil ? (is_public ? TRUE : FALSE) : @is_public,
+      is_public != nil ? (is_public ? TRUE : FALSE) : (@is_public ? TRUE : FALSE),
       @id
     )
   end
@@ -108,6 +108,7 @@ class Script
   def edits = self.source ? self.characters.filter {|char| !self.source.characters.include?(char)}.map {|char| ScriptEdit.new(char, ADDED)}.concat(self.source.characters.filter {|char| !self.characters.include?(char)}.map {|char| ScriptEdit.new(char, REMOVED)}) : nil
   def edits_from_origin = self.origin != self ? self.characters.filter {|char| !self.origin.characters.include?(char)}.map {|char| ScriptEdit.new(char, ADDED)}.concat(self.origin.characters.filter {|char| !self.characters.include?(char)}.map {|char| ScriptEdit.new(char, REMOVED)}) : nil
   def compare(other) = self.characters.filter {|char| !other.characters.include?(char)}.map {|char| ScriptEdit.new(char, ADDED)}.concat(other.characters.filter {|char| !self.characters.include?(char)}.map {|char| ScriptEdit.new(char, REMOVED)})
+  def can_see?(user) = @is_public || (user && (user.id == @author_id || user.has_perms?(MODERATOR)))
 
   attr_accessor :id
   attr_accessor :title

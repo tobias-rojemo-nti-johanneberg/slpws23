@@ -333,6 +333,9 @@
       <pre class="lines">
 
 
+48
+49
+50
 51
 52
 53
@@ -340,13 +343,10 @@
 55
 56
 57
-58
-59
-60
-61</pre>
+58</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'tag.rb', line 51</span>
+      <pre class="code"><span class="info file"># File 'tag.rb', line 48</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_db'>db</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
   <span class='ivar'>@db</span> <span class='op'>=</span> <span class='id identifier rubyid_db'>db</span>
@@ -399,12 +399,12 @@
       <pre class="lines">
 
 
-81
-82
-83</pre>
+78
+79
+80</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'tag.rb', line 81</span>
+      <pre class="code"><span class="info file"># File 'tag.rb', line 78</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_bg'>bg</span>
   <span class='ivar'>@bg</span>
@@ -444,12 +444,12 @@
       <pre class="lines">
 
 
-82
-83
-84</pre>
+79
+80
+81</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'tag.rb', line 82</span>
+      <pre class="code"><span class="info file"># File 'tag.rb', line 79</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_text'>text</span>
   <span class='ivar'>@text</span>
@@ -489,12 +489,12 @@
       <pre class="lines">
 
 
-79
-80
-81</pre>
+76
+77
+78</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'tag.rb', line 79</span>
+      <pre class="code"><span class="info file"># File 'tag.rb', line 76</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_type'>type</span>
   <span class='ivar'>@type</span>
@@ -534,12 +534,12 @@
       <pre class="lines">
 
 
-80
-81
-82</pre>
+77
+78
+79</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'tag.rb', line 80</span>
+      <pre class="code"><span class="info file"># File 'tag.rb', line 77</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_value'>value</span>
   <span class='ivar'>@value</span>
@@ -571,19 +571,19 @@
       <pre class="lines">
 
 
+60
+61
+62
 63
 64
 65
 66
 67
 68
-69
-70
-71
-72</pre>
+69</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'tag.rb', line 63</span>
+      <pre class="code"><span class="info file"># File 'tag.rb', line 60</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_characters'>characters</span><span class='lparen'>(</span><span class='id identifier rubyid_same_value'>same_value</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_data'>data</span> <span class='op'>=</span> <span class='kw'>nil</span>
@@ -615,13 +615,13 @@
       <pre class="lines">
 
 
-74
-75
-76
-77</pre>
+71
+72
+73
+74</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'tag.rb', line 74</span>
+      <pre class="code"><span class="info file"># File 'tag.rb', line 71</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span><span class='lparen'>(</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_type_name'>type_name</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SELECT name FROM tag_types WHERE id = ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='ivar'>@type</span><span class='rparen'>)</span>
@@ -637,7 +637,7 @@
 </div>
 
       <div id="footer">
-  Generated on Thu Mar 30 13:46:56 2023 by
+  Generated on Fri Mar 31 16:06:30 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.2).
 </div>

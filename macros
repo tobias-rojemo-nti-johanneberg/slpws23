@@ -1,0 +1,2 @@
+# @!macro [new] dbparam
+#   @param db [SQLite3::Database]

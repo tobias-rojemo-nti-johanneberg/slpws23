@@ -101,7 +101,20 @@
   
 </div>
 
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>The data associated with a character, as well as methods to modify it</p>
 
+
+  </div>
+</div>
+<div class="tags">
+  
+
+
+
+</div>
 
 
 
@@ -340,7 +353,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#==-instance_method" title="#== (instance method)">#<strong>==</strong>(other)  &#x21d2; Object </a>
+      <a href="#==-instance_method" title="#== (instance method)">#<strong>==</strong>(other)  &#x21d2; Bool </a>
     
 
     
@@ -354,7 +367,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Compares self with another object.</p>
+</div></span>
   
 </li>
 
@@ -362,7 +377,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#comment-instance_method" title="#comment (instance method)">#<strong>comment</strong>(author_id, content)  &#x21d2; Object </a>
+      <a href="#can_see%3F-instance_method" title="#can_see? (instance method)">#<strong>can_see?</strong>(user)  &#x21d2; Bool </a>
     
 
     
@@ -376,7 +391,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Returns if the character should be shown for the specified user.</p>
+</div></span>
   
 </li>
 
@@ -384,7 +401,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#comments-instance_method" title="#comments (instance method)">#<strong>comments</strong>  &#x21d2; Object </a>
+      <a href="#comment-instance_method" title="#comment (instance method)">#<strong>comment</strong>(author_id, content)  &#x21d2; void </a>
     
 
     
@@ -398,7 +415,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Create a comment on a character.</p>
+</div></span>
   
 </li>
 
@@ -406,7 +425,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#delete-instance_method" title="#delete (instance method)">#<strong>delete</strong>  &#x21d2; Object </a>
+      <a href="#comments-instance_method" title="#comments (instance method)">#<strong>comments</strong>  &#x21d2; Array&lt;CharacterComment&gt; </a>
     
 
     
@@ -420,7 +439,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>All comments on this character.</p>
+</div></span>
   
 </li>
 
@@ -428,7 +449,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#has_img%3F-instance_method" title="#has_img? (instance method)">#<strong>has_img?</strong>  &#x21d2; Boolean </a>
+      <a href="#delete-instance_method" title="#delete (instance method)">#<strong>delete</strong>  &#x21d2; void </a>
     
 
     
@@ -442,7 +463,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Deletes a character if possible.</p>
+</div></span>
   
 </li>
 
@@ -450,7 +473,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#img-instance_method" title="#img (instance method)">#<strong>img</strong>  &#x21d2; Object </a>
+      <a href="#has_img%3F-instance_method" title="#has_img? (instance method)">#<strong>has_img?</strong>  &#x21d2; Bool </a>
     
 
     
@@ -464,7 +487,33 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Checks if the character has an image.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#img-instance_method" title="#img (instance method)">#<strong>img</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the path for the image.</p>
+</div></span>
   
 </li>
 
@@ -498,7 +547,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#scripts-instance_method" title="#scripts (instance method)">#<strong>scripts</strong>  &#x21d2; Object </a>
+      <a href="#scripts-instance_method" title="#scripts (instance method)">#<strong>scripts</strong>  &#x21d2; Array&lt;Script&gt; </a>
     
 
     
@@ -512,7 +561,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>All scripts containing this character.</p>
+</div></span>
   
 </li>
 
@@ -520,7 +571,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#tags-instance_method" title="#tags (instance method)">#<strong>tags</strong>  &#x21d2; Object </a>
+      <a href="#tags-instance_method" title="#tags (instance method)">#<strong>tags</strong>  &#x21d2; Array&lt;Tag&gt; </a>
     
 
     
@@ -534,7 +585,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>All tags this character has.</p>
+</div></span>
   
 </li>
 
@@ -542,7 +595,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#update-instance_method" title="#update (instance method)">#<strong>update</strong>(name, is_public, type, ability)  &#x21d2; Object </a>
+      <a href="#update-instance_method" title="#update (instance method)">#<strong>update</strong>(name, is_public, type, ability)  &#x21d2; void </a>
     
 
     
@@ -556,7 +609,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Updates one or more attributes of a character.</p>
+</div></span>
   
 </li>
 
@@ -585,7 +640,33 @@
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>db</span>
+      
+      
+        <span class='type'>(<tt>SQLite3::Database</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>id</span>
+      
+      
+        <span class='type'>(<tt>Int</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
 
 
 
@@ -595,21 +676,21 @@
       <pre class="lines">
 
 
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52</pre>
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'character.rb', line 41</span>
+      <pre class="code"><span class="info file"># File 'character.rb', line 74</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_db'>db</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
   <span class='ivar'>@db</span> <span class='op'>=</span> <span class='id identifier rubyid_db'>db</span>
@@ -621,7 +702,7 @@
   <span class='ivar'>@ability</span> <span class='op'>=</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ability</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
   <span class='ivar'>@author</span> <span class='op'>=</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>username</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
   <span class='ivar'>@author_id</span> <span class='op'>=</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>author_id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
-  <span class='ivar'>@is_public</span> <span class='op'>=</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>is_public</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+  <span class='ivar'>@is_public</span> <span class='op'>=</span> <span class='ivar'>@data</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>is_public</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>&gt;</span> <span class='int'>0</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -663,12 +744,12 @@
       <pre class="lines">
 
 
-98
-99
-100</pre>
+164
+165
+166</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'character.rb', line 98</span>
+      <pre class="code"><span class="info file"># File 'character.rb', line 164</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_ability'>ability</span>
   <span class='ivar'>@ability</span>
@@ -708,12 +789,12 @@
       <pre class="lines">
 
 
-99
-100
-101</pre>
+165
+166
+167</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'character.rb', line 99</span>
+      <pre class="code"><span class="info file"># File 'character.rb', line 165</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_author'>author</span>
   <span class='ivar'>@author</span>
@@ -753,12 +834,12 @@
       <pre class="lines">
 
 
-100
-101
-102</pre>
+166
+167
+168</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'character.rb', line 100</span>
+      <pre class="code"><span class="info file"># File 'character.rb', line 166</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_author_id'>author_id</span>
   <span class='ivar'>@author_id</span>
@@ -798,12 +879,12 @@
       <pre class="lines">
 
 
-94
-95
-96</pre>
+160
+161
+162</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'character.rb', line 94</span>
+      <pre class="code"><span class="info file"># File 'character.rb', line 160</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_id'>id</span>
   <span class='ivar'>@id</span>
@@ -843,12 +924,12 @@
       <pre class="lines">
 
 
-101
-102
-103</pre>
+167
+168
+169</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'character.rb', line 101</span>
+      <pre class="code"><span class="info file"># File 'character.rb', line 167</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_is_public'>is_public</span>
   <span class='ivar'>@is_public</span>
@@ -888,12 +969,12 @@
       <pre class="lines">
 
 
-95
-96
-97</pre>
+161
+162
+163</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'character.rb', line 95</span>
+      <pre class="code"><span class="info file"># File 'character.rb', line 161</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_name'>name</span>
   <span class='ivar'>@name</span>
@@ -933,12 +1014,12 @@
       <pre class="lines">
 
 
-97
-98
-99</pre>
+163
+164
+165</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'character.rb', line 97</span>
+      <pre class="code"><span class="info file"># File 'character.rb', line 163</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_type'>type</span>
   <span class='ivar'>@type</span>
@@ -978,12 +1059,12 @@
       <pre class="lines">
 
 
-96
-97
-98</pre>
+162
+163
+164</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'character.rb', line 96</span>
+      <pre class="code"><span class="info file"># File 'character.rb', line 162</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_type_id'>type_id</span>
   <span class='ivar'>@type_id</span>
@@ -1003,127 +1084,7 @@
       <div class="method_details first">
   <h3 class="signature first" id="==-instance_method">
   
-    #<strong>==</strong>(other)  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-90</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'character.rb', line 90</span>
-
-<span class='kw'>def</span> <span class='op'>==</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span> <span class='op'>=</span> <span class='ivar'>@id</span> <span class='op'>==</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="comment-instance_method">
-  
-    #<strong>comment</strong>(author_id, content)  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-81
-82
-83</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'character.rb', line 81</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_comment'>comment</span><span class='lparen'>(</span><span class='id identifier rubyid_author_id'>author_id</span><span class='comma'>,</span> <span class='id identifier rubyid_content'>content</span><span class='rparen'>)</span>
-  <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>INSERT INTO character_comments (author_id, character_id, content) VALUES (?, ?, ?)</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_author_id'>author_id</span><span class='comma'>,</span> <span class='ivar'>@id</span><span class='comma'>,</span> <span class='id identifier rubyid_content'>content</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="comments-instance_method">
-  
-    #<strong>comments</strong>  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-64
-65
-66
-67</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'character.rb', line 64</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_comments'>comments</span>
-  <span class='ivar'>@comments</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SELECT id FROM character_comments WHERE character_id = ? ORDER BY id DESC</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='ivar'>@id</span><span class='rparen'>)</span>
-  <span class='ivar'>@comments</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_comment_data'>comment_data</span><span class='op'>|</span> <span class='const'><span class='object_link'><a href="CharacterComment.html" title="CharacterComment (class)">CharacterComment</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="CharacterComment.html#initialize-instance_method" title="CharacterComment#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='ivar'>@db</span><span class='comma'>,</span> <span class='id identifier rubyid_comment_data'>comment_data</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rbrace'>}</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="delete-instance_method">
-  
-    #<strong>delete</strong>  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-85
-86
-87
-88</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'character.rb', line 85</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_delete'>delete</span> 
-  <span class='kw'>return</span> <span class='kw'>unless</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_scripts'>scripts</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
-  <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>DELETE FROM characters WHERE id = ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='ivar'>@id</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="has_img?-instance_method">
-  
-    #<strong>has_img?</strong>  &#x21d2; <tt>Boolean</tt> 
+    #<strong>==</strong>(other)  &#x21d2; <tt>Bool</tt> 
   
 
   
@@ -1132,18 +1093,35 @@
 </h3><div class="docstring">
   <div class="discussion">
     
+<p>Compares self with another object</p>
+
 
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>other</span>
+      
+      
+        <span class='type'>(<tt>Any</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'>(<tt>Boolean</tt>)</span>
+        <span class='type'>(<tt>Bool</tt>)</span>
       
       
       
@@ -1159,10 +1137,301 @@
       <pre class="lines">
 
 
-91</pre>
+145</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'character.rb', line 91</span>
+      <pre class="code"><span class="info file"># File 'character.rb', line 145</span>
+
+<span class='kw'>def</span> <span class='op'>==</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span> <span class='op'>=</span> <span class='ivar'>@id</span> <span class='op'>==</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="can_see?-instance_method">
+  
+    #<strong>can_see?</strong>(user)  &#x21d2; <tt>Bool</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns if the character should be shown for the specified user</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>user</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="User_.html" title="User (class)">User</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Bool</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+158</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'character.rb', line 158</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_can_see?'>can_see?</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='rparen'>)</span> <span class='op'>=</span> <span class='ivar'>@is_public</span> <span class='op'>||</span> <span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span> <span class='op'>&amp;&amp;</span> <span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span> <span class='op'>==</span> <span class='ivar'>@author_id</span> <span class='op'>||</span> <span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_has_perms?'>has_perms?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="top-level-namespace.html#MODERATOR-constant" title="MODERATOR (constant)">MODERATOR</a></span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='rparen'>)</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="comment-instance_method">
+  
+    #<strong>comment</strong>(author_id, content)  &#x21d2; <tt>void</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p>
+<p>Create a comment on a character</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>author_id</span>
+      
+      
+        <span class='type'>(<tt>Int</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>content</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+131
+132
+133</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'character.rb', line 131</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_comment'>comment</span><span class='lparen'>(</span><span class='id identifier rubyid_author_id'>author_id</span><span class='comma'>,</span> <span class='id identifier rubyid_content'>content</span><span class='rparen'>)</span>
+  <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>INSERT INTO character_comments (author_id, character_id, content) VALUES (?, ?, ?)</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_author_id'>author_id</span><span class='comma'>,</span> <span class='ivar'>@id</span><span class='comma'>,</span> <span class='id identifier rubyid_content'>content</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="comments-instance_method">
+  
+    #<strong>comments</strong>  &#x21d2; <tt>Array&lt;<span class='object_link'><a href="CharacterComment.html" title="CharacterComment (class)">CharacterComment</a></span>&gt;</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>All comments on this character</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;<span class='object_link'><a href="CharacterComment.html" title="CharacterComment (class)">CharacterComment</a></span>&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+103
+104
+105
+106</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'character.rb', line 103</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_comments'>comments</span>
+  <span class='ivar'>@comments</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SELECT id FROM character_comments WHERE character_id = ? ORDER BY id DESC</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='ivar'>@id</span><span class='rparen'>)</span>
+  <span class='ivar'>@comments</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_comment_data'>comment_data</span><span class='op'>|</span> <span class='const'><span class='object_link'><a href="CharacterComment.html" title="CharacterComment (class)">CharacterComment</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="CharacterComment.html#initialize-instance_method" title="CharacterComment#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='ivar'>@db</span><span class='comma'>,</span> <span class='id identifier rubyid_comment_data'>comment_data</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="delete-instance_method">
+  
+    #<strong>delete</strong>  &#x21d2; <tt>void</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p>
+<p>Deletes a character if possible</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+137
+138
+139
+140</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'character.rb', line 137</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_delete'>delete</span> 
+  <span class='kw'>return</span> <span class='kw'>unless</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_scripts'>scripts</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+  <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>DELETE FROM characters WHERE id = ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='ivar'>@id</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="has_img?-instance_method">
+  
+    #<strong>has_img?</strong>  &#x21d2; <tt>Bool</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Checks if the character has an image</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Bool</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+149</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'character.rb', line 149</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_has_img?'>has_img?</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_exists?'>exists?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>public/img/c</span><span class='embexpr_beg'>#{</span><span class='ivar'>@id</span><span class='embexpr_end'>}</span><span class='tstring_content'>.png</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></pre>
     </td>
@@ -1173,22 +1442,48 @@
       <div class="method_details ">
   <h3 class="signature " id="img-instance_method">
   
-    #<strong>img</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>img</strong>  &#x21d2; <tt>String</tt> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the path for the image</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-92</pre>
+153</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'character.rb', line 92</span>
+      <pre class="code"><span class="info file"># File 'character.rb', line 153</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_img'>img</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/img/c</span><span class='embexpr_beg'>#{</span><span class='ivar'>@id</span><span class='embexpr_end'>}</span><span class='tstring_content'>.png</span><span class='tstring_end'>&quot;</span></span></pre>
     </td>
@@ -1199,25 +1494,51 @@
       <div class="method_details ">
   <h3 class="signature " id="scripts-instance_method">
   
-    #<strong>scripts</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>scripts</strong>  &#x21d2; <tt>Array&lt;<span class='object_link'><a href="Script.html" title="Script (class)">Script</a></span>&gt;</tt> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>All scripts containing this character</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;<span class='object_link'><a href="Script.html" title="Script (class)">Script</a></span>&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-54
-55
-56
-57</pre>
+89
+90
+91
+92</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'character.rb', line 54</span>
+      <pre class="code"><span class="info file"># File 'character.rb', line 89</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_scripts'>scripts</span>
   <span class='ivar'>@data</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SELECT id FROM scripts WHERE id IN (SELECT script_id FROM script_character_rel WHERE character_id = ?)</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='ivar'>@id</span><span class='rparen'>)</span>
@@ -1231,25 +1552,51 @@
       <div class="method_details ">
   <h3 class="signature " id="tags-instance_method">
   
-    #<strong>tags</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>tags</strong>  &#x21d2; <tt>Array&lt;<span class='object_link'><a href="Tag.html" title="Tag (class)">Tag</a></span>&gt;</tt> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>All tags this character has</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;<span class='object_link'><a href="Tag.html" title="Tag (class)">Tag</a></span>&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-59
-60
-61
-62</pre>
+96
+97
+98
+99</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'character.rb', line 59</span>
+      <pre class="code"><span class="info file"># File 'character.rb', line 96</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_tags'>tags</span>
   <span class='ivar'>@tags</span> <span class='op'>=</span> <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SELECT tag_type_id, value FROM tags WHERE character_id = ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='ivar'>@id</span><span class='rparen'>)</span>
@@ -1263,39 +1610,108 @@
       <div class="method_details ">
   <h3 class="signature " id="update-instance_method">
   
-    #<strong>update</strong>(name, is_public, type, ability)  &#x21d2; <tt>Object</tt> 
+    #<strong>update</strong>(name, is_public, type, ability)  &#x21d2; <tt>void</tt> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Leave a field as nil to not modify it</p>
+</div>
+  </div>
+
+<p class="note returns_void">This method returns an undefined value.</p>
+<p>Updates one or more attributes of a character</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'>(<tt>String</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>is_public</span>
+      
+      
+        <span class='type'>(<tt>Bool</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>type</span>
+      
+      
+        <span class='type'>(<tt>Int</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>ability</span>
+      
+      
+        <span class='type'>(<tt>String</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79</pre>
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'character.rb', line 69</span>
+      <pre class="code"><span class="info file"># File 'character.rb', line 115</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_is_public'>is_public</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_ability'>ability</span><span class='rparen'>)</span>
-  <span class='kw'>return</span> <span class='kw'>unless</span> <span class='id identifier rubyid_is_public'>is_public</span> <span class='op'>!=</span> <span class='kw'>false</span> <span class='op'>||</span> <span class='op'>!</span><span class='ivar'>@is_public</span> <span class='op'>||</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_scripts'>scripts</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+  <span class='kw'>return</span> <span class='kw'>unless</span> <span class='id identifier rubyid_is_public'>is_public</span> <span class='op'>!=</span> <span class='kw'>false</span> <span class='op'>||</span> <span class='op'>!</span><span class='ivar'>@is_public</span> <span class='op'>||</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_scripts'>scripts</span><span class='period'>.</span><span class='id identifier rubyid_none?'>none?</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_script'>script</span><span class='op'>|</span> <span class='id identifier rubyid_script'>script</span><span class='period'>.</span><span class='id identifier rubyid_is_public'>is_public</span><span class='rbrace'>}</span>
 
   <span class='ivar'>@db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>UPDATE characters SET name = ?, is_public = ?, type = ?, ability = ? WHERE id = ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
     <span class='id identifier rubyid_name'>name</span> <span class='op'>!=</span> <span class='kw'>nil</span> <span class='op'>?</span> <span class='id identifier rubyid_name'>name</span> <span class='op'>:</span> <span class='ivar'>@name</span><span class='comma'>,</span>
-    <span class='id identifier rubyid_is_public'>is_public</span> <span class='op'>!=</span> <span class='kw'>nil</span> <span class='op'>?</span> <span class='lparen'>(</span><span class='id identifier rubyid_is_public'>is_public</span> <span class='op'>?</span> <span class='const'><span class='object_link'><a href="top-level-namespace.html#TRUE-constant" title="TRUE (constant)">TRUE</a></span></span> <span class='op'>:</span> <span class='const'><span class='object_link'><a href="top-level-namespace.html#FALSE-constant" title="FALSE (constant)">FALSE</a></span></span><span class='rparen'>)</span> <span class='op'>:</span> <span class='ivar'>@is_public</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_is_public'>is_public</span> <span class='op'>!=</span> <span class='kw'>nil</span> <span class='op'>?</span> <span class='lparen'>(</span><span class='id identifier rubyid_is_public'>is_public</span> <span class='op'>?</span> <span class='const'><span class='object_link'><a href="top-level-namespace.html#TRUE-constant" title="TRUE (constant)">TRUE</a></span></span> <span class='op'>:</span> <span class='const'><span class='object_link'><a href="top-level-namespace.html#FALSE-constant" title="FALSE (constant)">FALSE</a></span></span><span class='rparen'>)</span> <span class='op'>:</span> <span class='lparen'>(</span><span class='ivar'>@is_public</span> <span class='op'>?</span> <span class='const'><span class='object_link'><a href="top-level-namespace.html#TRUE-constant" title="TRUE (constant)">TRUE</a></span></span> <span class='op'>:</span> <span class='const'><span class='object_link'><a href="top-level-namespace.html#FALSE-constant" title="FALSE (constant)">FALSE</a></span></span><span class='rparen'>)</span><span class='comma'>,</span>
     <span class='id identifier rubyid_type'>type</span> <span class='op'>!=</span> <span class='kw'>nil</span> <span class='op'>?</span> <span class='id identifier rubyid_type'>type</span> <span class='op'>:</span> <span class='ivar'>@type</span><span class='comma'>,</span>
     <span class='id identifier rubyid_ability'>ability</span> <span class='op'>!=</span> <span class='kw'>nil</span> <span class='op'>?</span> <span class='id identifier rubyid_ability'>ability</span> <span class='op'>:</span> <span class='ivar'>@ability</span><span class='comma'>,</span>
     <span class='ivar'>@id</span>
@@ -1311,7 +1727,7 @@
 </div>
 
       <div id="footer">
-  Generated on Thu Mar 30 13:46:56 2023 by
+  Generated on Fri Mar 31 16:06:29 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.2).
 </div>

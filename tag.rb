@@ -1,7 +1,5 @@
 require_relative 'character'
 
-TRUE = 1
-
 class TagTypeManager
   def initialize(db)
     @db = db
@@ -21,7 +19,6 @@ class TagTypeManager
   end
 
   def [](*ids) = self.get(ids)
-  def count =  @db.execute("SELECT id FROM tag_types").size
 
   def each
     self.get.each do |tag|

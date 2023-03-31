@@ -1,8 +1,11 @@
 script src="/js/scriptedit.js" defer=true
-form action="/scripts/create" method="post" enctype="multipart/form-data"
-  input type="text" name="title" required="true"
+form action="/scripts/#{@script.id}/edit" method="post" enctype="multipart/form-data"
+  input type="text" name="title" value=@script.title
   .checkbox
-    input type="checkbox" name="is_public" id="is_public" checked=@script.is_public /
+    - if @script.is_public
+      input type="checkbox" name="is_public" id="is_public" checked="true" /
+    - else
+      input type="checkbox" name="is_public" id="is_public" /
     label for="is_public" Public
   input type="submit" value="Update"
 .character-list.script-edit data-script-id=@script.id
