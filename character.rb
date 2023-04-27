@@ -2,7 +2,7 @@ require_relative 'tag'
 require_relative 'user'
 require_relative 'script'
 
-CHARACTER_TYPES = [:townsfolk, :outsider, :minion, :demon, :traveller, :fabled] 
+CHARACTER_TYPES = [:townsfolk, :outsider, :minion, :demon, :traveller, :fabled]
 TOWNSFOLK = 0
 OUTSIDER = 1
 MINION = 2

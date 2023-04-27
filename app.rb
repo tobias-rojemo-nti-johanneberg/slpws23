@@ -9,6 +9,17 @@ before do
   @logged_in_user = @db.users.from_session(session[:id])
 end
 
+cooldowns = {}
+
+before do
+  ip = request.ip
+  now = Time.now.to_i
+  if cooldowns[ip] && now - cooldowns[ip] < 1
+    halt "Please slow down your requests"
+  end
+  cooldowns[ip] = now
+end
+
 [
   {route: '/', slim: :home, title: "Home"},
   {route: '/home', slim: :home, title: "Home"},
