@@ -12,12 +12,14 @@ end
 cooldowns = {}
 
 before do
-  ip = request.ip
-  now = Time.now.to_i
-  if cooldowns[ip] && now - cooldowns[ip] < 1
-    halt "Please slow down your requests"
+  if request.request_method == "POST"
+    ip = request.ip
+    now = Time.now.to_i
+    if cooldowns[ip] && now - cooldowns[ip] < 1
+      halt "Please slow down your requests"
+    end
+    cooldowns[ip] = now
   end
-  cooldowns[ip] = now
 end
 
 [
